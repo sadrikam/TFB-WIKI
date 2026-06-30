@@ -224,87 +224,35 @@
 </div>
 
 <script>
-    // Встроенные JSON данные из вашего файла herous.json
-    // Сюда можно безболезненно дописывать новые объекты в будущем
-    const heroesData = [
-        {
-            "name": " Магнар Тяжеловес",
-            "character_type": " CONTRACT",
-            "class_id": 3,
-            "alliance_id": 5,
-            "race_id": 10,
-            "avatar": "https://s3.game-tech.net/lotw/skins/firstborn-tank-03.png",
-            "icon": "https://s3.game-tech.net/lotw/icons/firstborn-tank-03-mini.png",
-            "base_character_id": 211
-        },
-        {
-            "name": " Орвен Мрак",
-            "character_type": " CONTRACT",
-            "class_id": 1,
-            "alliance_id": 1,
-            "race_id": 1,
-			"avatar": "https://s3.game-tech.net/lotw/skins/human-debufer-02.png",
-            "icon": "https://s3.game-tech.net/lotw/icons/human-debufer-02-mini.png",
-            "base_character_id": 82
-        },
-		{
-            "name": "Мурок Рогач",
-            "character_type": "SECONDARY",
-            "class_id": 2,
-            "alliance_id": 2,
-            "race_id": 2,
-            "avatar": "https://s3.game-tech.net/lotw/skins/beast-bufer-01.png",
-            "icon": "https://s3.game-tech.net/lotw/icons/beast-bufer-01-mini.png",
-            "base_character_id": 87
-		},
-		{
-            "name": "Селина Звёздная",
-            "character_type": "SECONDARY",
-            "class_id": 3,
-            "alliance_id": 2,
-            "race_id": 6,
-            "avatar": "https://s3.game-tech.net/lotw/skins/elf-bufer-01.png",
-            "icon": "https://s3.game-tech.net/lotw/icons/elf-bufer-01-mini.png",
-            "base_character_id": 127
-		},
-		{
-            "name": "Варден Душекрад",
-            "character_type": "SECONDARY",
-            "class_id": 1,
-            "alliance_id": 1,
-            "race_id": 1,
-            "avatar": "https://s3.game-tech.net/lotw/skins/human-debufer-01.png",
-            "icon": "https://s3.game-tech.net/lotw/icons/human-debufer-01-mini.png",
-            "base_character_id": 81
-		},
-		{
-            "name": "Торвальд Буря",
-            "character_type": "SECONDARY",
-            "class_id": 1,
-            "alliance_id": 5,
-            "race_id": 1,
-            "avatar": "https://s3.game-tech.net/lotw/skins/human-tank-01.png",
-            "icon": "https://s3.game-tech.net/lotw/icons/human-tank-01-mini.png",
-            "base_character_id": 75
-		},
-		{
-            "name": "Сарн Колючий",
-            "character_type": "SECONDARY",
-            "class_id": 1,
-            "alliance_id": 2,
-            "race_id": 1,
-            "avatar": "https://s3.game-tech.net/lotw/skins/human-bufer-02.png",
-            "icon": "https://s3.game-tech.net/lotw/icons/human-bufer-02-mini.png",
-            "base_character_id": 78
-		}
-    ];
+    // Глобальный массив для хранения загруженных данных персонажей
+    let heroesData = [];
+    // ... (Ссылки на элементы DOM) ...
 
+    // Шаг 1: Асинхронная загрузка JSON данных
+    async function loadHeroes() {
+        try {
+            // Запрашиваем файл herous.json, который лежит в той же директории
+            const response = await fetch('herous.json');
+            // ... (обработка ошибок) ...
+            heroesData = await response.json();
+            // Настраиваем интерфейс на основе полученных данных
+            populateTypeFilter();
+            renderCards(heroesData);
+        } catch (error) {
+            // ... (логирование ошибок) ...
+        }
+    }
+	
     // Ссылки на элементы DOM
+    // Шаг 2: Динамическое наполнение фильтра типами из JSON
+    function populateTypeFilter() {
+    // ... (код сбора уникальных типов) ...
     const grid = document.getElementById('heroesGrid');
     const searchInput = document.getElementById('search');
     const filterType = document.getElementById('filterType');
     const sortClass = document.getElementById('sortClass');
     const sortAliance = document.getElementById('sortAliance');
+    }
 	
     // Функция отрисовки карточек
     function renderCards(data) {
