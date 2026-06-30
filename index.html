@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>База Героев</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --card-bg: #2d2d2d;
+            --text-color: #ffffff;
+            --text-muted: #aaaaaa;
+            --accent: #00adb5;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+
+        /* Панель управления */
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .control-group {
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        label {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        input, select {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            background-color: #1a1a1a;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--accent);
+        }
+
+        /* Сетка карточек */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* Карточка */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 100%;
+            padding-top: 100%; /* Соотношение сторон 1:1 */
+            background-color: #111;
+        }
+
+        .avatar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex-grow: 1;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            background-color: #111;
+        }
+
+        .name {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            color: #fff;
+        }
+
+        .badge {
+            background-color: var(--accent);
+            color: #1a1a1a;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            align-self: flex-start;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            font-size: 14px;
+            border-top: 1px solid #444;
+            padding-top: 12px;
+            margin-top: auto;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            color: var(--text-muted);
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        .info-value {
+            font-weight: 500;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>База Данных Персонажей</h1>
+
+    <!-- Панель управления -->
+    <div class="controls">
+        <div class="control-group">
+            <label for="search">Поиск по имени</label>
+            <input type="text" id="search" placeholder="Введите имя...">
+        </div>
+        <div class="control-group">
+            <label for="filterType">Тип персонажа</label>
+            <select id="filterType">
+                <option value="all">Все типы</option>
+                <option value="CONTRACT">CONTRACT</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="sortClass">Сортировка (ID класса)</label>
+            <select id="sortClass">
+                <option value="none">Без сортировки</option>
+                <option value="asc">По возрастанию</option>
+                <option value="desc">По убыванию</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Сетка с карточками -->
+    <div class="grid" id="heroesGrid"></div>
+</div>
+
+<script>
+    // Встроенные JSON данные из вашего файла herous.json
+    // Сюда можно безболезненно дописывать новые объекты в будущем
+    const heroesData = [
+        {
+            "name": " Магнар Тяжеловес",
+            "character_type": " CONTRACT",
+            "class_id": 3,
+            "alliance_id": 5,
+            "race_id": 10,
+            "avatar": "https://game-tech.net",
+            "icon": "https://game-tech.net",
+            "base_character_id": 211
+        },
+        {
+            "name": " Орвен Мрак",
+            "character_type": " CONTRACT",
+            "class_id": 1,
+            "alliance_id": 1,
+            "race_id": 1,
+            "avatar": "https://game-tech.net",
+            "icon": "https://game-tech.net",
+            "base_character_id": 82
+        }
+    ];
+
+    // Ссылки на элементы DOM
+    const grid = document.getElementById('heroesGrid');
+    const searchInput = document.getElementById('search');
+    const filterType = document.getElementById('filterType');
+    const sortClass = document.getElementById('sortClass');
+
+    // Функция отрисовки карточек
+    function renderCards(data) {
+        grid.innerHTML = '';
+        
+        if (data.length === 0) {
+            grid.innerHTML = '<div class="no-results">Персонажи не найдены</div>';
+            return;
+        }
+
+        data.forEach(hero => {
+            // Очищаем строки от лишних пробелов на краях для красивого вывода
+            const cleanName = hero.name.trim();
+            const cleanType = hero.character_type.trim();
+
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="avatar-container">
+                    <img class="avatar" src="${hero.avatar}" alt="${cleanName}" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <img class="icon" src="${hero.icon}" alt="icon">
+                        <h2 class="name">${cleanName}</h2>
+                    </div>
+                    <span class="badge">${cleanType}</span>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Base ID</span>
+                            <span class="info-value">${hero.base_character_id}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Class ID</span>
+                            <span class="info-value">${hero.class_id}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Alliance ID</span>
+                            <span class="info-value">${hero.alliance_id}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Race ID</span>
+                            <span class="info-value">${hero.race_id}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    // Функция обработки поиска, фильтрации и сортировки
+    function updateDisplay() {
+        let updatedList = [...heroesData];
+
+        // 1. Поиск (по совпадению подстроки в имени без учета регистра)
+        const searchValue = searchInput.value.toLowerCase().trim();
+        if (searchValue) {
+            updatedList = updatedList.filter(hero => 
+                hero.name.toLowerCase().includes(searchValue)
+            );
+        }
+
+        // 2. Фильтрация по типу
+        const typeValue = filterType.value;
+        if (typeValue !== 'all') {
+            updatedList = updatedList.filter(hero => 
+                hero.character_type.trim() === typeValue
+            );
+        }
+
+        // 3. Сортировка по class_id
+        const sortValue = sortClass.value;
+        if (sortValue === 'asc') {
+            updatedList.sort((a, b) => a.class_id - b.class_id);
+        } else if (sortValue === 'desc') {
+            updatedList.sort((a, b) => b.class_id - a.class_id);
+        }
+
+        renderCards(updatedList);
+    }
+
+    // Слушатели событий управления
+    searchInput.addEventListener('input', updateDisplay);
+	filterType.addEventListener('change', updateDisplay);
+	sortClass.addEventListener('change', updateDisplay);
+	// Первичный запуск отрисовки
+	renderCards(heroesData);
+</script>
+
+</body>
+</html>
