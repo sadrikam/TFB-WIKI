@@ -75,5 +75,16 @@
             "icon": "https://s3.game-tech.net/lotw/icons/human-bufer-02-mini.png",
             "base_character_id": 78,
             "max_stardom": 2
+            },
+            {
+            "name": "Дракмар Гром",
+            "character_type": "SECONDARY",
+            "class_id": 1,
+            "alliance_id": 4,
+            "race_id": 1,
+            "avatar": "https://s3.game-tech.net/lotw/skins/human-fighter-01.png",
+            "icon": "https://s3.game-tech.net/lotw/icons/human-fighter-01-mini.png",
+            "base_character_id": 74,
+            "max_stardom": 5
             }
 ]
