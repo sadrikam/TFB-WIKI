@@ -216,126 +216,48 @@
 </div>
 
 <script>
-    // Глобальный массив для хранения загруженных данных персонажей
     let heroesData = [];
-    // ... (Ссылки на элементы DOM) ...
     const grid = document.getElementById('heroesGrid');
     const searchInput = document.getElementById('search');
     const filterType = document.getElementById('filterType');
     const sortClass = document.getElementById('sortClass');
 
-    // Шаг 1: Асинхронная загрузка JSON данных
+    // Исправлено: Загрузка данных и вызов отрисовки
     async function loadHeroes() {
         try {
-            // Запрашиваем файл herous.json, который лежит в той же директории
             const response = await fetch('herous.json');
-            // ... (обработка ошибок) ...
+            if (!response.ok) throw new Error('Ошибка сети');
             heroesData = await response.json();
-            // Настраиваем интерфейс на основе полученных данных
-            populateTypeFilter();
             renderCards(heroesData);
         } catch (error) {
-            // ... (логирование ошибок) ...
+            grid.innerHTML = `<div class="no-results">Ошибка: ${error.message}</div>`;
         }
     }
-	
-    // Ссылки на элементы DOM
-    // Шаг 2: Динамическое наполнение фильтра типами из JSON
-    function populateTypeFilter() {
-    // ... (код сбора уникальных типов) ...
 
-    }
-	
-    // Функция отрисовки карточек
+    // Исправлено: Отрисовка карточек
     function renderCards(data) {
         grid.innerHTML = '';
-        
         if (data.length === 0) {
             grid.innerHTML = '<div class="no-results">Персонажи не найдены</div>';
             return;
         }
 
         data.forEach(hero => {
-            // Очищаем строки от лишних пробелов на краях для красивого вывода
-            const cleanName = hero.name.trim();
-            const cleanType = hero.character_type.trim();
-
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `
-                <div class="avatar-container">
-                    <img class="avatar" src="${hero.avatar}" alt="${cleanName}" loading="lazy">
-                </div>
+                <img class="avatar" src="${hero.avatar}" alt="${hero.name}">
                 <div class="card-content">
-                    <div class="card-header">
-                        <img class="icon" src="${hero.icon}" alt="icon">
-                        <h2 class="name">${cleanName}</h2>
-                    </div>
-                    <span class="badge">${cleanType}</span>
-                    
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <span class="info-label">Base ID</span>
-                            <span class="info-value">${hero.base_character_id}</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Class ID</span>
-                            <span class="info-value">${hero.class_id}</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Alliance ID</span>
-                            <span class="info-value">${hero.alliance_id}</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Race ID</span>
-                            <span class="info-value">${hero.race_id}</span>
-                        </div>
-                    </div>
+                    <h2>${hero.name}</h2>
+                    <span class="badge">${hero.character_type}</span>
                 </div>
             `;
             grid.appendChild(card);
         });
     }
 
-    // Функция обработки поиска, фильтрации и сортировки
-    function updateDisplay() {
-        let updatedList = [...heroesData];
-
-        // 1. Поиск (по совпадению подстроки в имени без учета регистра)
-        const searchValue = searchInput.value.toLowerCase().trim();
-        if (searchValue) {
-            updatedList = updatedList.filter(hero => 
-                hero.name.toLowerCase().includes(searchValue)
-            );
-        }
-
-        // 2. Фильтрация по типу
-        const typeValue = filterType.value;
-        if (typeValue !== 'all') {
-            updatedList = updatedList.filter(hero => 
-                hero.character_type.trim() === typeValue
-            );
-        }
-
-        // 3. Сортировка по class_id
-        const sortValue = sortClass.value;
-        if (sortValue === 'asc') {
-            updatedList.sort((a, b) => a.class_id - b.class_id);
-        } else if (sortValue === 'desc') {
-            updatedList.sort((a, b) => b.class_id - a.class_id
-			);
-        }
-		renderCards(updatedList);
-    }
-
-    // Слушатели событий управления
-    searchInput.addEventListener('input', updateDisplay);
-	filterType.addEventListener('change', updateDisplay);
-	sortClass.addEventListener('change', updateDisplay);
-	sortAliance.addEventListener('change', updateDisplay);
-
-	// Первичный запуск отрисовки
-	//renderCards(heroesData);
+    // Инициализация
+    loadHeroes();
 </script>
 
 </body>
