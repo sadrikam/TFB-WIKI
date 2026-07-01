@@ -42,5 +42,38 @@
             "icon": "https://s3.game-tech.net/lotw/icons/elf-bufer-01-mini.png",
             "base_character_id": 127,
             "max_stardom": 2
+            },
+            [
+            "name": "Варден Душекрад",
+            "character_type": "SECONDARY",
+            "class_id": 1,
+            "alliance_id": 1,
+            "race_id": 1,
+            "avatar": "https://s3.game-tech.net/lotw/skins/human-debufer-01.png",
+            "icon": "https://s3.game-tech.net/lotw/icons/human-debufer-01-mini.png",
+            "base_character_id": 81,
+            "max_stardom": 2
+            },
+            {
+            "name": "Торвальд Буря",
+            "character_type": "SECONDARY",
+            "class_id": 1,
+            "alliance_id": 5,
+            "race_id": 1,
+            "avatar": "https://s3.game-tech.net/lotw/skins/human-tank-01.png",
+            "icon": "https://s3.game-tech.net/lotw/icons/human-tank-01-mini.png",
+            "base_character_id": 75,
+            "max_stardom": 2
+            },
+            {
+            "name": "Сарн Колючий",
+            "character_type": "SECONDARY",
+            "class_id": 1,
+            "alliance_id": 2,
+            "race_id": 1,
+            "avatar": "https://s3.game-tech.net/lotw/skins/human-bufer-02.png",
+            "icon": "https://s3.game-tech.net/lotw/icons/human-bufer-02-mini.png",
+            "base_character_id": 78,
+            "max_stardom": 2
             }
 ]
