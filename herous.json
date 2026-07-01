@@ -43,7 +43,7 @@
             "base_character_id": 127,
             "max_stardom": 2
             },
-            [
+            {
             "name": "Варден Душекрад",
             "character_type": "SECONDARY",
             "class_id": 1,
