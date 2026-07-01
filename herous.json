@@ -8,7 +8,7 @@
 		"avatar": "https://s3.game-tech.net/lotw/skins/firstborn-tank-03.png",
 		"icon": "https://s3.game-tech.net/lotw/icons/firstborn-tank-03-mini.png",
 		"base_character_id": 211
-	},
+	}
 	{
 		"name": "Орвен Мрак",
 		"character_type": "CONTRACT",
@@ -18,7 +18,7 @@
 		"avatar": "https://s3.game-tech.net/lotw/skins/human-debufer-02.png",
 		"icon": "https://s3.game-tech.net/lotw/icons/human-debufer-02-mini.png",
 		"base_character_id": 82
-	},
+	}
 	{		
 		"name": "Мурок Рогач",
 		"character_type": "SECONDARY",
