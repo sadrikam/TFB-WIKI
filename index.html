@@ -246,10 +246,34 @@
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `
-                <img class="avatar" src="${hero.avatar}" alt="${hero.name}">
+                <div class="avatar-container">
+                    <img class="avatar" src="${hero.avatar}" alt="${cleanName}" loading="lazy">
+                </div>
                 <div class="card-content">
-                    <h2>${hero.name}</h2>
-                    <span class="badge">${hero.character_type}</span>
+                    <div class="card-header">
+                        <img class="icon" src="${hero.icon}" alt="icon">
+                        <h2 class="name">${cleanName}</h2>
+                    </div>
+                    <span class="badge">${cleanType}</span>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Base ID</span>
+                            <span class="info-value">${hero.base_character_id}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Class ID</span>
+                            <span class="info-value">${hero.class_id}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Alliance ID</span>
+                            <span class="info-value">${hero.alliance_id}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Race ID</span>
+                            <span class="info-value">${hero.race_id}</span>
+                        </div>
+                    </div>
                 </div>
             `;
             grid.appendChild(card);
