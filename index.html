@@ -243,6 +243,10 @@
         }
 
         data.forEach(hero => {
+            // Очищаем строки от лишних пробелов на краях для красивого вывода
+            const cleanName = hero.name.trim();
+            const cleanType = hero.character_type.trim();
+            
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `
