@@ -209,14 +209,6 @@
                 <option value="desc">По убыванию</option>
             </select>
         </div>
-        <div class="control-group">
-            <label for="sortAliance">Сортировка (ID альянса)</label>
-            <select id="sortAliance">
-                <option value="none">Без сортировки</option>
-                <option value="asc">По возрастанию</option>
-                <option value="desc">По убыванию</option>
-            </select>
-        </div>
     </div>
 
     <!-- Сетка с карточками -->
@@ -231,7 +223,6 @@
     const searchInput = document.getElementById('search');
     const filterType = document.getElementById('filterType');
     const sortClass = document.getElementById('sortClass');
-    const sortAliance = document.getElementById('sortAliance');
 
     // Шаг 1: Асинхронная загрузка JSON данных
     async function loadHeroes() {
@@ -327,23 +318,13 @@
         }
 
         // 3. Сортировка по class_id
-        const sortValue1 = sortClass.value;
-        if (sortValue1 === 'asc') {
+        const sortValue = sortClass.value;
+        if (sortValue === 'asc') {
             updatedList.sort((a, b) => a.class_id - b.class_id);
-        } else if (sortValue1 === 'desc') {
+        } else if (sortValue === 'desc') {
             updatedList.sort((a, b) => b.class_id - a.class_id
 			);
         }
-
- 
-        // 4. Сортировка по alliance_id
-        const sortValue2 = sortAliance.value;
-        if (sortValue2 === 'asc') {
-            updatedList.sort((a, b) => a.alliance_id - b.alliance_id);
-        } else if (sortValue2 === 'desc') {
-            updatedList.sort((a, b) => b.alliance_id - a.alliance_id);
-        }
-		
 		renderCards(updatedList);
     }
 
@@ -354,7 +335,7 @@
 	sortAliance.addEventListener('change', updateDisplay);
 
 	// Первичный запуск отрисовки
-	renderCards(heroesData);
+	//renderCards(heroesData);
 </script>
 
 </body>
