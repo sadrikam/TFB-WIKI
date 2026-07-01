@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильтр JSON по полю "name"</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            background-color: #238636;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover { background-color: #2ea043; }
+        button:disabled { background-color: #cccccc; cursor: not-allowed; }
+        #status { margin-top: 20px; font-weight: bold; color: #555; }
+    </style>
+</head>
+<body>
+
+    <h2>Очистка JSON: Оставить только поля "name"</h2>
+    <p>Нажмите кнопку ниже, чтобы скачать отфильтрованную версию файла source.json</p>
+    
+    <button id="processBtn">Обработать и скачать JSON</button>
+    <div id="status"></div>
+
+    <script>
+        // Функция рекурсивной фильтрации объекта
+        function keepOnlyNameFields(obj) {
+            if (Array.isArray(obj)) {
+                // Если это массив, обрабатываем каждый элемент и убираем пустые объекты
+                return obj.map(keepOnlyNameFields).filter(item => {
+                    if (item && typeof item === 'object') {
+                        return Object.keys(item).length > 0;
+                    }
+                    return true;
+                });
+            } else if (obj !== null && typeof obj === 'object') {
+                const newObj = {};
+                // Если внутри объекта есть ключ "name", сохраняем его
+                if ('name' in obj) {
+                    newObj.name = obj.name;
+                }
+                // Проверяем остальные ключи на случай вложенных структур (объектов/массивов)
+                for (const key in obj) {
+                    if (key !== 'name' && obj[key] && typeof obj[key] === 'object') {
+                        const filteredChild = keepOnlyNameFields(obj[key]);
+                        // Если вложенный объект не пустой, сохраняем его структуру
+                        if (Object.keys(filteredChild).length > 0) {
+                            newObj[key] = filteredChild;
+                        }
+                    }
+                }
+                return newObj;
+            }
+            return obj;
+        }
+
+        document.getElementById('processBtn').addEventListener('click', async () => {
+            const statusDiv = document.getElementById('status');
+            const btn = document.getElementById('processBtn');
+            
+            // Ссылка на raw-версию файла на GitHub через публичный CORS-прокси
+            const fileUrl = 'https://allorigins.win' + encodeURIComponent('https://githubusercontent.com');
+
+            try {
+                btn.disabled = true;
+                statusDiv.style.color = '#555';
+                statusDiv.innerText = 'Скачивание файла с GitHub...';
+
+                const response = await fetch(fileUrl);
+                if (!response.ok) throw new Error('Не удалось загрузить файл. Ошибка сети.');
+
+                statusDiv.innerText = 'Файл успешно загружен. Фильтрация данных...';
+                const rawJson = await response.json();
+
+                // Запуск глубокой фильтрации
+                const filteredJson = keepOnlyNameFields(rawJson);
+
+                statusDiv.innerText = 'Формирование файла для скачивания...';
+                
+                // Создание Blob объекта с отфильтрованным JSON
+                const blob = new Blob([JSON.stringify(filteredJson, null, 2)], { type: 'application/json' });
+                const downloadUrl = URL.createObjectURL(blob);
+                
+                // Эмуляция клика для скачивания файла на диск
+                const link = document.createElement('a');
+                link.href = downloadUrl;
+                link.download = 'filtered_source.json';
+                document.body.appendChild(link);
+                link.click();
+                
+                // Очистка ресурсов
+                document.body.removeChild(link);
+                URL.revokeObjectURL(downloadUrl);
+
+                statusDiv.style.color = '#238636';
+                statusDiv.innerText = 'Готово! Файл "filtered_source.json" сохранен на диск.';
+            } catch (error) {
+                statusDiv.style.color = '#d32f2f';
+                statusDiv.innerText = 'Ошибка: ' + error.message;
+                console.error(error);
+            } finally {
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
