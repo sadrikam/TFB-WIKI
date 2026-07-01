@@ -227,6 +227,11 @@
     // Глобальный массив для хранения загруженных данных персонажей
     let heroesData = [];
     // ... (Ссылки на элементы DOM) ...
+    const grid = document.getElementById('heroesGrid');
+    const searchInput = document.getElementById('search');
+    const filterType = document.getElementById('filterType');
+    const sortClass = document.getElementById('sortClass');
+    const sortAliance = document.getElementById('sortAliance');
 
     // Шаг 1: Асинхронная загрузка JSON данных
     async function loadHeroes() {
@@ -247,11 +252,7 @@
     // Шаг 2: Динамическое наполнение фильтра типами из JSON
     function populateTypeFilter() {
     // ... (код сбора уникальных типов) ...
-    const grid = document.getElementById('heroesGrid');
-    const searchInput = document.getElementById('search');
-    const filterType = document.getElementById('filterType');
-    const sortClass = document.getElementById('sortClass');
-    const sortAliance = document.getElementById('sortAliance');
+
     }
 	
     // Функция отрисовки карточек
