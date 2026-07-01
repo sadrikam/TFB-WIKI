@@ -283,7 +283,43 @@
             grid.appendChild(card);
         });
     }
+    
+    // Функция обработки поиска, фильтрации и сортировки
+    function updateDisplay() {
+        let updatedList = [...heroesData];
 
+        // 1. Поиск (по совпадению подстроки в имени без учета регистра)
+        const searchValue = searchInput.value.toLowerCase().trim();
+        if (searchValue) {
+            updatedList = updatedList.filter(hero => 
+                hero.name.toLowerCase().includes(searchValue)
+            );
+        }
+
+        // 2. Фильтрация по типу
+        const typeValue = filterType.value;
+        if (typeValue !== 'all') {
+            updatedList = updatedList.filter(hero => 
+                hero.character_type.trim() === typeValue
+            );
+        }
+
+        // 3. Сортировка по class_id
+        const sortValue = sortClass.value;
+        if (sortValue === 'asc') {
+            updatedList.sort((a, b) => a.class_id - b.class_id);
+        } else if (sortValue === 'desc') {
+            updatedList.sort((a, b) => b.class_id - a.class_id);
+        }
+
+        renderCards(updatedList);
+    }
+
+    // Слушатели событий управления
+    searchInput.addEventListener('input', updateDisplay);
+	filterType.addEventListener('change', updateDisplay);
+	sortClass.addEventListener('change', updateDisplay);
+    
     // Инициализация
     loadHeroes();
 </script>
