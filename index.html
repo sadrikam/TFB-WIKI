@@ -226,13 +226,17 @@
     const filterType = document.getElementById('filterType');
     const sortClass = document.getElementById('sortClass');
 
+	const classMapper = {
+		'1': 'Сила',
+	    '2': 'Ловкость',
+	    '3': 'Интеллект'
+	};
 	const typeMapper = {
 		'MAIN': 'ГЛАВНЫЙ ГЕРОЙ',
 	    'HUNT': 'ОХОТА',
 	    'CONTRACT': 'КОНТРАКТ',
 	    'SECONDARY': 'БИОМ',
 		'PREMIUM': 'ПРЕМИУМ'
-	    // Добавьте сюда любые свои типы из source.json
 	};
 	
     // Исправлено: Загрузка данных и вызов отрисовки
@@ -259,6 +263,7 @@
             // Очищаем строки от лишних пробелов на краях для красивого вывода
             const cleanName = hero.name.trim();
             const cleanType = hero.character_type.trim();
+			const cleanClass = hero.class_id.trim();
             
             const card = document.createElement('div');
             card.className = 'card';
@@ -272,7 +277,8 @@
                         <h2 class="name">${cleanName}</h2>
                     </div>
                     <span class="badge">${typeMapper[cleanType] || cleanType}</span>
-                    
+                    <span class="badge">${classMapper[cleanClass] || cleanClass}</span>
+                   
                     <div class="info-grid">
                         <div class="info-item">
                             <span class="info-label">Base ID</span>
