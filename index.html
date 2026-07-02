@@ -263,7 +263,7 @@
             // Очищаем строки от лишних пробелов на краях для красивого вывода
             const cleanName = hero.name.trim();
             const cleanType = hero.character_type.trim();
-			const cleanClass = hero.class_id.trim();
+			//const cleanClass = hero.class_id.trim();
             
             const card = document.createElement('div');
             card.className = 'card';
@@ -277,7 +277,7 @@
                         <h2 class="name">${cleanName}</h2>
                     </div>
                     <span class="badge">${typeMapper[cleanType] || cleanType}</span>
-                    <span class="badge">${classMapper[cleanClass] || cleanClass}</span>
+                    <span class="badge">${classMapper[hero.class_id] || hero.class_id}</span>
                    
                     <div class="info-grid">
                         <div class="info-item">
