@@ -227,9 +227,9 @@
     const sortClass = document.getElementById('sortClass');
 
 	const classMapper = {
-		'1': 'Сила',
-	    '2': 'Ловкость',
-	    '3': 'Интеллект'
+	    1: 'Сила',
+	    2: 'Ловкость',
+	    3: 'Интеллект'
 	};
 	const typeMapper = {
 		'MAIN': 'ГЛАВНЫЙ ГЕРОЙ',
@@ -263,7 +263,6 @@
             // Очищаем строки от лишних пробелов на краях для красивого вывода
             const cleanName = hero.name.trim();
             const cleanType = hero.character_type.trim();
-			//const cleanClass = hero.class_id.trim();
             
             const card = document.createElement('div');
             card.className = 'card';
