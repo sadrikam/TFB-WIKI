@@ -198,6 +198,7 @@
             <label for="filterType">Тип персонажа</label>
             <select id="filterType">
                 <option value="all">Все типы</option>
+				<option value="MAIN">Главный герой</option>
                 <option value="SECONDARY">Биом</option>
                 <option value="CONTRACT">Контракт</option>
 				<option value="HUNT">Охота</option>
@@ -226,6 +227,7 @@
     const sortClass = document.getElementById('sortClass');
 
 	const typeMapper = {
+		'MAIN': 'ГЛАВНЫЙ ГЕРОЙ',
 	    'HUNT': 'ОХОТА',
 	    'CONTRACT': 'КОНТРАКТ',
 	    'SECONDARY': 'БИОМ',
