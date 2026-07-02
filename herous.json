@@ -9,26 +9,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/firstborn-tank-03.png",
       "icon": "https://s3.game-tech.net/lotw/icons/firstborn-tank-03-mini.png",
       "base_character_id": 211,
-      "ability_ids": [
-        403,
-        523
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "sleep"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "paralyze"
-            ]
-          }
-        }
-      ],
       "max_stardom": 5
     }
   },
@@ -42,26 +22,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/human-debufer-02.png",
       "icon": "https://s3.game-tech.net/lotw/icons/human-debufer-02-mini.png",
       "base_character_id": 82,
-      "ability_ids": [
-        263,
-        534
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "paralyze"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "bleeding"
-            ]
-          }
-        }
-      ],
       "max_stardom": 3
     }
   },
@@ -75,25 +35,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/beast-bufer-01.png",
       "icon": "https://s3.game-tech.net/lotw/icons/beast-bufer-01-mini.png",
       "base_character_id": 87,
-      "ability_ids": [
-        286
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "bleeding"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "freeze"
-            ]
-          }
-        }
-      ],
       "max_stardom": 2
     }
   },
@@ -107,25 +48,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/elf-bufer-01.png",
       "icon": "https://s3.game-tech.net/lotw/icons/elf-bufer-01-mini.png",
       "base_character_id": 127,
-      "ability_ids": [
-        345
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "blinding"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "stunning"
-            ]
-          }
-        }
-      ],
       "max_stardom": 2
     }
   },
@@ -139,25 +61,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/human-debufer-01.png",
       "icon": "https://s3.game-tech.net/lotw/icons/human-debufer-01-mini.png",
       "base_character_id": 81,
-      "ability_ids": [
-        258
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "paralyze"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "bleeding"
-            ]
-          }
-        }
-      ],
       "max_stardom": 2
     }
   },
@@ -171,25 +74,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/human-tank-01.png",
       "icon": "https://s3.game-tech.net/lotw/icons/human-tank-01-mini.png",
       "base_character_id": 75,
-      "ability_ids": [
-        234
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "paralyze"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "bleeding"
-            ]
-          }
-        }
-      ],
       "max_stardom": 2
     }
   },
@@ -203,25 +87,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/human-bufer-02.png",
       "icon": "https://s3.game-tech.net/lotw/icons/human-bufer-02-mini.png",
       "base_character_id": 78,
-      "ability_ids": [
-        246
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "paralyze"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "bleeding"
-            ]
-          }
-        }
-      ],
       "max_stardom": 2
     }
   },
@@ -235,26 +100,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/human-fighter-01.png",
       "icon": "https://s3.game-tech.net/lotw/icons/human-fighter-01-mini.png",
       "base_character_id": 74,
-      "ability_ids": [
-        230,
-        559
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "paralyze"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "bleeding"
-            ]
-          }
-        }
-      ],
       "max_stardom": 5
     }
   },
@@ -268,25 +113,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/human-bufer-01.png",
       "icon": "https://s3.game-tech.net/lotw/icons/human-bufer-01-mini.png",
       "base_character_id": 77,
-      "ability_ids": [
-        244
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "paralyze"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "bleeding"
-            ]
-          }
-        }
-      ],
       "max_stardom": 2
     }
   },
@@ -300,25 +126,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/beast-tank-01.png",
       "icon": "https://s3.game-tech.net/lotw/icons/beast-tank-01-mini.png",
       "base_character_id": 85,
-      "ability_ids": [
-        276
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "bleeding"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "freeze"
-            ]
-          }
-        }
-      ],
       "max_stardom": 2
     }
   },
@@ -332,25 +139,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/beast-fighter-01.png",
       "icon": "https://s3.game-tech.net/lotw/icons/beast-fighter-01-mini.png",
       "base_character_id": 84,
-      "ability_ids": [
-        272
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "bleeding"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "freeze"
-            ]
-          }
-        }
-      ],
       "max_stardom": 2
     }
   },
@@ -364,25 +152,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/dwarf-bufer-02.png",
       "icon": "https://s3.game-tech.net/lotw/icons/dwarf-bufer-02-mini.png",
       "base_character_id": 98,
-      "ability_ids": [
-        315
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "freeze"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "burning"
-            ]
-          }
-        }
-      ],
       "max_stardom": 2
     }
   },
@@ -396,27 +165,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/dwarf-fighter-01.png",
       "icon": "https://s3.game-tech.net/lotw/icons/dwarf-fighter-01-mini.png",
       "base_character_id": 93,
-      "ability_ids": [
-        310,
-        624,
-        625
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "freeze"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "burning"
-            ]
-          }
-        }
-      ],
       "max_stardom": 2
     }
   },
@@ -430,25 +178,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/demon-bufer-02.png",
       "icon": "https://s3.game-tech.net/lotw/icons/demon-bufer-02-mini.png",
       "base_character_id": 108,
-      "ability_ids": [
-        326
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "blinding"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "burning"
-            ]
-          }
-        }
-      ],
       "max_stardom": 2
     }
   },
@@ -462,25 +191,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/demon-tank-01.png",
       "icon": "https://s3.game-tech.net/lotw/icons/demon-tank-01-mini.png",
       "base_character_id": 105,
-      "ability_ids": [
-        323
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "blinding"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "burning"
-            ]
-          }
-        }
-      ],
       "max_stardom": 2
     }
   },
@@ -494,25 +204,6 @@
       "avatar": "https://s3.game-tech.net/lotw/skins/demon-fighter-01.png",
       "icon": "https://s3.game-tech.net/lotw/icons/demon-fighter-01-mini.png",
       "base_character_id": 103,
-      "ability_ids": [
-        321
-      ],
-      "abilities": [
-        {
-          "effect": {
-            "immunities": [
-              "blinding"
-            ]
-          }
-        },
-        {
-          "effect": {
-            "immunities": [
-              "burning"
-            ]
-          }
-        }
-      ],
       "max_stardom": 2
     }
   },
