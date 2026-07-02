@@ -857,5 +857,181 @@
 "icon": "https://s3.game-tech.net/lotw/icons/elf-debufer-01-mini.png",
 "base_character_id": 131,
 "max_stardom": 3
+},
+{
+"name": "Урзек",
+"character_type": "CONTRACT",
+"class_id": 1,
+"alliance_id": 3,
+"race_id": 4,
+"avatar": "https://s3.game-tech.net/lotw/skins/demon-killer-01.png",
+"icon": "https://s3.game-tech.net/lotw/icons/demon-killer-01-mini.png",
+"base_character_id": 104,
+"max_stardom": 5
+},
+{
+"name": "Клоксиум",
+"character_type": "HUNT",
+"class_id": 2,
+"alliance_id": 3,
+"race_id": 8,
+"avatar": "https://s3.game-tech.net/lotw/skins/mechanism-killer-01.png",
+"icon": "https://s3.game-tech.net/lotw/icons/mechanism-killer-01-mini.png",
+"base_character_id": 144,
+"max_stardom": 5
+},
+{
+"name": "Оргрим Гнилошрам",
+"character_type": "CONTRACT",
+"class_id": 2,
+"alliance_id": 4,
+"race_id": 5,
+"avatar": "https://s3.game-tech.net/lotw/skins/undead-fighter-01.png",
+"icon": "https://s3.game-tech.net/lotw/icons/undead-fighter-01-mini.png",
+"base_character_id": 113,
+"max_stardom": 5
+},
+{
+"name": "Модулус",
+"character_type": "HUNT",
+"class_id": 2,
+"alliance_id": 2,
+"race_id": 8,
+"avatar": "https://s3.game-tech.net/lotw/skins/mechanism-bufer-03.png",
+"icon": "https://s3.game-tech.net/lotw/icons/mechanism-bufer-03-mini.png",
+"base_character_id": 149,
+"max_stardom": 3
+},
+{
+"name": "Карнель Сукотрес",
+"character_type": "HUNT",
+"class_id": 3,
+"alliance_id": 2,
+"race_id": 9,
+"avatar": "https://s3.game-tech.net/lotw/skins/ent-bufer-03.png",
+"icon": "https://s3.game-tech.net/lotw/icons/ent-bufer-03-mini.png",
+"base_character_id": 159,
+"max_stardom": 3
+},
+{
+"name": "Сильдар",
+"character_type": "HUNT",
+"class_id": 1,
+"alliance_id": 1,
+"race_id": 10,
+"avatar": "https://s3.game-tech.net/lotw/skins/firstborn-debufer-01.png",
+"icon": "https://s3.game-tech.net/lotw/icons/firstborn-debufer-01-mini.png",
+"base_character_id": 171,
+"max_stardom": 3
+},
+{
+"name": "Леди Рэйн",
+"character_type": "COLLECTIBLE",
+"class_id": 1,
+"alliance_id": 4,
+"race_id": 1,
+"avatar": "https://s3.game-tech.net/lotw/skins/human-fighter-02.png",
+"icon": "https://s3.game-tech.net/lotw/icons/human-fighter-02-mini.png",
+"base_character_id": 201,
+"max_stardom": 4
+},
+{
+"name": "Альдор Белый Клык",
+"character_type": "CONTRACT",
+"class_id": 2,
+"alliance_id": 3,
+"race_id": 10,
+"avatar": "https://s3.game-tech.net/lotw/skins/firstborn-killer-02.png",
+"icon": "https://s3.game-tech.net/lotw/icons/firstborn-killer-02-mini.png",
+"base_character_id": 210,
+"max_stardom": 5
+},
+{
+"name": "Вардан Алый",
+"character_type": "HUNT",
+"class_id": 2,
+"alliance_id": 1,
+"race_id": 10,
+"avatar": "https://s3.game-tech.net/lotw/skins/firstborn-debufer-03.png",
+"icon": "https://s3.game-tech.net/lotw/icons/firstborn-debufer-03-mini.png",
+"base_character_id": 216,
+"max_stardom": 3
+},
+{
+"name": "Волгром",
+"character_type": "HUNT",
+"class_id": 3,
+"alliance_id": 2,
+"race_id": 10,
+"avatar": "https://s3.game-tech.net/lotw/skins/firstborn-bufer-03.png",
+"icon": "https://s3.game-tech.net/lotw/icons/firstborn-bufer-03-mini.png",
+"base_character_id": 169,
+"max_stardom": 3
+},
+{
+"name": "Эллариос",
+"character_type": "HUNT",
+"class_id": 1,
+"alliance_id": 2,
+"race_id": 10,
+"avatar": "https://s3.game-tech.net/lotw/skins/firstborn-bufer-05.png",
+"icon": "https://s3.game-tech.net/lotw/icons/firstborn-bufer-05-mini.png",
+"base_character_id": 214,
+"max_stardom": 5
+},
+{
+"name": "Карган Страж",
+"character_type": "HUNT",
+"class_id": 2,
+"alliance_id": 5,
+"race_id": 10,
+"avatar": "https://s3.game-tech.net/lotw/skins/firstborn-tank-04.png",
+"icon": "https://s3.game-tech.net/lotw/icons/firstborn-tank-04-mini.png",
+"base_character_id": 215,
+"max_stardom": 5
+},
+{
+"name": "Орель Пламенный",
+"character_type": "PREMIUM",
+"class_id": 1,
+"alliance_id": 2,
+"race_id": 10,
+"avatar": "https://s3.game-tech.net/lotw/skins/firstborn-bufer-07.png",
+"icon": "https://s3.game-tech.net/lotw/icons/firstborn-bufer-07-mini.png",
+"base_character_id": 217,
+"max_stardom": 1
+},
+{
+"name": "Нокс",
+"character_type": "PREMIUM",
+"class_id": 2,
+"alliance_id": 2,
+"race_id": 10,
+"avatar": "https://s3.game-tech.net/lotw/skins/firstborn-bufer-08.png",
+"icon": "https://s3.game-tech.net/lotw/icons/firstborn-bufer-08-mini.png",
+"base_character_id": 218,
+"max_stardom": 1
+},
+{
+"name": "Нерис Роголом",
+"character_type": "PREMIUM",
+"class_id": 3,
+"alliance_id": 2,
+"race_id": 10,
+"avatar": "https://s3.game-tech.net/lotw/skins/firstborn-bufer-09.png",
+"icon": "https://s3.game-tech.net/lotw/icons/firstborn-bufer-09-mini.png",
+"base_character_id": 219,
+"max_stardom": 1
+},
+{
+"name": "Скелдор",
+"character_type": "CONTRACT",
+"class_id": 2,
+"alliance_id": 2,
+"race_id": 5,
+"avatar": "https://s3.game-tech.net/lotw/skins/undead-bufer-01.png",
+"icon": "https://s3.game-tech.net/lotw/icons/undead-bufer-01-mini.png",
+"base_character_id": 117,
+"max_stardom": 3
 }
 ]
