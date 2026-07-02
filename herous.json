@@ -219,5 +219,203 @@
       "icon": "https://s3.game-tech.net/lotw/icons/undead-tank-02-mini.png",
       "base_character_id": 116,
       "max_stardom": 2
+  },
+ {
+      "name": "Ульмар",
+      "character_type": "SECONDARY",
+      "class_id": 2,
+      "alliance_id": 5,
+      "race_id": 5,
+      "avatar": "https://s3.game-tech.net/lotw/skins/undead-tank-01.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/undead-tank-01-mini.png",
+      "base_character_id": 115,
+      "max_stardom": 2
+  },
+ {
+      "name": "Драксор",
+      "character_type": "SECONDARY",
+      "class_id": 2,
+      "alliance_id": 1,
+      "race_id": 5,
+      "avatar": "https://s3.game-tech.net/lotw/skins/undead-debufer-01.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/undead-debufer-01-mini.png",
+      "base_character_id": 121,
+      "max_stardom": 2
+  },
+ {
+      "name": "Силекс-9",
+      "character_type": "CONTRACT",
+      "class_id": 2,
+      "alliance_id": 1,
+      "race_id": 8,
+      "avatar": "https://s3.game-tech.net/lotw/skins/mechanism-debufer-01.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/mechanism-debufer-01-mini.png",
+      "base_character_id": 151,
+      "max_stardom": 3
+  },
+{
+      "name": "Саргот",
+      "character_type": "SECONDARY",
+      "class_id": 2,
+      "alliance_id": 3,
+      "race_id": 5,
+      "avatar": "https://s3.game-tech.net/lotw/skins/undead-killer-01.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/undead-killer-01-mini.png",
+      "base_character_id": 114,
+      "max_stardom": 2
+    },
+ {
+      "name": "Дарилан",
+      "character_type": "SECONDARY",
+      "class_id": 3,
+      "alliance_id": 4,
+      "race_id": 6,
+      "avatar": "https://s3.game-tech.net/lotw/skins/elf-fighter-01.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/elf-fighter-01-mini.png",
+      "base_character_id": 123,
+      "max_stardom": 2
+  },
+{
+      "name": "Мурдрак Костолом",
+      "character_type": "SECONDARY",
+      "class_id": 1,
+      "alliance_id": 5,
+      "race_id": 7,
+      "avatar": "https://s3.game-tech.net/lotw/skins/orc-tank-01.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/orc-tank-01-mini.png",
+      "base_character_id": 135,
+      "max_stardom": 2
+  },
+{
+      "name": "Варгос Черношрам",
+      "character_type": "HUNT",
+      "class_id": 2,
+      "alliance_id": 1,
+      "race_id": 2,
+      "avatar": "https://s3.game-tech.net/lotw/skins/beast-debufer-01.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/beast-debufer-01-mini.png",
+      "base_character_id": 91,
+      "max_stardom": 3
+  },
+{
+      "name": "Гролис",
+      "character_type": "CONTRACT",
+      "class_id": 3,
+      "alliance_id": 1,
+      "race_id": 9,
+      "avatar": "https://s3.game-tech.net/lotw/skins/ent-debufer-01.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/ent-debufer-01-mini.png",
+      "base_character_id": 161,
+      "max_stardom": 3
+  },
+ {
+      "name": "Таргул Костолом",
+      "character_type": "SECONDARY",
+      "class_id": 1,
+      "alliance_id": 2,
+      "race_id": 7,
+      "avatar": "https://s3.game-tech.net/lotw/skins/orc-bufer-01.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/orc-bufer-01-mini.png",
+      "base_character_id": 137,
+      "max_stardom": 2
+  },
+{
+      "name": "Зорук",
+      "character_type": "SECONDARY",
+      "class_id": 1,
+      "alliance_id": 5,
+      "race_id": 7,
+      "avatar": "https://s3.game-tech.net/lotw/skins/orc-tank-02.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/orc-tank-02-mini.png",
+      "base_character_id": 136,
+      "max_stardom": 2
+  },
+{
+      "name": "Гальдис Каменкор",
+      "character_type": "SECONDARY",
+      "class_id": 3,
+      "alliance_id": 5,
+      "race_id": 6,
+      "avatar": "https://s3.game-tech.net/lotw/skins/elf-tank-02.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/elf-tank-02-mini.png",
+      "base_character_id": 126,
+      "max_stardom": 2
+  },
+ {
+      "name": "Ривекс-8",
+      "character_type": "SECONDARY",
+      "class_id": 2,
+      "alliance_id": 5,
+      "race_id": 8,
+      "avatar": "https://s3.game-tech.net/lotw/skins/mechanism-tank-02.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/mechanism-tank-02-mini.png",
+      "base_character_id": 146,
+      "max_stardom": 2
+  },
+ {
+      "name": "Титан-12",
+      "character_type": "SECONDARY",
+      "class_id": 2,
+      "alliance_id": 5,
+      "race_id": 8,
+      "avatar": "https://s3.game-tech.net/lotw/skins/mechanism-tank-01.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/mechanism-tank-01-mini.png",
+      "base_character_id": 145,
+      "max_stardom": 2
+  },
+{
+      "name": "Дрокгар",
+      "character_type": "SECONDARY",
+      "class_id": 1,
+      "alliance_id": 4,
+      "race_id": 7,
+      "avatar": "https://s3.game-tech.net/lotw/skins/orc-fighter-01.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/orc-fighter-01-mini.png",
+      "base_character_id": 133,
+      "max_stardom": 2
+  },
+ {
+      "name": "Авис-3",
+      "character_type": "SECONDARY",
+      "class_id": 2,
+      "alliance_id": 4,
+      "race_id": 8,
+      "avatar": "https://s3.game-tech.net/lotw/skins/mechanism-fighter-01.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/mechanism-fighter-01-mini.png",
+      "base_character_id": 143,
+      "max_stardom": 2
+  },
+{
+      "name": "Буллкар",
+      "character_type": "CONTRACT",
+      "class_id": 3,
+      "alliance_id": 1,
+      "race_id": 10,
+      "avatar": "https://s3.game-tech.net/lotw/skins/firstborn-debufer-04.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/firstborn-debufer-04-mini.png",
+      "base_character_id": 213,
+      "max_stardom": 3
+  },
+{
+      "name": "Коггард",
+      "character_type": "SECONDARY",
+      "class_id": 2,
+      "alliance_id": 2,
+      "race_id": 8,
+      "avatar": "https://s3.game-tech.net/lotw/skins/mechanism-bufer-01.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/mechanism-bufer-01-mini.png",
+      "base_character_id": 147,
+      "max_stardom": 2
+  },
+{
+      "name": "Древолист",
+      "character_type": "CONTRACT",
+      "class_id": 3,
+      "alliance_id": 2,
+      "race_id": 9,
+      "avatar": "https://s3.game-tech.net/lotw/skins/ent-bufer-02.png",
+      "icon": "https://s3.game-tech.net/lotw/icons/ent-bufer-02-mini.png",
+      "base_character_id": 158,
+      "max_stardom": 5
   }
 ]
