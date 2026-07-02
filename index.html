@@ -233,6 +233,13 @@
 	    2: 'Ловкость',
 	    3: 'Интеллект'
 	};
+	const allianceMapper = {
+		1: 'Осквернитель',
+		2: 'Жрец',
+		3: 'Убийца',
+		4: 'Боец',
+		5: 'Защитник'
+	};
 	const raceMapper = {
 		1: 'Люди',
 		2: 'Звери',
@@ -288,28 +295,18 @@
                     <div class="card-header">
                         <img class="icon" src="${hero.icon}" alt="icon">
                         <h2 class="name">${cleanName}</h2>
-                    </div>
-                    <span class="badge">${typeMapper[cleanType] || cleanType}</span>
+                    
+					<span class="badge">${typeMapper[cleanType] || cleanType}</span>
                     <span class="badge">${classMapper[hero.class_id] || hero.class_id}</span>
                     <span class="badge">${raceMapper[hero.race_id] || hero.race_id}</span>
-					
+                    <span class="badge">${allianceMapper[hero.alliance_id] || hero.alliance_id}</span>
+					</div>
                     <div class="info-grid">
                         <div class="info-item">
                             <span class="info-label">Base ID</span>
                             <span class="info-value">${hero.base_character_id}</span>
                         </div>
-                        <div class="info-item">
-                            <span class="info-label">Class ID</span>
-                            <span class="info-value">${hero.class_id}</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Alliance ID</span>
-                            <span class="info-value">${hero.alliance_id}</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Race ID</span>
-                            <span class="info-value">${hero.race_id}</span>
-                        </div>
+
 						<div class="info-item">
                             <span class="info-label">MAX Star</span>
                             <span class="info-value">${'★'.repeat(hero.max_stardom || 0)}</span>
