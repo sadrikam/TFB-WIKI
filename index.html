@@ -224,6 +224,13 @@
     const filterType = document.getElementById('filterType');
     const sortClass = document.getElementById('sortClass');
 
+	const typeMapper = {
+	    'HUNT': 'ОХОТА',
+	    'CONTRACT': 'КОНТРАКТ',
+	    'SECONDARY': 'БИОМ'
+	    // Добавьте сюда любые свои типы из source.json
+	};
+	
     // Исправлено: Загрузка данных и вызов отрисовки
     async function loadHeroes() {
         try {
@@ -260,7 +267,7 @@
                         <img class="icon" src="${hero.icon}" alt="icon">
                         <h2 class="name">${cleanName}</h2>
                     </div>
-                    <span class="badge">${cleanType}</span>
+                    <span class="badge">${typeMapper[cleanType] || cleanType}</span>
                     
                     <div class="info-grid">
                         <div class="info-item">
