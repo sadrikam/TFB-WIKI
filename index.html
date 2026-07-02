@@ -233,6 +233,18 @@
 	    2: 'Ловкость',
 	    3: 'Интеллект'
 	};
+	const raceMapper = {
+		1: 'Люди',
+		2: 'Звери',
+		3: 'Гномы',
+		4: 'Демоны',
+		5: 'Нежить',
+		6: 'Эльфы',
+		7: 'Орки',
+		8: 'Механизмы',
+		9: 'Энты',
+		10: 'Перворожденные'
+	};
 	const typeMapper = {
 		'MAIN': 'ГЛАВНЫЙ ГЕРОЙ',
 	    'HUNT': 'ОХОТА',
@@ -279,7 +291,8 @@
                     </div>
                     <span class="badge">${typeMapper[cleanType] || cleanType}</span>
                     <span class="badge">${classMapper[hero.class_id] || hero.class_id}</span>
-                   
+                    <span class="badge">${raceMapper[hero.race_id] || hero.race_id}</span>
+					
                     <div class="info-grid">
                         <div class="info-item">
                             <span class="info-label">Base ID</span>
