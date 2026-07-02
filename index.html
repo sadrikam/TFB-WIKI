@@ -353,9 +353,9 @@
         // 3. Сортировка по class_id
         const sortValue = sortBaseID.value;
         if (sortValue === 'asc') {
-            updatedList.sort((a, b) => a.BaseID - b.BaseID);
+            updatedList.sort((a, b) => a.base_character_id - b.base_character_id);
         } else if (sortValue === 'desc') {
-            updatedList.sort((a, b) => b.BaseID - a.BaseID);
+            updatedList.sort((a, b) => b.base_character_id - a.base_character_id);
         }
 
         renderCards(updatedList);
