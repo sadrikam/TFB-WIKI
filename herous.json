@@ -1024,6 +1024,17 @@
 "max_stardom": 1
 },
 {
+"name": "Эвелина Варол",
+"character_type": "PREMIUM",
+"class_id": 1,
+"alliance_id": 5,
+"race_id": 1,
+"avatar": "https://s3.game-tech.net/lotw/skins/human-tank-03.png",
+"icon": "https://s3.game-tech.net/lotw/icons/human-tank-03-mini.png",
+"base_character_id": 200,
+"max_stardom": 4
+},
+{
 "name": "Скелдор",
 "character_type": "CONTRACT",
 "class_id": 2,
