@@ -137,8 +137,12 @@
             margin: 0;
             color: #fff;
         }
-
-        .badge {
+		.hero-badges-container {
+			    display: flex;
+			    flex-direction: column;
+			    gap: 4px;
+		}
+		.badge {
             display: inline-flex;
 			background-color: var(--accent);
             color: #1a1a1a;
@@ -148,7 +152,6 @@
             font-weight: bold;
             text-transform: uppercase;
             align-self: flex-start;
-			gap: 4px;
         }
 
         .info-grid {
@@ -295,11 +298,12 @@
                     <div class="card-header">
                         <img class="icon" src="${hero.icon}" alt="icon">
                         <h2 class="name">${cleanName}</h2>
-                    
-					<span class="badge">${typeMapper[cleanType] || cleanType}</span>
-                    <span class="badge">${classMapper[hero.class_id] || hero.class_id}</span>
-                    <span class="badge">${raceMapper[hero.race_id] || hero.race_id}</span>
-                    <span class="badge">${allianceMapper[hero.alliance_id] || hero.alliance_id}</span>
+                    </div>
+					<div class="hero-badges-container">
+						<span class="badge">${typeMapper[cleanType] || cleanType}</span>
+	                    <span class="badge">${classMapper[hero.class_id] || hero.class_id}</span>
+	                    <span class="badge">${raceMapper[hero.race_id] || hero.race_id}</span>
+	                    <span class="badge">${allianceMapper[hero.alliance_id] || hero.alliance_id}</span>
 					</div>
                     <div class="info-grid">
                         <div class="info-item">
