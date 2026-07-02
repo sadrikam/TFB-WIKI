@@ -191,60 +191,6 @@
             color: var(--text-muted);
             font-size: 18px;
         }
-
-/* Базовые стили для самой кнопки переключения */
-.view-toggle-btn {
-    padding: 8px 16px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: var(--accent, #0969da);
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    min-width: 45px;
-    transition: background-color 0.2s;
-}
-
-.view-toggle-btn:hover {
-    background-color: #1f85ff;
-}
-
-/* Медиа-запрос для узких экранов гаджетов */
-@media (max-width: 768px) {
-    /* Предполагаем, что у вас есть контейнер-обертка для всех карточек, например .heroes-grid */
-    .heroes-grid {
-        display: grid !important;
-        gap: 12px; /* Расстояние между карточками */
-        transition: all 0.3s ease;
-    }
-
-    /* Когда на контейнере стоит режим 1 карточка в строку */
-    .heroes-grid[data-cols="1"] {
-        grid-template-columns: repeat(1, 1fr) !important;
-    }
-
-    /* Когда на контейнере стоит режим 2 карточки в строку */
-    .heroes-grid[data-cols="2"] {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-
-    /* Когда на контейнере стоит режим 3 карточки в строку */
-    .heroes-grid[data-cols="3"] {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-    
-    /* Опционально: настраиваем внутренности карточек под узкий размер (для 3 в ряд) */
-    .heroes-grid[data-cols="3"] .hero-card {
-        padding: 6px;
-        font-size: 11px;
-    }
-    .heroes-grid[data-cols="3"] .badge {
-        padding: 2px 4px;
-        font-size: 10px;
-    }
-}
-
     </style>
 </head>
 <body>
@@ -254,9 +200,6 @@
 
     <!-- Панель управления -->
     <div class="controls">
-		<!-- Кнопка циклического переключения колонок -->
-		<button id="viewToggleBtn" class="view-toggle-btn" data-columns="1">1</button>
-
         <div class="control-group">
             <label for="search">Поиск по имени</label>
             <input type="text" id="search" placeholder="Введите имя...">
@@ -426,58 +369,6 @@
     
     // Инициализация
     loadHeroes();
-
-
-	document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.getElementById('viewToggleBtn');
-    
-    // Автоматический поиск контейнера: ищем самые частые варианты классов
-    const heroesContainer = document.querySelector('.heroes-grid') || 
-                            document.querySelector('.cards-container') || 
-                            document.querySelector('.grid') ||
-                            document.querySelector('main'); // запасной вариант
-
-    console.log('Проверка кнопки:', toggleBtn);
-    console.log('Проверка контейнера карточек:', heroesContainer);
-
-    if (!toggleBtn) {
-        console.error('Ошибка: Кнопка с id="viewToggleBtn" не найдена в HTML!');
-        return;
-    }
-
-    // Принудительно ставим стартовое значение
-    if (heroesContainer) {
-        heroesContainer.setAttribute('data-cols', '1');
-    }
-
-document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.getElementById('viewToggleBtn');
-    
-    // ВНИМАНИЕ: Замените '.heroes-grid' на реальный класс селектора вашего контейнера карточек
-    const heroesContainer = document.querySelector('.grid'); 
-
-    if (toggleBtn && heroesContainer) {
-        // Устанавливаем изначальное состояние "1" на контейнер
-        heroesContainer.setAttribute('data-cols', '1');
-
-        toggleBtn.addEventListener('click', () => {
-            // Читаем текущее количество колонок из кнопки
-            let currentCols = parseInt(toggleBtn.getAttribute('data-columns'), 10);
-
-            // Циклическое переключение: если 3, то сбрасываем на 1, иначе увеличиваем
-            let nextCols = currentCols === 3 ? 1 : currentCols + 1;
-
-            // Обновляем цифру и атрибут на самой кнопке
-            toggleBtn.setAttribute('data-columns', nextCols);
-            toggleBtn.innerText = nextCols;
-
-            // Передаем значение в контейнер карточек для срабатывания CSS правил
-            heroesContainer.setAttribute('data-cols', nextCols);
-        });
-    }
-});
-
-
 </script>
 
 </body>
