@@ -736,5 +736,126 @@
 "icon": "https://s3.game-tech.net/lotw/icons/demon-tank-02-mini.png",
 "base_character_id": 106,
 "max_stardom": 3
+},
+{
+"name": "Таргиус",
+"character_type": "CONTRACT",
+"class_id": 2,
+"alliance_id": 2,
+"race_id": 10,
+"avatar": "https://s3.game-tech.net/lotw/skins/firstborn-bufer-06.png",
+"icon": "https://s3.game-tech.net/lotw/icons/firstborn-bufer-06-mini.png",
+"base_character_id": 212,
+"max_stardom": 3
+},
+{
+"name": "Грастон Медный Щит",
+"character_type": "HUNT",
+"class_id": 3,
+"alliance_id": 3,
+"race_id": 3,
+"avatar": "https://s3.game-tech.net/lotw/skins/dwarf-killer-01.png",
+"icon": "https://s3.game-tech.net/lotw/icons/dwarf-killer-01-mini.png",
+"base_character_id": 94,
+"max_stardom": 5
+},
+{
+"name": "Крадок Молотобоец",
+"character_type": "HUNT",
+"class_id": 3,
+"alliance_id": 1,
+"race_id": 3,
+"avatar": "https://s3.game-tech.net/lotw/skins/dwarf-debufer-02.png",
+"icon": "https://s3.game-tech.net/lotw/icons/dwarf-debufer-02-mini.png",
+"base_character_id": 102,
+"max_stardom": 3
+},
+{
+"name": "Зурмак",
+"character_type": "HUNT",
+"class_id": 1,
+"alliance_id": 1,
+"race_id": 7,
+"avatar": "https://s3.game-tech.net/lotw/skins/orc-debufer-02.png",
+"icon": "https://s3.game-tech.net/lotw/icons/orc-debufer-02-mini.png",
+"base_character_id": 142,
+"max_stardom": 3
+},
+{
+"name": "Сайрон Великий",
+"character_type": "HUNT",
+"class_id": 3,
+"alliance_id": 3,
+"race_id": 10,
+"avatar": "https://s3.game-tech.net/lotw/skins/firstborn-killer-03.png",
+"icon": "https://s3.game-tech.net/lotw/res/firstborn-killer-03-mini.png",
+"base_character_id": 227,
+"max_stardom": 5
+},
+{
+"name": "Элдермир",
+"character_type": "HUNT",
+"class_id": 3,
+"alliance_id": 3,
+"race_id": 9,
+"avatar": "https://s3.game-tech.net/lotw/skins/ent-killer-01.png",
+"icon": "https://s3.game-tech.net/lotw/icons/ent-killer-01-mini.png",
+"base_character_id": 154,
+"max_stardom": 5
+},
+{
+"name": "Грог",
+"character_type": "CONTRACT",
+"class_id": 1,
+"alliance_id": 2,
+"race_id": 7,
+"avatar": "https://s3.game-tech.net/lotw/skins/orc-bufer-02.png",
+"icon": "https://s3.game-tech.net/lotw/icons/orc-bufer-02-mini.png",
+"base_character_id": 138,
+"max_stardom": 5
+},
+{
+"name": "Брагнар Кривозуб",
+"character_type": "CONTRACT",
+"class_id": 1,
+"alliance_id": 1,
+"race_id": 7,
+"avatar": "https://s3.game-tech.net/lotw/skins/orc-debufer-01.png",
+"icon": "https://s3.game-tech.net/lotw/icons/orc-debufer-01-mini.png",
+"base_character_id": 141,
+"max_stardom": 3
+},
+{
+"name": "Грор Крушитель",
+"character_type": "HUNT",
+"class_id": 1,
+"alliance_id": 2,
+"race_id": 7,
+"avatar": "https://s3.game-tech.net/lotw/skins/orc-bufer-03.png",
+"icon": "https://s3.game-tech.net/lotw/icons/orc-bufer-03-mini.png",
+"base_character_id": 139,
+"max_stardom": 5
+},
+{
+"name": "Рагнур Длинный Клык",
+"character_type": "HUNT",
+"class_id": 2,
+"alliance_id": 2,
+"race_id": 2,
+"avatar": "https://s3.game-tech.net/lotw/skins/beast-bufer-03.png",
+"icon": "https://s3.game-tech.net/lotw/icons/beast-bufer-03-mini.png",
+"base_character_id": 89,
+"max_stardom": 5
+},
+{
+"name": "Фаэринн Лесотень",
+"character_type": "CONTRACT",
+"class_id": 3,
+"alliance_id": 1,
+"race_id": 6,
+"avatar": "https://s3.game-tech.net/lotw/skins/elf-debufer-01.png",
+"icon": "https://s3.game-tech.net/lotw/icons/elf-debufer-01-mini.png",
+"base_character_id": 131,
+"max_stardom": 3
 }
 ]
