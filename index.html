@@ -209,40 +209,29 @@
 		    background-color: #1f85ff;
 		}
 		
-		/* Медиа-запрос для узких экранов гаджетов */
-		@media (max-width: 768px) {
-		    /* Предполагаем, что у вас есть контейнер-обертка для всех карточек, например .heroes-grid */
-		    .heroes-grid {
-		        display: grid !important;
-		        gap: 12px; /* Расстояние между карточками */
-		        transition: all 0.3s ease;
-		    }
-		
-		    /* Когда на контейнере стоит режим 1 карточка в строку */
-		    .heroes-grid[data-cols="1"] {
-		        grid-template-columns: repeat(1, 1fr) !important;
-		    }
-		
-		    /* Когда на контейнере стоит режим 2 карточки в строку */
-		    .heroes-grid[data-cols="2"] {
-		        grid-template-columns: repeat(2, 1fr) !important;
-		    }
-		
-		    /* Когда на контейнере стоит режим 3 карточки в строку */
-		    .heroes-grid[data-cols="3"] {
-		        grid-template-columns: repeat(3, 1fr) !important;
-		    }
-		    
-		    /* Опционально: настраиваем внутренности карточек под узкий размер (для 3 в ряд) */
-		    .heroes-grid[data-cols="3"] .hero-card {
-		        padding: 6px;
-		        font-size: 11px;
-		    }
-		    .heroes-grid[data-cols="3"] .badge {
-		        padding: 2px 4px;
-		        font-size: 10px;
-		    }
-		}
+@media (max-width: 768px) {
+    /* Принудительно включаем Grid-сетку для вашего контейнера на мобильных */
+    #heroesGrid {
+        display: grid !important;
+        gap: 12px; /* Расстояние между карточками героев */
+    }
+
+    /* Когда на кнопке 1: карточки во всю ширину экрана */
+    #heroesGrid[data-cols="1"] {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+
+    /* Когда на кнопке 2: карточки делят экран пополам */
+    #heroesGrid[data-cols="2"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Когда на кнопке 3: три карточки плотно встают в один ряд */
+    #heroesGrid[data-cols="3"] {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -448,27 +437,32 @@
         heroesContainer.setAttribute('data-cols', '1');
     }
 
-    toggleBtn.addEventListener('click', () => {
-        console.log('Клик по кнопке зафиксирован!');
-        
-        // Читаем текущее значение, если его нет — берем 1 по умолчанию
-        let currentCols = parseInt(toggleBtn.getAttribute('data-columns') || '1', 10);
-        
-        // Считаем следующее состояние (1 -> 2 -> 3 -> 1)
-        let nextCols = currentCols === 3 ? 1 : currentCols + 1;
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('viewToggleBtn');
+    const heroesContainer = document.getElementById('heroesGrid'); // Находим ваш контейнер
 
-        // Меняем цифру и атрибуты
-        toggleBtn.setAttribute('data-columns', nextCols);
-        toggleBtn.innerText = nextCols;
+    if (toggleBtn && heroesContainer) {
+        // Убеждаемся, что кнопка синхронизирована с HTML (начинаем с 1)
+        toggleBtn.setAttribute('data-columns', '1');
+        toggleBtn.innerText = '1';
 
-        if (heroesContainer) {
+        toggleBtn.addEventListener('click', () => {
+            // Читаем текущее число колонок (1, 2 или 3)
+            let currentCols = parseInt(toggleBtn.getAttribute('data-columns'), 10);
+
+            // Циклическое переключение: 1 -> 2 -> 3 -> и снова 1
+            let nextCols = currentCols === 3 ? 1 : currentCols + 1;
+
+            // Обновляем кнопку
+            toggleBtn.setAttribute('data-columns', nextCols);
+            toggleBtn.innerText = nextCols;
+
+            // Изменяем атрибут data-cols у вашего контейнера #heroesGrid
             heroesContainer.setAttribute('data-cols', nextCols);
-            console.log(`Сетка переключена на ${nextCols} кол.`);
-        } else {
-            console.warn('Предупреждение: Контейнер для карточек не найден, CSS не применится.');
-        }
-    });
+        });
+    }
 });
+
 
 </script>
 
