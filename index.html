@@ -323,33 +323,6 @@
 		'PREMIUM': 'ПРЕМИУМ'
 	};
 	
-	document.addEventListener('DOMContentLoaded', () => {
-		const toggleBtn = document.getElementById('viewToggleBtn');
-		
-		// ВНИМАНИЕ: Замените '.heroes-grid' на реальный класс селектора вашего контейнера карточек
-		const heroesContainer = document.querySelector('.heroesGrid'); 
-	
-		if (toggleBtn && heroesContainer) {
-			// Устанавливаем изначальное состояние "1" на контейнер
-			heroesContainer.setAttribute('data-cols', '1');
-	
-			toggleBtn.addEventListener('click', () => {
-				// Читаем текущее количество колонок из кнопки
-				let currentCols = parseInt(toggleBtn.getAttribute('data-columns'), 10);
-	
-				// Циклическое переключение: если 3, то сбрасываем на 1, иначе увеличиваем
-				let nextCols = currentCols === 3 ? 1 : currentCols + 1;
-	
-				// Обновляем цифру и атрибут на самой кнопке
-				toggleBtn.setAttribute('data-columns', nextCols);
-				toggleBtn.innerText = nextCols;
-	
-				// Передаем значение в контейнер карточек для срабатывания CSS правил
-				heroesContainer.setAttribute('data-cols', nextCols);
-			});
-		}
-	});
-
     // Исправлено: Загрузка данных и вызов отрисовки
     async function loadHeroes() {
         try {
@@ -451,6 +424,34 @@
     
     // Инициализация
     loadHeroes();
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const toggleBtn = document.getElementById('viewToggleBtn');
+		
+		// ВНИМАНИЕ: Замените '.heroes-grid' на реальный класс селектора вашего контейнера карточек
+		const heroesContainer = document.querySelector('.heroesGrid'); 
+	
+		if (toggleBtn && heroesContainer) {
+			// Устанавливаем изначальное состояние "1" на контейнер
+			heroesContainer.setAttribute('data-cols', '1');
+	
+			toggleBtn.addEventListener('click', () => {
+				// Читаем текущее количество колонок из кнопки
+				let currentCols = parseInt(toggleBtn.getAttribute('data-columns'), 10);
+	
+				// Циклическое переключение: если 3, то сбрасываем на 1, иначе увеличиваем
+				let nextCols = currentCols === 3 ? 1 : currentCols + 1;
+	
+				// Обновляем цифру и атрибут на самой кнопке
+				toggleBtn.setAttribute('data-columns', nextCols);
+				toggleBtn.innerText = nextCols;
+	
+				// Передаем значение в контейнер карточек для срабатывания CSS правил
+				heroesContainer.setAttribute('data-cols', nextCols);
+			});
+		}
+	});
+	
 </script>
 
 </body>
