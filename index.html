@@ -211,8 +211,8 @@
              </select>
         </div>
         <div class="control-group">
-            <label for="sortClass">Сортировка (ID класса)</label>
-            <select id="sortClass">
+            <label for="sortBaseID">Сортировка (BaseID)</label>
+            <select id="sortBaseID">
                 <option value="none">Без сортировки</option>
                 <option value="asc">По возрастанию</option>
                 <option value="desc">По убыванию</option>
@@ -343,11 +343,11 @@
         }
 
         // 3. Сортировка по class_id
-        const sortValue = sortClass.value;
+        const sortValue = sortBaseID.value;
         if (sortValue === 'asc') {
-            updatedList.sort((a, b) => a.class_id - b.class_id);
+            updatedList.sort((a, b) => a.BaseID - b.BaseID);
         } else if (sortValue === 'desc') {
-            updatedList.sort((a, b) => b.class_id - a.class_id);
+            updatedList.sort((a, b) => b.BaseID - a.BaseID);
         }
 
         renderCards(updatedList);
@@ -356,7 +356,7 @@
     // Слушатели событий управления
     searchInput.addEventListener('input', updateDisplay);
 	filterType.addEventListener('change', updateDisplay);
-	sortClass.addEventListener('change', updateDisplay);
+	sortBaseID.addEventListener('change', updateDisplay);
     
     // Инициализация
     loadHeroes();
