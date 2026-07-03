@@ -216,11 +216,14 @@
              </select>
         </div>
         <div class="control-group">
-            <label for="sortName">Сортировка по имени</label>
-            <select id="sortName">
+        <div class="control-group">
+            <label for="sortMIX">Сортировка</label>
+            <select id="sortMIX">
                 <option value="none">Без сортировки</option>
-                <option value="asc">По возрастанию</option>
-                <option value="desc">По убыванию</option>
+                <option value="ascName">По возрастанию имени</option>
+                <option value="descName">По убыванию имени</option>
+				<option value="ascBaseID">По возрастанию ID</option>
+                <option value="descBaseID">По убыванию ID</option>
             </select>
         </div>
     </div>
@@ -234,7 +237,7 @@
     const grid = document.getElementById('heroesGrid');
     const searchInput = document.getElementById('search');
     const filterType = document.getElementById('filterType');
-    const sortName = document.getElementById('sortName');
+    const sortMIX = document.getElementById('sortMIX');
 
 	const classMapper = {
 	    1: 'Сила',
@@ -360,11 +363,17 @@
         //}
 
 		// 3. Сортировка по имени (Исправлено)
-		const sortValue = sortName.value;
-		if (sortValue === 'asc') {
+		const sortValue = sortMIX.value;
+		if (sortValue === 'ascName') {
 		    updatedList.sort((a, b) => a.name.trim().localeCompare(b.name.trim()));
-		} else if (sortValue === 'desc') {
+		} else if (sortValue === 'descName') {
 		    updatedList.sort((a, b) => b.name.trim().localeCompare(a.name.trim()));
+		} else if (sortValue === 'ascBaseID') {
+            updatedList.sort((a, b) => a.base_character_id - b.base_character_id);
+        } else if (sortValue === 'descBaseID') {
+            updatedList.sort((a, b) => b.base_character_id - a.base_character_id);
+		} else if (sortValue === 'none') {
+            updatedList.sort((a, b) => a.base_character_id - b.base_character_id);
 		}
 
         renderCards(updatedList);
