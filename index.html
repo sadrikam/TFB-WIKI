@@ -196,7 +196,7 @@
 <body>
 
 <div class="container">
-    <h1>База Данных Персонажей</h1>
+    <h1>Герои</h1>
 
     <!-- Панель управления -->
     <div class="controls">
@@ -216,7 +216,7 @@
              </select>
         </div>
         <div class="control-group">
-            <label for="sortBaseID">Сортировка (BaseID)</label>
+            <label for="sortBaseID">Сортировка по имени</label>
             <select id="sortBaseID">
                 <option value="none">Без сортировки</option>
                 <option value="asc">По возрастанию</option>
@@ -234,7 +234,7 @@
     const grid = document.getElementById('heroesGrid');
     const searchInput = document.getElementById('search');
     const filterType = document.getElementById('filterType');
-    const sortClass = document.getElementById('sortClass');
+    const sortName = document.getElementById('sortName');
 
 	const classMapper = {
 	    1: 'Сила',
@@ -354,9 +354,9 @@
         // 3. Сортировка по class_id
         const sortValue = sortBaseID.value;
         if (sortValue === 'asc') {
-            updatedList.sort((a, b) => a.base_character_id - b.base_character_id);
+            updatedList.sort((a, b) => a.name - b.name);
         } else if (sortValue === 'desc') {
-            updatedList.sort((a, b) => b.base_character_id - a.base_character_id);
+            updatedList.sort((a, b) => b.name - a.name);
         }
 
         renderCards(updatedList);
