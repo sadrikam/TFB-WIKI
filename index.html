@@ -215,6 +215,15 @@
 				<option value="PREMIUM">Премиум</option>
              </select>
         </div>
+		<div class="control-group">
+            <label for="filterClass">Класс персонажа</label>
+            <select id="filterClass">
+                <option value="all">Все классы</option>
+				<option value=1>Сила</option>
+                <option value=2>Ловкость</option>
+                <option value=3>Интеллект</option>
+             </select>
+        </div>
         <div class="control-group">
             <label for="sortMIX">Сортировка</label>
             <select id="sortMIX">
@@ -236,6 +245,7 @@
     const grid = document.getElementById('heroesGrid');
     const searchInput = document.getElementById('search');
     const filterType = document.getElementById('filterType');
+	const filterClasse = document.getElementById('filterClass');
     const sortMIX = document.getElementById('sortMIX');
 
 	const classMapper = {
@@ -352,14 +362,14 @@
                 hero.character_type.trim() === typeValue
             );
         }
-
-        // 3. Сортировка по class_id
-        //const sortValue = sortName.value;
-        //if (sortValue === 'asc') {
-        //    updatedList.sort((a, b) => a.name - b.name);
-        //} else if (sortValue === 'desc') {
-        //    updatedList.sort((a, b) => b.name - a.name);
-        //}
+		
+       // 2. Фильтрация по классу
+        const typeValue = filterClass.value;
+        if (typeValue !== 'all') {
+            updatedList = updatedList.filter(hero => 
+                hero.class_id === typeValue
+            );
+        }
 
 		// 3. Сортировка по имени (Исправлено)
 		const sortValue = sortMIX.value;
@@ -381,6 +391,7 @@
     // Слушатели событий управления
     searchInput.addEventListener('input', updateDisplay);
 	filterType.addEventListener('change', updateDisplay);
+	filterClass.addEventListener('change', updateDisplay);
 	sortMIX.addEventListener('change', updateDisplay);
     
     // Инициализация
