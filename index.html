@@ -428,32 +428,50 @@
     // Инициализация
     loadHeroes();
 
-	document.addEventListener('DOMContentLoaded', () => {
-	    const toggleBtn = document.getElementById('viewToggleBtn');
-	    
-	    // ВНИМАНИЕ: Замените '.heroes-grid' на реальный класс селектора вашего контейнера карточек
-	    const heroesContainer = document.querySelector('.heroes-grid'); 
-	
-	    if (toggleBtn && heroesContainer) {
-	        // Устанавливаем изначальное состояние "1" на контейнер
-	        heroesContainer.setAttribute('data-cols', '1');
-	
-	        toggleBtn.addEventListener('click', () => {
-	            // Читаем текущее количество колонок из кнопки
-	            let currentCols = parseInt(toggleBtn.getAttribute('data-columns'), 10);
-	
-	            // Циклическое переключение: если 3, то сбрасываем на 1, иначе увеличиваем
-	            let nextCols = currentCols === 3 ? 1 : currentCols + 1;
-	
-	            // Обновляем цифру и атрибут на самой кнопке
-	            toggleBtn.setAttribute('data-columns', nextCols);
-	            toggleBtn.innerText = nextCols;
-	
-	            // Передаем значение в контейнер карточек для срабатывания CSS правил
-	            heroesContainer.setAttribute('data-cols', nextCols);
-	        });
-	    }
-	});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('viewToggleBtn');
+    
+    // Автоматический поиск контейнера: ищем самые частые варианты классов
+    const heroesContainer = document.querySelector('.heroes-grid') || 
+                            document.querySelector('.cards-container') || 
+                            document.querySelector('.grid') ||
+                            document.querySelector('main'); // запасной вариант
+
+    console.log('Проверка кнопки:', toggleBtn);
+    console.log('Проверка контейнера карточек:', heroesContainer);
+
+    if (!toggleBtn) {
+        console.error('Ошибка: Кнопка с id="viewToggleBtn" не найдена в HTML!');
+        return;
+    }
+
+    // Принудительно ставим стартовое значение
+    if (heroesContainer) {
+        heroesContainer.setAttribute('data-cols', '1');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        console.log('Клик по кнопке зафиксирован!');
+        
+        // Читаем текущее значение, если его нет — берем 1 по умолчанию
+        let currentCols = parseInt(toggleBtn.getAttribute('data-columns') || '1', 10);
+        
+        // Считаем следующее состояние (1 -> 2 -> 3 -> 1)
+        let nextCols = currentCols === 3 ? 1 : currentCols + 1;
+
+        // Меняем цифру и атрибуты
+        toggleBtn.setAttribute('data-columns', nextCols);
+        toggleBtn.innerText = nextCols;
+
+        if (heroesContainer) {
+            heroesContainer.setAttribute('data-cols', nextCols);
+            console.log(`Сетка переключена на ${nextCols} кол.`);
+        } else {
+            console.warn('Предупреждение: Контейнер для карточек не найден, CSS не применится.');
+        }
+    });
+});
 
 </script>
 
