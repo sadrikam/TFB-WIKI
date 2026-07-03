@@ -216,8 +216,8 @@
              </select>
         </div>
         <div class="control-group">
-            <label for="sortBaseID">Сортировка по имени</label>
-            <select id="sortBaseID">
+            <label for="sortName">Сортировка по имени</label>
+            <select id="sortName">
                 <option value="none">Без сортировки</option>
                 <option value="asc">По возрастанию</option>
                 <option value="desc">По убыванию</option>
@@ -352,7 +352,7 @@
         }
 
         // 3. Сортировка по class_id
-        const sortValue = sortBaseID.value;
+        const sortValue = sortName.value;
         if (sortValue === 'asc') {
             updatedList.sort((a, b) => a.name - b.name);
         } else if (sortValue === 'desc') {
@@ -365,7 +365,7 @@
     // Слушатели событий управления
     searchInput.addEventListener('input', updateDisplay);
 	filterType.addEventListener('change', updateDisplay);
-	sortBaseID.addEventListener('change', updateDisplay);
+	sortName.addEventListener('change', updateDisplay);
     
     // Инициализация
     loadHeroes();
