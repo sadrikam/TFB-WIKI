@@ -366,8 +366,7 @@
        // 2. Фильтрация по классу
         const classValue = filterClass.value;
         if (classValue !== 'all') {
-            updatedList = updatedList.filter(hero => 
-                hero.class_id === classValue
+        	updatedList = updatedList.filter(hero => hero.class_id === Number(classValue));
             );
         }
 
