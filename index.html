@@ -352,12 +352,20 @@
         }
 
         // 3. Сортировка по class_id
-        const sortValue = sortName.value;
-        if (sortValue === 'asc') {
-            updatedList.sort((a, b) => a.name - b.name);
-        } else if (sortValue === 'desc') {
-            updatedList.sort((a, b) => b.name - a.name);
-        }
+        //const sortValue = sortName.value;
+        //if (sortValue === 'asc') {
+        //    updatedList.sort((a, b) => a.name - b.name);
+        //} else if (sortValue === 'desc') {
+        //    updatedList.sort((a, b) => b.name - a.name);
+        //}
+
+		// 3. Сортировка по имени (Исправлено)
+		const sortValue = sortName.value;
+		if (sortValue === 'asc') {
+		    updatedList.sort((a, b) => a.name.trim().localeCompare(b.name.trim()));
+		} else if (sortValue === 'desc') {
+		    updatedList.sort((a, b) => b.name.trim().localeCompare(a.name.trim()));
+		}
 
         renderCards(updatedList);
     }
