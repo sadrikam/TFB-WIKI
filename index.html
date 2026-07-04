@@ -380,7 +380,7 @@
         const searchValue = searchInput.value.toLowerCase().trim();
         if (searchValue) {
             updatedList = updatedList.filter(hero => 
-                hero.name.toLowerCase().includes(searchValue)
+                hero.data.name.toLowerCase().includes(searchValue)
             );
         }
 
