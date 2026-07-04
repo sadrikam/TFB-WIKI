@@ -331,39 +331,39 @@
 
         data.forEach(hero => {
             // Очищаем строки от лишних пробелов на краях для красивого вывода
-            const cleanName = hero.name.trim();
-            const cleanType = hero.character_type.trim();
+            const cleanName = hero.data.name.trim();
+            const cleanType = hero.data.character_type.trim();
             
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `
                 <div class="avatar-container">
-                    <img class="avatar" src="${hero.avatar}" alt="${cleanName}" loading="lazy">
+                    <img class="avatar" src="${hero.data.avatar}" alt="${cleanName}" loading="lazy">
                 </div>
                 <div class="card-content">
                     <div class="card-header">
-                        <img class="icon" src="${hero.icon}" alt="icon">
+                        <img class="icon" src="${hero.data.icon}" alt="icon">
                         <h2 class="name">${cleanName}</h2>
                     </div>
 					<div class="hero-badges-container">
 						<div class="hero-badges">
 							<span class="badge" style="background: #6FECD3;">${typeMapper[cleanType] || cleanType}</span>
-		                    <span class="badge" style="background: #FF5C5C;">${classMapper[hero.class_id] || hero.class_id}</span>
+		                    <span class="badge" style="background: #FF5C5C;">${classMapper[hero.data.class_id] || hero.data.class_id}</span>
 						</div>
 		                <div class="hero-badges">
-							<span class="badge" style="background: #4A90E2;">${raceMapper[hero.race_id] || hero.race_id}</span>
-		                    <span class="badge" style="background: #F7BF64;">${allianceMapper[hero.alliance_id] || hero.alliance_id}</span>
+							<span class="badge" style="background: #4A90E2;">${raceMapper[hero.data.race_id] || hero.data.race_id}</span>
+		                    <span class="badge" style="background: #F7BF64;">${allianceMapper[hero.data.alliance_id] || hero.data.alliance_id}</span>
 						</div>
 					</div>
                     <div class="info-grid">
                         <div class="info-item">
                             <span class="info-label">Base ID</span>
-                            <span class="info-value">${hero.base_character_id}</span>
+                            <span class="info-value">${hero.data.base_character_id}</span>
                         </div>
 
 						<div class="info-item">
                             <span class="info-label">MAX Star</span>
-                            <span class="info-value">${'★'.repeat(hero.max_stardom || 0)}</span>
+                            <span class="info-value">${'★'.repeat(hero.data.max_stardom || 0)}</span>
                         </div>
                     </div>
                 </div>
@@ -380,7 +380,7 @@
         const searchValue = searchInput.value.toLowerCase().trim();
         if (searchValue) {
             updatedList = updatedList.filter(hero => 
-                hero.name.toLowerCase().includes(searchValue)
+                hero.data.name.toLowerCase().includes(searchValue)
             );
         }
 
@@ -388,40 +388,40 @@
         const typeValue = filterType.value;
         if (typeValue !== 'all') {
             updatedList = updatedList.filter(hero => 
-                hero.character_type.trim() === typeValue
+                hero.data.character_type.trim() === typeValue
             );
         }
 		
         // 2. Фильтрация по классу
         const classValue = filterClass.value;
         if (classValue !== 'all') {
-        	updatedList = updatedList.filter(hero => hero.class_id === Number(classValue));
+        	updatedList = updatedList.filter(hero => hero.data.class_id === Number(classValue));
         }
 		
         // 2. Фильтрация по альянсу
         const allianceValue = filterAlliance.value;
         if (allianceValue !== 'all') {
-        	updatedList = updatedList.filter(hero => hero.alliance_id === Number(allianceValue));
+        	updatedList = updatedList.filter(hero => hero.data.alliance_id === Number(allianceValue));
         }
 		
 		// 2. Фильтрация по расе
         const raceValue = filterRace.value;
         if (raceValue !== 'all') {
-        	updatedList = updatedList.filter(hero => hero.race_id === Number(raceValue));
+        	updatedList = updatedList.filter(hero => hero.data.race_id === Number(raceValue));
         }
 		
 		// 3. Сортировка по имени и ID
 		const sortValue = sortMIX.value;
 		if (sortValue === 'ascName') {
-		    updatedList.sort((a, b) => a.name.trim().localeCompare(b.name.trim()));
+		    updatedList.sort((a, b) => a.data.name.trim().localeCompare(b.data.name.trim()));
 		} else if (sortValue === 'descName') {
-		    updatedList.sort((a, b) => b.name.trim().localeCompare(a.name.trim()));
+		    updatedList.sort((a, b) => b.data.name.trim().localeCompare(a.data.name.trim()));
 		} else if (sortValue === 'ascBaseID') {
-            updatedList.sort((a, b) => a.base_character_id - b.base_character_id);
+            updatedList.sort((a, b) => a.data.base_character_id - b.data.base_character_id);
         } else if (sortValue === 'descBaseID') {
-            updatedList.sort((a, b) => b.base_character_id - a.base_character_id);
+            updatedList.sort((a, b) => b.data.base_character_id - a.data.base_character_id);
 		} else if (sortValue === 'none') {
-            updatedList.sort((a, b) => a.base_character_id - b.base_character_id);
+            updatedList.sort((a, b) => a.data.base_character_id - b.data.base_character_id);
 		}
 
         renderCards(updatedList);
