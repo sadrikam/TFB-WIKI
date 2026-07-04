@@ -378,8 +378,10 @@ function renderCards(data) {
     const rawClass = classMapper[hero.data.class_id] || hero.data.class_id;
     const rawAlliance = allianceMapper[hero.data.alliance_id] || hero.data.alliance_id;
     const rawRace = raceMapper[hero.data.race_id] || hero.data.race_id;
-
+	const cleanName = hero.data.name.trim();
+	const cleanType = hero.data.character_type.trim();
     const card = document.createElement('div');
+	
     card.className = 'hero-card';
     card.innerHTML = `
       <div class="hero-avatar-container">
