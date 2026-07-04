@@ -196,7 +196,14 @@
 <body>
 
 <div class="container">
-    <h1>Герои</h1>
+    <!-- Переключатель языков -->
+    <div style="text-align: right; margin-bottom: 10px;">
+        <select id="languageSelect" style="padding: 5px 10px; font-size: 14px; min-width: auto; cursor: pointer;">
+            <option value="ru">Русский</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+    <h1 id="mainTitle">Герои</h1>
 
     <!-- Панель управления -->
     <div class="controls">
@@ -277,36 +284,31 @@
 	const filterRace = document.getElementById('filterRace');
     const sortMIX = document.getElementById('sortMIX');
 
+	// Текущий выбранный язык
+	let currentLang = 'ru';
+	
+	// Словарь интерфейса (ru/en)
+	const translations = {
+	    ru: { title: "База Героев", mainTitle: "Герои", searchPlaceholder: "Введите имя...", noResults: "Персонажи не найдены" },
+	    en: { title: "Hero Database", mainTitle: "Heroes", searchPlaceholder: "Enter name...", noResults: "Heroes not found" }
+	};
+	
+	// Мапперы для категорий (названия классов, рас и т.д. на двух языках)
 	const classMapper = {
-	    1: 'Сила',
-	    2: 'Ловкость',
-	    3: 'Интеллект'
+	    ru: { 1: 'Сила', 2: 'Ловкость', 3: 'Интеллект' },
+	    en: { 1: 'Strength', 2: 'Agility', 3: 'Intelligence' }
 	};
 	const allianceMapper = {
-		1: 'Осквернитель',
-		2: 'Жрец',
-		3: 'Убийца',
-		4: 'Боец',
-		5: 'Защитник'
+	    ru: { 1: 'Осквернитель', 2: 'Жрец', 3: 'Убийца', 4: 'Боец', 5: 'Защитник' },
+	    en: { 1: 'Defiler', 2: 'Priest', 3: 'Assassin', 4: 'Fighter', 5: 'Defender' }
 	};
 	const raceMapper = {
-		1: 'Люди',
-		2: 'Звери',
-		3: 'Гномы',
-		4: 'Демоны',
-		5: 'Нежить',
-		6: 'Эльфы',
-		7: 'Орки',
-		8: 'Механизмы',
-		9: 'Энты',
-		10: 'Перворожденные'
+	    ru: { 1: 'Люди', 2: 'Звери', 3: 'Гномы', 4: 'Демоны', 5: 'Нежить', 6: 'Эльфы', 7: 'Орки', 8: 'Механцизмы', 9: 'Энты', 10: 'Перворожденные' },
+	    en: { 1: 'Humans', 2: 'Beasts', 3: 'Dwarves', 4: 'Demons', 5: 'Undead', 6: 'Elves', 7: 'Orcs', 8: 'Mechanisms', 9: 'Ents', 10: 'Firstborn' }
 	};
 	const typeMapper = {
-		'MAIN': 'ГЛАВНЫЙ ГЕРОЙ',
-	    'HUNT': 'ОХОТА',
-	    'CONTRACT': 'КОНТРАКТ',
-	    'SECONDARY': 'БИОМ',
-		'PREMIUM': 'ПРЕМИУМ'
+	    ru: { 'MAIN': 'ГЛАВНЫЙ ГЕРОЙ', 'HUNT': 'ОХОТА', 'SECONDARY': 'БИОМ', 'PREMIUM': 'ПРЕМИУМ' },
+	    en: { 'MAIN': 'MAIN HERO', 'HUNT': 'HUNT', 'SECONDARY': 'BIOME', 'PREMIUM': 'PREMIUM' }
 	};
 	
     // Исправлено: Загрузка данных и вызов отрисовки
