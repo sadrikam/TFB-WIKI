@@ -442,17 +442,19 @@ function updateDisplay() {
     return matchesSearch && matchesType && matchesClass && matchesAlliance && matchesRace;
   });
 
-  // Сортировка
-  if (sortValue === 'ascName') {
-    filtered.sort((a, b) => a.data.name.localeCompare(b.data.name, 'ru'));
-  } else if (sortValue === 'descName') {
-    filtered.sort((a, b) => b.data.name.localeCompare(a.data.name, 'ru'));
-  } else if (sortValue === 'ascBaseID') {
-    filtered.sort((a, b) => a.data.base_character_id - b.data.base_character_id);
-  } else if (sortValue === 'descBaseID') {
-    filtered.sort((a, b) => b.data.base_character_id - a.data.base_character_id);
-  }
-
+ 	// Сортировка
+	if ( sortValue === 'ascName') {
+	  filtered.sort(( a, b) => a.data.name.localeCompare( b.data.name, 'ru'));
+	} else if ( sortValue === 'descName') {
+	  filtered.sort(( a, b) => b.data.name.localeCompare( a.data.name, 'ru'));
+	} else if ( sortValue === 'ascBaseID') {
+	  // Принудительно превращаем строки в числа перед вычитанием
+	  filtered.sort(( a, b) => Number(a.data.base_character_id) - Number(b.data.base_character_id));
+	} else if ( sortValue === 'descBaseID') {
+	  // Принудительно превращаем строки в числа перед вычитанием
+	  filtered.sort(( a, b) => Number(b.data.base_character_id) - Number(a.data.base_character_id));
+	}
+	
   renderCards(filtered);
 }
 
