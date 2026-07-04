@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>База Героев</title>
+    <title id="pageTitle">База Героев</title>
     <style>
         :root {
             --bg-color: #1a1a1a;
@@ -24,9 +24,14 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+			position: relative;
         }
 
-        h1 {
+		.lang-switcher {
+			position: absolute; top: 0; right: 0; padding: 8px 12px; cursor: pointer;
+		}
+
+		h1 {
             text-align: center;
             color: var(--accent);
             margin-bottom: 30px;
@@ -196,7 +201,8 @@
 <body>
 
 <div class="container">
-    <h1>Герои</h1>
+    <button class="lang-switcher" id="langBtn" onclick="toggleLanguage()">EN</button>
+    <h1 id="mainTitle">Герои</h1>
 
     <!-- Панель управления -->
     <div class="controls">
@@ -277,6 +283,20 @@
 	const filterRace = document.getElementById('filterRace');
     const sortMIX = document.getElementById('sortMIX');
 
+	let currentLang = 'ru';
+	const translations = {
+	    ru: { title: "База Героев", mainTitle: "Герои" },
+	    en: { title: "Hero Database", mainTitle: "Heroes" }
+	};
+
+function toggleLanguage() {
+    currentLang = currentLang === 'ru' ? 'en' : 'ru';
+    document.getElementById('langBtn').innerText = currentLang === 'ru' ? 'EN' : 'RU';
+    document.getElementById('pageTitle').innerText = translations[currentLang].title;
+    document.getElementById('mainTitle').innerText = translations[currentLang].mainTitle;
+    document.documentElement.lang = currentLang;
+}
+	
 	const classMapper = {
 	    1: 'Сила',
 	    2: 'Ловкость',
