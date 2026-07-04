@@ -397,8 +397,8 @@ function renderCards(data) {
 	        <p><strong>${currentLang === 'ru' ? 'Раса' : 'Race'}:</strong> ${getTxt(rawRace)}</p>
 	      </div>
 	      <div class="hero-footer">
-	        <div><span class="info-label">Base ID</span><span class="info-value">${hero.data.base_character_id}</span></div>
-	        <div><span class="info-label">MAX Star</span><span class="info-value">${hero.data.max_stardom}</span></div>
+	        <div><span class="info-label">Base ID </span><span class="info-value">${hero.data.base_character_id}</span></div>
+	        <div><span class="info-label">MAX Star </span><span class="info-value">${'★'.repeat(hero.data.max_stardom || 0)}</span></div>
 	      </div>
 	  </div>
     `;
