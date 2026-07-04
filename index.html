@@ -354,7 +354,7 @@ function toggleLanguage() {
 // 6. Загрузка данных (ИСПРАВЛЕНО имя файла на heroes.json)
 async function loadHeroes() {
   try {
-    const response = await fetch('heroes.json'); 
+    const response = await fetch('herous.json'); 
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     heroesData = await response.json();
     updateDisplay(); // Запуск отображения через фильтр
