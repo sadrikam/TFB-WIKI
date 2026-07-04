@@ -404,8 +404,8 @@ function renderCards(data) {
 		                    <span class="badge" style="background: #FF5C5C;">${getTxt(rawClass)}</span>
 						</div>
 		                <div class="hero-badges">
-							<span class="badge" style="background: #4A90E2;">${raceMapper[hero.data.race_id] || hero.data.race_id}</span>
-		                    <span class="badge" style="background: #F7BF64;">${allianceMapper[hero.data.alliance_id] || hero.data.alliance_id}</span>
+							<span class="badge" style="background: #4A90E2;">${getTxt(rawRace)}</span>
+		                    <span class="badge" style="background: #F7BF64;">${getTxt(rawAlliance)}</span>
 						</div>
 					</div>
 		  <!--</div> -->
