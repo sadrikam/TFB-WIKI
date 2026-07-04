@@ -79,7 +79,32 @@
         ];
 
         // Вывод списка полей на экран для наглядности
-        document.getElementById('activeFields').innerText = JSON.stringify(FIELDS_TO_KEEP, null, 2);
+        // document.getElementById('activeFields').innerText = JSON.stringify(FIELDS_TO_KEEP, null, 2);
+		
+		// НОВЫЙ СПИСОК: Поля и пути, которые будут полностью удалены
+		const FIELDS_TO_REMOVE = [
+			'data.item_ids', 
+			'data.level', 
+			'data.power', 
+			'data.ability_ids', 
+			'data.id', 
+			'data.params', 
+			'data.abilities', 
+			'data.items', 
+			'data.hero_shard_id', 
+			'data.max_level', 
+			'data.is_owned', 
+			'data.has_shards', 
+			'data.minimal_for_activate', 
+			'data.can_activate', 
+			'data.has_some_shards', 
+			'data.rarity'
+		];
+
+		// Обновленный вывод для наглядности
+		document.getElementById('activeFields').innerHTML = 
+			`<strong>Сохранять:</strong><pre>${JSON.stringify(FIELDS_TO_KEEP, null, 2)}</pre>` +
+			`<strong>Удалять:</strong><pre>${JSON.stringify(FIELDS_TO_REMOVE, null, 2)}</pre>`;
 
         // Главная функция фильтрации с поддержкой вложенности и путей через точку
         function filterJsonStructure(obj, currentPath = '') {
@@ -102,6 +127,11 @@
                 for (const key in obj) {
                     // Строим полный путь для текущего ключа (например: "data" -> "data.name")
                     const fullPath = currentPath ? `${currentPath}.${key}` : key;
+					
+					// --- ПРОВЕРКА ЧЕРНОГО СПИСКА ---
+					if (FIELDS_TO_REMOVE.includes(fullPath) || FIELDS_TO_REMOVE.includes(key)) {
+						continue; // Пропускаем поле и всю вложенность
+					}
 
                     // Проверяем, совпадает ли точный путь ИЛИ имя самого ключа с белым списком
                     const isAllowed = FIELDS_TO_KEEP.includes(fullPath) || FIELDS_TO_KEEP.includes(key);
