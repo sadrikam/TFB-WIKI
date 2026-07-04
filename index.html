@@ -354,7 +354,7 @@ function toggleLanguage() {
 // 6. Загрузка данных (ИСПРАВЛЕНО имя файла на heroes.json)
 async function loadHeroes() {
   try {
-    const response = await fetch('herous.json'); 
+    const response = await fetch('heroes.json'); 
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     heroesData = await response.json();
     updateDisplay(); // Запуск отображения через фильтр
@@ -392,6 +392,16 @@ function renderCards(data) {
 	        <span class="tag tag-type">${getTxt(rawType)}</span>
 	        <span class="tag tag-class">${getTxt(rawClass)}</span>
 	      </div>
+					<div class="hero-badges-container">
+						<div class="hero-badges">
+							<span class="badge" style="background: #6FECD3;">${typeMapper[cleanType] || cleanType}</span>
+		                    <span class="badge" style="background: #FF5C5C;">${classMapper[hero.data.class_id] || hero.data.class_id}</span>
+						</div>
+		                <div class="hero-badges">
+							<span class="badge" style="background: #4A90E2;">${raceMapper[hero.data.race_id] || hero.data.race_id}</span>
+		                    <span class="badge" style="background: #F7BF64;">${allianceMapper[hero.data.alliance_id] || hero.data.alliance_id}</span>
+						</div>
+					</div>
 	      <div class="hero-info">
 	        <p><strong>${currentLang === 'ru' ? 'Альянс' : 'Alliance'}:</strong> ${getTxt(rawAlliance)}</p>
 	        <p><strong>${currentLang === 'ru' ? 'Раса' : 'Race'}:</strong> ${getTxt(rawRace)}</p>
