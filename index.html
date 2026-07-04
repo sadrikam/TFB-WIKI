@@ -267,7 +267,7 @@
                 <option value=3>Гномы</option>
 				<option value=4>Демоны</option>
                 <option value=5>Нежить</option>
-                <option value=6>Эльыф</option>
+                <option value=6>Эльфы</option>
 				<option value=7>Орки</option>
                 <option value=8>Механизмы</option>
                 <option value=9>Энты</option>
@@ -292,6 +292,8 @@
 
 <script>
     let heroesData = [];
+	let currentLang = 'ru';
+	
     const grid = document.getElementById('heroesGrid');
     const searchInput = document.getElementById('search');
     const filterType = document.getElementById('filterType');
@@ -300,12 +302,49 @@
 	const filterRace = document.getElementById('filterRace');
     const sortMIX = document.getElementById('sortMIX');
 
-	let currentLang = 'ru';
+	// ==========================================
+	// 2. ЦЕНТРАЛЬНЫЙ СЛОВАРЬ ЛОКАЛИЗАЦИИ (i18n)
+	// ==========================================
 	const translations = {
-	    ru: { title: "База Героев", mainTitle: "Герои" },
-	    en: { title: "Hero Database", mainTitle: "Heroes" }
+	  ru: {
+	    ui: { title: "База Героев", mainTitle: "Герои", searchPlaceholder: "Введите имя...", noResults: "Персонажи не найдены" },
+	    options: { allTypes: "Все типы" },
+	    // Ключ - всегда русский (из JSON), значение - русский текст
+	    data: {
+	      "ГЛАВНЫЙ ГЕРОЙ": "ГЛАВНЫЙ ГЕРОЙ",
+	      "Сила": "Сила"
+	      // ...остальные данные...
+	    }
+	  },
+	  en: {
+	    ui: { title: "Hero Database", mainTitle: "Heroes", searchPlaceholder: "Enter name...", noResults: "Heroes not found" }
+	    options: { allTypes: "All types" },
+	    // Ключ - русский (из JSON), значение - английский перевод
+	    data: {
+	      "ГЛАВНЫЙ ГЕРОЙ": "MAIN HERO",
+	      "Сила": "Strength",
+	      "Орки": "Orcs"
+	      // ...остальные переводы...
+	    }
+	  }
 	};
-
+	const classMapper = {
+	    ru: { 1: 'Сила', 2: 'Ловкость', 3: 'Интеллект' },
+	    en: { 1: 'Strength', 2: 'Agility', 3: 'Intelligence' }
+	};
+	const allianceMapper = {
+	    ru: { 1: 'Осквернитель', 2: 'Жрец', 3: 'Убийца', 4: 'Боец', 5: 'Защитник' },
+	    en: { 1: 'Defiler', 2: 'Priest', 3: 'Assassin', 4: 'Fighter', 5: 'Defender' }
+	};
+	const raceMapper = {
+	    ru: { 1: 'Люди', 2: 'Звери', 3: 'Гномы', 4: 'Демоны', 5: 'Нежить', 6: 'Эльфы', 7: 'Орки', 8: 'Механцизмы', 9: 'Энты', 10: 'Перворожденные' },
+	    en: { 1: 'Humans', 2: 'Beasts', 3: 'Dwarves', 4: 'Demons', 5: 'Undead', 6: 'Elves', 7: 'Orcs', 8: 'Mechanisms', 9: 'Ents', 10: 'Firstborn' }
+	};
+	const typeMapper = {
+	    ru: { 'MAIN': 'ГЛАВНЫЙ ГЕРОЙ', 'HUNT': 'ОХОТА', 'SECONDARY': 'БИОМ', 'PREMIUM': 'ПРЕМИУМ' },
+	    en: { 'MAIN': 'MAIN HERO', 'HUNT': 'HUNT', 'SECONDARY': 'BIOME', 'PREMIUM': 'PREMIUM' }
+	};
+	
 function toggleLanguage() {
     currentLang = currentLang === 'ru' ? 'en' : 'ru';
     document.getElementById('langBtn').innerText = currentLang === 'ru' ? 'EN' : 'RU';
@@ -313,38 +352,6 @@ function toggleLanguage() {
     document.getElementById('mainTitle').innerText = translations[currentLang].mainTitle;
     document.documentElement.lang = currentLang;
 }
-	
-	const classMapper = {
-	    1: 'Сила',
-	    2: 'Ловкость',
-	    3: 'Интеллект'
-	};
-	const allianceMapper = {
-		1: 'Осквернитель',
-		2: 'Жрец',
-		3: 'Убийца',
-		4: 'Боец',
-		5: 'Защитник'
-	};
-	const raceMapper = {
-		1: 'Люди',
-		2: 'Звери',
-		3: 'Гномы',
-		4: 'Демоны',
-		5: 'Нежить',
-		6: 'Эльфы',
-		7: 'Орки',
-		8: 'Механизмы',
-		9: 'Энты',
-		10: 'Перворожденные'
-	};
-	const typeMapper = {
-		'MAIN': 'ГЛАВНЫЙ ГЕРОЙ',
-	    'HUNT': 'ОХОТА',
-	    'CONTRACT': 'КОНТРАКТ',
-	    'SECONDARY': 'БИОМ',
-		'PREMIUM': 'ПРЕМИУМ'
-	};
 	
     // Исправлено: Загрузка данных и вызов отрисовки
     async function loadHeroes() {
