@@ -374,16 +374,16 @@ function renderCards(data) {
 
   data.forEach(hero => {
     // Получаем эталонные русские значения из мапперов
-    const rawType = typeMapper[hero.type] || hero.type;
-    const rawClass = classMapper[hero.class] || hero.class;
-    const rawAlliance = allianceMapper[hero.alliance] || hero.alliance;
-    const rawRace = raceMapper[hero.race] || hero.race;
+    const rawType = typeMapper[hero.data.character_type] || hero.data.character_type;
+    const rawClass = classMapper[hero.data.class_id] || hero.data.class_id;
+    const rawAlliance = allianceMapper[hero.alliance_id] || hero.alliance_id;
+    const rawRace = raceMapper[hero.data.race_id] || hero.data.race_id;
 
     const card = document.createElement('div');
     card.className = 'hero-card';
     card.innerHTML = `
-      <img class="hero-avatar" src="${hero.avatar}" alt="${hero.name}" onerror="this.src='https://placeholder.com'">
-      <div class="hero-name">${hero.name}</div>
+      <img class="hero-avatar" src="${hero.data.avatar}" alt="${hero.data.name}" onerror="this.src='https://placeholder.com'">
+      <div class="hero-name">${hero.data.name}</div>
       <div class="hero-tags">
         <!-- getTxt переведет русскую строку на нужный язык автоматически -->
         <span class="tag tag-type">${getTxt(rawType)}</span>
@@ -394,8 +394,8 @@ function renderCards(data) {
         <p><strong>${currentLang === 'ru' ? 'Раса' : 'Race'}:</strong> ${getTxt(rawRace)}</p>
       </div>
       <div class="hero-footer">
-        <div><span class="info-label">Base ID</span><span class="info-value">${hero.id}</span></div>
-        <div><span class="info-label">MAX Star</span><span class="info-value">${hero.max_star}</span></div>
+        <div><span class="info-label">Base ID</span><span class="info-value">${hero.data.base_character_id}</span></div>
+        <div><span class="info-label">MAX Star</span><span class="info-value">${hero.data.max_stardom}</span></div>
       </div>
     `;
     grid.appendChild(card);
