@@ -443,6 +443,7 @@ function updateDisplay() {
   });
 
  	// Сортировка
+	const sortValue = sortMIX.value;
 	if ( sortValue === 'ascName') {
 	  filtered.sort(( a, b) => a.data.name.localeCompare( b.data.name, 'ru'));
 	} else if ( sortValue === 'descName') {
