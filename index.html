@@ -101,7 +101,7 @@
         }
 
         /* Карточка */
-        .card {
+        .hero-card {
             background-color: var(--card-bg);
             border-radius: 10px;
             overflow: hidden;
@@ -111,19 +111,19 @@
             flex-direction: column;
         }
 
-        .card:hover {
+        .hero-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
 
-        .avatar-container {
+        .hero-avatar-container {
             position: relative;
             width: 100%;
             padding-top: 100%; /* Соотношение сторон 1:1 */
             background-color: #111;
         }
 
-        .avatar {
+        .hero-avatar {
             position: absolute;
             top: 0;
             left: 0;
@@ -132,7 +132,7 @@
             object-fit: cover;
         }
 
-        .card-content {
+        .hero-card-content {
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -140,20 +140,20 @@
             flex-grow: 1;
         }
 
-        .card-header {
+        .hero-card-header {
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .icon {
+        .hero-icon {
             width: 32px;
             height: 32px;
             border-radius: 4px;
             background-color: #111;
         }
 
-        .name {
+        .hero-name {
             font-size: 20px;
             font-weight: bold;
             margin: 0;
