@@ -3,100 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фильтр JSON по полю "name"</title>
+    <title>Локальный JSON Фильтр</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 600px;
+            max-width: 650px;
             margin: 50px auto;
             text-align: center;
-            background-color: #f9f9f9;
+            background-color: #f4f7f6;
             padding: 20px;
         }
         .box {
             background: white;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        button {
-            padding: 12px 24px;
-            font-size: 16px;
-            background-color: #238636;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
-            margin-top: 10px;
-        }
-        button:hover { background-color: #2ea043; }
-        button:disabled { background-color: #cccccc; cursor: not-allowed; }
-        .or-divider { margin: 20px 0; color: #777; font-weight: bold; }
         input[type="file"] { display: none; }
         .file-label {
-            display: block;
-            padding: 12px 24px;
+            display: inline-block;
+            padding: 14px 28px;
             background-color: #0969da;
             color: white;
             border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 16px;
+            transition: background 0.2s;
         }
         .file-label:hover { background-color: #1f85ff; }
-        #status { margin-top: 20px; font-weight: bold; color: #555; word-wrap: break-word; }
+        #status { margin-top: 25px; font-weight: bold; color: #555; word-wrap: break-word; }
+        .config-info {
+            margin-top: 20px;
+            text-align: left;
+            background: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #0969da;
+            font-size: 13px;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
 
     <div class="box">
-        <h2>Способ 1: Автоматическая загрузка</h2>
-        <p>Скачать оригинальный файл с GitHub, очистить и сохранить результат.</p>
-        <button id="processBtn">Загрузить и обработать автоматически</button>
-    </div>
-
-    <div class="or-divider">ИЛИ (если способ выше выдает ошибку сети)</div>
-
-    <div class="box">
-        <h2>Способ 2: Локальная обработка</h2>
-        <p>Если у вас уже скачан файл <code>source.json</code>, выберите его с компьютера:</p>
-        <label for="fileInput" class="file-label">Выбрать файл source.json</label>
+        <h2>Локальная фильтрация JSON</h2>
+        <p>Выберите скачанный файл с компьютера для моментальной очистки.</p>
+        
+        <label for="fileInput" class="file-label">Выбрать и обработать файл</label>
         <input type="file" id="fileInput" accept=".json">
+
+        <div class="config-info">
+            <strong>Текущие сохраняемые поля (изменяются в коде):</strong>
+            <div id="activeFields"></div>
+        </div>
     </div>
     
     <div id="status"></div>
 
     <script>
-        // Функция рекурсивной фильтрации объекта
-        function keepOnlyNameFields(obj) {
+        // =========================================================================
+        // НАСТРОЙКА ПОЛЕЙ: Редактируйте этот список для изменения правил фильтрации.
+        // Можно указывать как простые ключи, так и точные пути через точку.
+        // =========================================================================
+        const FIELDS_TO_KEEP = [
+            'data.name',
+            'data.character_type',
+            'data.class_id',
+            'data.alliance_id',
+            'data.race_id',
+            'data.avatar',
+            'data.icon',
+            'data.base_character_id',
+			'data.max_stardom'
+        ];
+
+        // Вывод списка полей на экран для наглядности
+        document.getElementById('activeFields').innerText = JSON.stringify(FIELDS_TO_KEEP, null, 2);
+
+        // Главная функция фильтрации с поддержкой вложенности и путей через точку
+        function filterJsonStructure(obj, currentPath = '') {
+            // Если это массив, фильтруем каждый его элемент
             if (Array.isArray(obj)) {
-                return obj.map(keepOnlyNameFields).filter(item => {
-                    if (item && typeof item === 'object') {
-                        return Object.keys(item).length > 0;
-                    }
-                    return true;
-                });
-            } else if (obj !== null && typeof obj === 'object') {
+                return obj.map(item => filterJsonStructure(item, currentPath))
+                          .filter(item => {
+                              if (item && typeof item === 'object') {
+                                  return Object.keys(item).length > 0;
+                              }
+                              return item !== undefined;
+                          });
+            } 
+            
+            // Если это объект, разбираем его ключи
+            if (obj !== null && typeof obj === 'object') {
                 const newObj = {};
-                if ('name' in obj) {
-                    newObj.name = obj.name;
-                }
+                let hasValidData = false;
+
                 for (const key in obj) {
-                    if (key !== 'name' && obj[key] && typeof obj[key] === 'object') {
-                        const filteredChild = keepOnlyNameFields(obj[key]);
-                        if (Object.keys(filteredChild).length > 0) {
+                    // Строим полный путь для текущего ключа (например: "data" -> "data.name")
+                    const fullPath = currentPath ? `${currentPath}.${key}` : key;
+
+                    // Проверяем, совпадает ли точный путь ИЛИ имя самого ключа с белым списком
+                    const isAllowed = FIELDS_TO_KEEP.includes(fullPath) || FIELDS_TO_KEEP.includes(key);
+
+                    if (isAllowed && obj[key] !== undefined && typeof obj[key] !== 'object') {
+                        // Сохраняем простые типы данных (строки, числа), если они разрешены
+                        newObj[key] = obj[key];
+                        hasValidData = true;
+                    } else if (obj[key] && typeof obj[key] === 'object') {
+                        // Если внутри объект или массив, спускаемся глубже
+                        const filteredChild = filterJsonStructure(obj[key], fullPath);
+                        
+                        // Если в глубине нашлись нужные поля, сохраняем эту ветку структуры
+                        if (filteredChild !== undefined && (Array.isArray(filteredChild) ? filteredChild.length > 0 : Object.keys(filteredChild).length > 0)) {
                             newObj[key] = filteredChild;
+                            hasValidData = true;
+                        } else if (isAllowed) {
+                            // Если разрешен весь объект целиком, сохраняем его
+                            newObj[key] = filteredChild;
+                            hasValidData = true;
                         }
                     }
                 }
-                return newObj;
+                return hasValidData ? newObj : {};
             }
+
             return obj;
         }
 
-        // Функция сохранения файла на диск
+        // Функция скачивания результата
         function downloadJson(data) {
             const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
             const downloadUrl = URL.createObjectURL(blob);
@@ -109,66 +144,33 @@
             URL.revokeObjectURL(downloadUrl);
         }
 
-        const statusDiv = document.getElementById('status');
-        const btn = document.getElementById('processBtn');
-
-        // Логика Способа 1 (Автоматический Fetch с правильным URL)
-        btn.addEventListener('click', async () => {
-            // Исправленное склеивание URL-адреса прокси
-            const targetUrl = 'https://githubusercontent.com';
-            const proxyUrl = `https://allorigins.win{encodeURIComponent(targetUrl)}`;
-
-            try {
-                btn.disabled = true;
-                statusDiv.style.color = '#555';
-                statusDiv.innerText = 'Скачивание файла с GitHub через прокси...';
-
-                const response = await fetch(proxyUrl);
-                if (!response.ok) throw new Error(`Ошибка сети: ${response.status} ${response.statusText}`);
-
-                statusDiv.innerText = 'Файл успешно загружен. Очистка данных...';
-                const rawJson = await response.json();
-
-                const filteredJson = keepOnlyNameFields(rawJson);
-                statusDiv.innerText = 'Сохранение файла...';
-                
-                downloadJson(filteredJson);
-
-                statusDiv.style.color = '#238636';
-                statusDiv.innerText = 'Готово! Файл "filtered_source.json" сохранен на диск.';
-            } catch (error) {
-                statusDiv.style.color = '#d32f2f';
-                statusDiv.innerText = 'Ошибка: ' + error.message;
-                console.error(error);
-            } finally {
-                btn.disabled = false;
-            }
-        });
-
-        // Логика Способа 2 (Чтение локального файла)
+        // Слушатель выбора файла
         document.getElementById('fileInput').addEventListener('change', function(event) {
             const file = event.target.files[0];
             if (!file) return;
 
+            const statusDiv = document.getElementById('status');
             statusDiv.style.color = '#555';
-            statusDiv.innerText = 'Чтение выбранного файла...';
+            statusDiv.innerText = 'Чтение файла...';
 
             const reader = new FileReader();
             reader.onload = function(e) {
                 try {
-                    statusDiv.innerText = 'Файл прочитан. Фильтрация...';
+                    statusDiv.innerText = 'Парсинг JSON...';
                     const rawJson = JSON.parse(e.target.result);
                     
-                    const filteredJson = keepOnlyNameFields(rawJson);
-                    statusDiv.innerText = 'Сохранение обработанного файла...';
+                    statusDiv.innerText = 'Фильтрация по заданной структуре...';
+                    const filteredJson = filterJsonStructure(rawJson);
                     
+                    statusDiv.innerText = 'Сохранение файла на диск...';
                     downloadJson(filteredJson);
 
                     statusDiv.style.color = '#238636';
-                    statusDiv.innerText = 'Готово! Отфильтрованный файл сохранен на диск.';
+                    statusDiv.innerText = 'Успешно! Отфильтрованный файл сохранен в "Загрузки".';
                 } catch (error) {
                     statusDiv.style.color = '#d32f2f';
-                    statusDiv.innerText = 'Ошибка обработки файла: ' + error.message;
+                    statusDiv.innerText = 'Ошибка обработки: ' + error.message;
+                    console.error(error);
                 }
             };
             reader.readAsText(file);
