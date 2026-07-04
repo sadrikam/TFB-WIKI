@@ -196,24 +196,17 @@
 <body>
 
 <div class="container">
-    <!-- Переключатель языков -->
-    <div style="text-align: right; margin-bottom: 10px;">
-        <select id="languageSelect" style="padding: 5px 10px; font-size: 14px; min-width: auto; cursor: pointer;">
-            <option value="ru">Русский</option>
-            <option value="en">English</option>
-        </select>
-    </div>
-    <h1 id="mainTitle">Герои</h1>
+    <h1>Герои</h1>
 
     <!-- Панель управления -->
     <div class="controls">
         <div class="control-group">
-            <label for="search" id="searchLabel">Поиск по имени</label>
+            <label for="search">Поиск по имени</label>
             <input type="text" id="search" placeholder="Введите имя...">
         </div>
         <div class="control-group">
-            <label for="selectType">Тип персонажа</label>
-            <select id="selectType">
+            <label for="filterType">Тип персонажа</label>
+            <select id="filterType">
                 <option value="all">Все типы</option>
 				<option value="MAIN">Главный герой</option>
                 <option value="SECONDARY">Биом</option>
@@ -223,8 +216,8 @@
              </select>
         </div>
 		<div class="control-group">
-            <label for="selectClass">Класс персонажа</label>
-            <select id="selectClass">
+            <label for="filterClass">Класс персонажа</label>
+            <select id="filterClass">
                 <option value="all">Все классы</option>
 				<option value=1>Сила</option>
                 <option value=2>Ловкость</option>
@@ -232,8 +225,8 @@
              </select>
         </div>
 		<div class="control-group">
-            <label for="selectAlliance">Альянс персонажа</label>
-            <select id="selectAlliance">
+            <label for="filterAlliance">Альянс персонажа</label>
+            <select id="filterAlliance">
                 <option value="all">Все альянсы</option>
 				<option value=1>Осквернитель</option>
                 <option value=2>Жрец</option>
@@ -243,8 +236,8 @@
              </select>
         </div>
 		<div class="control-group">
-            <label for="selectRace">Раса персонажа</label>
-            <select id="selectRace">
+            <label for="filterRace">Раса персонажа</label>
+            <select id="filterRace">
                 <option value="all">Все расы</option>
 				<option value=1>Люди</option>
                 <option value=2>Звери</option>
@@ -276,55 +269,44 @@
 
 <script>
     let heroesData = [];
-	// Текущий выбранный язык
-	let currentLang = 'ru';
-	
-	const grid = document.getElementById('heroesGrid');
+    const grid = document.getElementById('heroesGrid');
     const searchInput = document.getElementById('search');
     const filterType = document.getElementById('filterType');
 	const filterClass = document.getElementById('filterClass');
 	const filterAlliance = document.getElementById('filterAlliance');
 	const filterRace = document.getElementById('filterRace');
     const sortMIX = document.getElementById('sortMIX');
-	
-	// Словарь интерфейса (ru/en)
-	//const translations = {
-	//    ru: { title: "База Героев", mainTitle: "Герои", searchPlaceholder: "Введите имя...", noResults: "Персонажи не найдены" },
-	//    en: { title: "Hero Database", mainTitle: "Heroes", searchPlaceholder: "Enter name...", noResults: "Heroes not found" }
-	//};
-	const uiTranslations = {
-	    ru: {
-	        mainTitle: 'База героев',
-	        searchPlaceholder: 'Поиск по имени...',
-	        classLabel: 'Класс',
-	        allOption: 'Все',
-	        noResults: 'Ничего не найдено'
-	    },
-	    en: {
-	        mainTitle: 'Heroes Database',
-	        searchPlaceholder: 'Search by name...',
-	        classLabel: 'Class',
-	        allOption: 'All',
-	        noResults: 'No results found'
-	    }
-	};
-	
-	// Мапперы для категорий (названия классов, рас и т.д. на двух языках)
+
 	const classMapper = {
-	    ru: { 1: 'Сила', 2: 'Ловкость', 3: 'Интеллект' },
-	    en: { 1: 'Strength', 2: 'Agility', 3: 'Intelligence' }
+	    1: 'Сила',
+	    2: 'Ловкость',
+	    3: 'Интеллект'
 	};
 	const allianceMapper = {
-	    ru: { 1: 'Осквернитель', 2: 'Жрец', 3: 'Убийца', 4: 'Боец', 5: 'Защитник' },
-	    en: { 1: 'Defiler', 2: 'Priest', 3: 'Assassin', 4: 'Fighter', 5: 'Defender' }
+		1: 'Осквернитель',
+		2: 'Жрец',
+		3: 'Убийца',
+		4: 'Боец',
+		5: 'Защитник'
 	};
 	const raceMapper = {
-	    ru: { 1: 'Люди', 2: 'Звери', 3: 'Гномы', 4: 'Демоны', 5: 'Нежить', 6: 'Эльфы', 7: 'Орки', 8: 'Механцизмы', 9: 'Энты', 10: 'Перворожденные' },
-	    en: { 1: 'Humans', 2: 'Beasts', 3: 'Dwarves', 4: 'Demons', 5: 'Undead', 6: 'Elves', 7: 'Orcs', 8: 'Mechanisms', 9: 'Ents', 10: 'Firstborn' }
+		1: 'Люди',
+		2: 'Звери',
+		3: 'Гномы',
+		4: 'Демоны',
+		5: 'Нежить',
+		6: 'Эльфы',
+		7: 'Орки',
+		8: 'Механизмы',
+		9: 'Энты',
+		10: 'Перворожденные'
 	};
 	const typeMapper = {
-	    ru: { 'MAIN': 'ГЛАВНЫЙ ГЕРОЙ', 'HUNT': 'ОХОТА', 'SECONDARY': 'БИОМ', 'PREMIUM': 'ПРЕМИУМ' },
-	    en: { 'MAIN': 'MAIN HERO', 'HUNT': 'HUNT', 'SECONDARY': 'BIOME', 'PREMIUM': 'PREMIUM' }
+		'MAIN': 'ГЛАВНЫЙ ГЕРОЙ',
+	    'HUNT': 'ОХОТА',
+	    'CONTRACT': 'КОНТРАКТ',
+	    'SECONDARY': 'БИОМ',
+		'PREMIUM': 'ПРЕМИУМ'
 	};
 	
     // Исправлено: Загрузка данных и вызов отрисовки
@@ -339,216 +321,56 @@
         }
     }
 
-	/**
-	 * Функция изменения глобального языка интерфейса приложения.
-	 * @param {string} lang - Идентификатор выбранного языка ('ru' или 'en')
-	 */
-	function setLanguage(lang) {
-	    // === БЛОК 1: СОХРАНЕНИЕ ТЕКУЩЕГО ЯЗЫКА ===
-	    // Перезаписываем глобальную переменную, чтобы все остальные функции 
-	    // (включая renderCards) знали, какой язык сейчас выбран пользователем.
-	    currentLang = lang;
-	
-	    // Ссылка на объект с переводами интерфейса для удобства написания кода
-	    const t = uiTranslations[lang];
-	    if (!t) return; // Защита: если переводы для языка не описаны, выходим из функции
-	
-	    // === БЛОК 2: АКТИВАЦИЯ КНОПОК ПЕРЕКЛЮЧЕНИЯ ЯЗЫКА ===
-	    // Переключаем визуальный класс 'active' на кнопках выбора языка, 
-	    // чтобы пользователь видел, какой язык сейчас активен в интерфейсе.
-	    const btnRu = document.getElementById('btnRu');
-	    const btnEn = document.getElementById('btnEn');
-	    
-	    if (btnRu && btnEn) {
-	        if (lang === 'ru') {
-	            btnRu.classList.add('active');
-	            btnEn.classList.remove('active');
-	        } else {
-	            btnEn.classList.add('active');
-	            btnRu.classList.remove('active');
-	        }
-	    }
-	
-	    // === БЛОК 3: ПЕРЕВОД СТАТИЧЕСКИХ ТЕКСТОВЫХ ЭЛЕМЕНТОВ (UI) ===
-	    // Находим элементы страницы по их ID и меняем текстовое содержимое 
-	    // на перевод из нашего словаря uiTranslations.
-	    
-	    // Перевод главного заголовка страницы (например, "База героев" / "Heroes Database")
-	    const mainTitle = document.getElementById('mainTitle');
-	    if (mainTitle && t.mainTitle) mainTitle.innerText = t.mainTitle;
-	
-	    // Перевод подзаголовка или описания
-	    const subTitle = document.getElementById('subTitle');
-	    if (subTitle && t.subTitle) subTitle.innerText = t.subTitle;
-	
-	    // Перевод подписи к текстовому поиску по имени
-	    const searchLabel = document.getElementById('searchLabel');
-	    if (searchLabel && t.searchLabel) searchLabel.innerText = t.searchLabel;
-	
-	    // Перевод плейсхолдера (подсказки ввода) в текстовом поле поиска
-	    const searchInput = document.getElementById('searchInput');
-	    if (searchInput && t.searchPlaceholder) searchInput.placeholder = t.searchPlaceholder;
-	
-	    // === БЛОК 4: ПЕРЕВОД ТЕКСТОВЫХ ПОДПИСЕЙ (LABEL) У ФИЛЬТРОВ ===
-	    // Меняем названия блоков фильтрации перед выпадающими списками (select)
-	    const classFilterLabel = document.getElementById('classFilterLabel');
-	    if (classFilterLabel && t.classLabel) classFilterLabel.innerText = t.classLabel + ':';
-	
-	    const raceFilterLabel = document.getElementById('raceFilterLabel');
-	    if (raceFilterLabel && t.raceLabel) raceFilterLabel.innerText = t.raceLabel + ':';
-	
-	    const allianceFilterLabel = document.getElementById('allianceFilterLabel');
-	    if (allianceFilterLabel && t.allianceLabel) allianceFilterLabel.innerText = t.allianceLabel + ':';
-	
-	    const elementFilterLabel = document.getElementById('elementFilterLabel');
-	    if (elementFilterLabel && t.elementLabel) elementFilterLabel.innerText = t.elementLabel + ':';
-	
-	    const typeFilterLabel = document.getElementById('typeFilterLabel');
-	    if (typeFilterLabel && t.typeFilterLabel) typeFilterLabel.innerText = t.typeFilterLabel + ':';
-	
-	    // === БЛОК 5: ДИНАМИЧЕСКИЙ ПЕРЕВОД ОПЦИЙ В ВЫПАДАЮЩИХ СПИСКАХ (SELECT) ===
-	    // Переводим самый первый пункт ("Все") в каждом выпадающем списке, 
-	    // а также остальные опции, если они завязаны на мапперы.
-	    
-	    // Список фильтрации классов
-	    const classSelect = document.getElementById('classSelect');
-	    if (classSelect && classSelect.options[0]) {
-	        classSelect.options[0].text = t.allOption || 'Все';
-	    }
-	
-	    // Список фильтрации рас
-	    const raceSelect = document.getElementById('raceSelect');
-	    if (raceSelect && raceSelect.options[0]) {
-	        raceSelect.options[0].text = t.allOption || 'Все';
-	    }
-	
-	    // Список фильтрации альянсов
-	    const allianceSelect = document.getElementById('allianceSelect');
-	    if (allianceSelect && allianceSelect.options[0]) {
-	        allianceSelect.options[0].text = t.allOption || 'Все';
-	    }
-	
-	    // Список фильтрации стихий
-	    const elementSelect = document.getElementById('elementSelect');
-	    if (elementSelect && elementSelect.options[0]) {
-	        elementSelect.options[0].text = t.allOption || 'Все';
-	    }
-	
-	    // Список фильтрации типов персонажей ("Легендарный", "Эпический" и т.д.)
-	    const typeSelect = document.getElementById('typeSelect');
-	    if (typeSelect) {
-	        if (typeSelect.options[0]) typeSelect.options[0].text = t.allOption || 'Все';
-	        // Для типа персонажей (так как значения строковые) мы можем перевести и остальные опции напрямую
-	        for (let i = 1; i < typeSelect.options.length; i++) {
-	            const rawValue = typeSelect.options[i].value;
-	            if (typeMapper[lang] && typeMapper[lang][rawValue]) {
-	                typeSelect.options[i].text = typeMapper[lang][rawValue];
-	            }
-	        }
-	    }
-	
-	    // === БЛОК 6: ПЕРЕЗАПУСК ОБНОВЛЕНИЯ ДАННЫХ И КАРТОЧЕК ===
-	    // После того как весь интерфейс переведен, вызываем основную функцию 
-	    // обновления экрана. Обычно это функция filterHeroes() или updateDisplay(), 
-	    // которая берет текущие фильтры, обрабатывает массив и в самом конце вызывает renderCards(filteredData).
-	    // Если у вас используется прямая функция, замените на неё (например, renderCards(heroesData)).
-	    if (typeof updateDisplay === 'function') {
-	        updateDisplay();
-	    } else if (typeof filterHeroes === 'function') {
-	        filterHeroes();
-	    } else if (typeof heroesData !== 'undefined' && heroesData.length > 0) {
-	        renderCards(heroesData);
-	    }
-	}
+    // Исправлено: Отрисовка карточек
+    function renderCards(data) {
+        grid.innerHTML = '';
+        if (data.length === 0) {
+            grid.innerHTML = '<div class="no-results">Персонажи не найдены</div>';
+            return;
+        }
 
+        data.forEach(hero => {
+            // Очищаем строки от лишних пробелов на краях для красивого вывода
+            const cleanName = hero.name.trim();
+            const cleanType = hero.character_type.trim();
+            
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="avatar-container">
+                    <img class="avatar" src="${hero.avatar}" alt="${cleanName}" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <img class="icon" src="${hero.icon}" alt="icon">
+                        <h2 class="name">${cleanName}</h2>
+                    </div>
+					<div class="hero-badges-container">
+						<div class="hero-badges">
+							<span class="badge" style="background: #6FECD3;">${typeMapper[cleanType] || cleanType}</span>
+		                    <span class="badge" style="background: #FF5C5C;">${classMapper[hero.class_id] || hero.class_id}</span>
+						</div>
+		                <div class="hero-badges">
+							<span class="badge" style="background: #4A90E2;">${raceMapper[hero.race_id] || hero.race_id}</span>
+		                    <span class="badge" style="background: #F7BF64;">${allianceMapper[hero.alliance_id] || hero.alliance_id}</span>
+						</div>
+					</div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Base ID</span>
+                            <span class="info-value">${hero.base_character_id}</span>
+                        </div>
 
-	/**
-	 * Функция рендеринга карточек персонажей на страницу.
-	 * @param {Array} data - Массив объектов персонажей из JSON-файла herous.json
-	 */
-	function renderCards(data) {
-	    // === БЛОК 1: ОЧИСТКА КОНТЕЙНЕРА ===
-	    // Полностью очищаем сетку перед выводом, чтобы карточки не дублировались
-	    // при повторном вызове функции (например, при переключении языка или фильтрации)
-	    grid.innerHTML = '';
-	
-	    // === БЛОК 2: ПРОВЕРКА НА ПУСТЫЕ ДАННЫЕ ===
-	    // Если после фильтрации массив пуст, выводим сообщение об отсутствии результатов
-	    if (!data || data.length === 0) {
-	        grid.innerHTML = `<div class="no-results">${uiTranslations[currentLang].noResults || 'Ничего не найдено'}</div>`;
-	        return;
-	    }
-	
-	    // === БЛОК 3: ПЕРЕБОР МАССИВА ДАННЫХ ===
-	    // Проходим циклом по каждому персонажу в массиве
-	    data.forEach(hero => {
-	        // Защита от ошибок: если объект данных поврежден, пропускаем итерацию
-	        if (!hero || !hero.data) return;
-	
-	        // === БЛОК 4: ИЗОЛЯЦИЯ СТРОКОВЫХ ДАННЫХ JSON (БЕЗ ПЕРЕВОДА) ===
-	        // Извлекаем имя персонажа напрямую из JSON. Как вы и просили, 
-	        // текстовые данные (строки и символы персонажа) остаются на русском языке.
-	        const heroName = hero.data.name ? hero.data.name.trim() : 'Без имени';
-	
-	        // === БЛОК 5: ДИНАМИЧЕСКИЙ ДВУЯЗЫЧНЫЙ МАППИНГ ===
-	        // С помощью переменной 'currentLang' ('ru' или 'en') мы забираем нужный перевод 
-	        // из наших языковых словарей. Если перевода нет, оставляем исходный ID/текст как запасной вариант.
-	        
-	        // Перевод типа персонажа (например, "Легендарный" / "Legendary")
-	        const characterTypeRaw = hero.data.character_type ? hero.data.character_type.trim() : '';
-	        const displayType = (typeMapper[currentLang] && typeMapper[currentLang][characterTypeRaw]) || characterTypeRaw;
-	
-	        // Перевод класса по его числовому ID (например, 1 -> "Сила" / "Strength")
-	        const displayClass = (classMapper[currentLang] && classMapper[currentLang][hero.data.class_id]) || hero.data.class_id;
-	
-	        // Перевод расы по её числовому ID (например, 2 -> "Человек" / "Human")
-	        const displayRace = (raceMapper[currentLang] && raceMapper[currentLang][hero.data.race_id]) || hero.data.race_id;
-	
-	        // Перевод альянса/фракции по её числовому ID
-	        const displayAlliance = (allianceMapper[currentLang] && allianceMapper[currentLang][hero.data.alliance_id]) || hero.data.alliance_id;
-	
-	        // Перевод стихии (элемента) по числовому ID
-	        const displayElement = (elementMapper[currentLang] && elementMapper[currentLang][hero.data.element_id]) || hero.data.element_id;
-	
-	        // === БЛОК 6: СБОРКА HTML-ШАБЛОНА КАРТОЧКИ ===
-	        // Создаем DOM-элемент для карточки героя
-	        const card = document.createElement('div');
-	        // Добавляем базовый класс стилей и дополнительный класс типа для стилизации рамок/фонов
-	        card.className = `hero-card ${characterTypeRaw.toLowerCase()}`;
-	
-	        // Наполняем карточку структурой. Все переменные display... автоматически 
-	        // подставят либо русский, либо английский текст в зависимости от active-языка.
-	        card.innerHTML = `
-	            <div class="hero-header">
-	                <!-- Имя выводится строго на русском языке, как в исходном файле -->
-	                <h3 class="hero-name">${heroName}</h3>
-	                <span class="badge badge-type">${displayType}</span>
-	            </div>
-	            <div class="hero-body">
-	                <div class="hero-info-item">
-	                    <span class="info-label">${uiTranslations[currentLang].classLabel || 'Класс'}:</span>
-	                    <span class="info-value">${displayClass}</span>
-	                </div>
-	                <div class="hero-info-item">
-	                    <span class="info-label">${uiTranslations[currentLang].raceLabel || 'Раса'}:</span>
-	                    <span class="info-value">${displayRace}</span>
-	                </div>
-	                <div class="hero-info-item">
-	                    <span class="info-label">${uiTranslations[currentLang].allianceLabel || 'Альянс'}:</span>
-	                    <span class="info-value">${displayAlliance}</span>
-	                </div>
-	                <div class="hero-info-item">
-	                    <span class="info-label">${uiTranslations[currentLang].elementLabel || 'Стихия'}:</span>
-	                    <span class="info-value">${displayElement}</span>
-	                </div>
-	            </div>
-	        `;
-	
-	        // === БЛОК 7: ДОБАВЛЕНИЕ КАРТОЧКИ НА СТРАНИЦУ ===
-	        // Вставляем готовую собранную карточку персонажа в общую сетку grid
-	        grid.appendChild(card);
-	    });
-	}
+						<div class="info-item">
+                            <span class="info-label">MAX Star</span>
+                            <span class="info-value">${'★'.repeat(hero.max_stardom || 0)}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
     
     // Функция обработки поиска, фильтрации и сортировки
     function updateDisplay() {
@@ -558,7 +380,7 @@
         const searchValue = searchInput.value.toLowerCase().trim();
         if (searchValue) {
             updatedList = updatedList.filter(hero => 
-                hero.data.name.toLowerCase().includes(searchValue)
+                hero.name.toLowerCase().includes(searchValue)
             );
         }
 
@@ -566,40 +388,40 @@
         const typeValue = filterType.value;
         if (typeValue !== 'all') {
             updatedList = updatedList.filter(hero => 
-                hero.data.character_type.trim() === typeValue
+                hero.character_type.trim() === typeValue
             );
         }
 		
         // 2. Фильтрация по классу
         const classValue = filterClass.value;
         if (classValue !== 'all') {
-        	updatedList = updatedList.filter(hero => hero.data.class_id === Number(classValue));
+        	updatedList = updatedList.filter(hero => hero.class_id === Number(classValue));
         }
 		
         // 2. Фильтрация по альянсу
         const allianceValue = filterAlliance.value;
         if (allianceValue !== 'all') {
-        	updatedList = updatedList.filter(hero => hero.data.alliance_id === Number(allianceValue));
+        	updatedList = updatedList.filter(hero => hero.alliance_id === Number(allianceValue));
         }
 		
 		// 2. Фильтрация по расе
         const raceValue = filterRace.value;
         if (raceValue !== 'all') {
-        	updatedList = updatedList.filter(hero => hero.data.race_id === Number(raceValue));
+        	updatedList = updatedList.filter(hero => hero.race_id === Number(raceValue));
         }
 		
 		// 3. Сортировка по имени и ID
 		const sortValue = sortMIX.value;
 		if (sortValue === 'ascName') {
-		    updatedList.sort((a, b) => a.data.name.trim().localeCompare(b.data.name.trim()));
+		    updatedList.sort((a, b) => a.name.trim().localeCompare(b.name.trim()));
 		} else if (sortValue === 'descName') {
-		    updatedList.sort((a, b) => b.data.name.trim().localeCompare(a.data.name.trim()));
+		    updatedList.sort((a, b) => b.name.trim().localeCompare(a.name.trim()));
 		} else if (sortValue === 'ascBaseID') {
-            updatedList.sort((a, b) => a.data.base_character_id - b.data.base_character_id);
+            updatedList.sort((a, b) => a.base_character_id - b.base_character_id);
         } else if (sortValue === 'descBaseID') {
-            updatedList.sort((a, b) => b.data.base_character_id - a.data.base_character_id);
+            updatedList.sort((a, b) => b.base_character_id - a.base_character_id);
 		} else if (sortValue === 'none') {
-            updatedList.sort((a, b) => a.data.base_character_id - b.data.base_character_id);
+            updatedList.sort((a, b) => a.base_character_id - b.base_character_id);
 		}
 
         renderCards(updatedList);
@@ -612,11 +434,7 @@
 	filterAlliance.addEventListener('change', updateDisplay);
 	filterRace.addEventListener('change', updateDisplay);
 	sortMIX.addEventListener('change', updateDisplay);
-	document.getElementById('languageSelect').addEventListener('change', function(event) {
-	    setLanguage(event.target.value);
-	});
-    //document.getElementById('btnRu').addEventListener('click', () => setLanguage('ru'));
-	//document.getElementById('btnEn').addEventListener('click', () => setLanguage('en'));
+    
     // Инициализация
     loadHeroes();
 </script>
