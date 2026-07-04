@@ -291,197 +291,160 @@
 </div>
 
 <script>
-    let heroesData = [];
-	let currentLang = 'ru';
-	
-    const grid = document.getElementById('heroesGrid');
-    const searchInput = document.getElementById('search');
-    const filterType = document.getElementById('filterType');
-	const filterClass = document.getElementById('filterClass');
-	const filterAlliance = document.getElementById('filterAlliance');
-	const filterRace = document.getElementById('filterRace');
-    const sortMIX = document.getElementById('sortMIX');
+// 1. Хранилище данных и текущее состояние
+let heroesData = []; 
+const grid = document.getElementById('heroesGrid');
+let currentLang = 'ru'; 
 
+// 2. Исправленные мапперы (поддерживают и числа, и строки в качестве ключей)
+const classMapper = { 1: 'Сила', 2: 'Ловкость', 3: 'Интеллект' };
+const allianceMapper = { 1: 'Осквернитель', 2: 'Жрец', 3: 'Колдун', 4: 'Следопыт', 5: 'Защитник' };
+const raceMapper = { 1: 'Люди', 2: 'Звери', 3: 'Орки', 4: 'Нежить', 5: 'Эльфы', 6: 'Гномы', 7: 'Демоны', 8: 'Энты', 9: 'Наги', 10: 'Перворожденные' };
+const typeMapper = { 'MAIN': 'ГЛАВНЫЙ ГЕРОЙ', 'HUNT': 'ОХОТА', 'PREMIUM': 'ПРЕМИУМ' };
 
-	// ==========================================
-	// 2. ЦЕНТРАЛЬНЫЙ СЛОВАРЬ ЛОКАЛИЗАЦИИ (i18n)
-	// ==========================================
-	const translations = {
-	  ru: {
-	    ui: { title: "База Героев", mainTitle: "Герои", searchPlaceholder: "Введите имя...", noResults: "Персонажи не найдены" },
-	    options: { allTypes: "Все типы" },
-	    // Ключ - всегда русский (из JSON), значение - русский текст
-	    data: {
-	      "ГЛАВНЫЙ ГЕРОЙ": "ГЛАВНЫЙ ГЕРОЙ",
-	      "Сила": "Сила"
-	      // ...остальные данные...
-	    }
-	  },
-	  en: {
-	    ui: { title: "Hero Database", mainTitle: "Heroes", searchPlaceholder: "Enter name...", noResults: "Heroes not found" }
-	    options: { allTypes: "All types" },
-	    // Ключ - русский (из JSON), значение - английский перевод
-	    data: {
-	      "ГЛАВНЫЙ ГЕРОЙ": "MAIN HERO",
-	      "Сила": "Strength",
-	      "Орки": "Orcs"
-	      // ...остальные переводы...
-	    }
-	  }
-	};
-	const classMapper = {
-	    ru: { 1: 'Сила', 2: 'Ловкость', 3: 'Интеллект' },
-	    en: { 1: 'Strength', 2: 'Agility', 3: 'Intelligence' }
-	};
-	const allianceMapper = {
-	    ru: { 1: 'Осквернитель', 2: 'Жрец', 3: 'Убийца', 4: 'Боец', 5: 'Защитник' },
-	    en: { 1: 'Defiler', 2: 'Priest', 3: 'Assassin', 4: 'Fighter', 5: 'Defender' }
-	};
-	const raceMapper = {
-	    ru: { 1: 'Люди', 2: 'Звери', 3: 'Гномы', 4: 'Демоны', 5: 'Нежить', 6: 'Эльфы', 7: 'Орки', 8: 'Механцизмы', 9: 'Энты', 10: 'Перворожденные' },
-	    en: { 1: 'Humans', 2: 'Beasts', 3: 'Dwarves', 4: 'Demons', 5: 'Undead', 6: 'Elves', 7: 'Orcs', 8: 'Mechanisms', 9: 'Ents', 10: 'Firstborn' }
-	};
-	const typeMapper = {
-	    ru: { 'MAIN': 'ГЛАВНЫЙ ГЕРОЙ', 'HUNT': 'ОХОТА', 'SECONDARY': 'БИОМ', 'PREMIUM': 'ПРЕМИУМ' },
-	    en: { 'MAIN': 'MAIN HERO', 'HUNT': 'HUNT', 'SECONDARY': 'BIOME', 'PREMIUM': 'PREMIUM' }
-	};
-	
-function toggleLanguage() {
-    currentLang = currentLang === 'ru' ? 'en' : 'ru';
-    document.getElementById('langBtn').innerText = currentLang === 'ru' ? 'EN' : 'RU';
-    document.getElementById('pageTitle').innerText = translations[currentLang].title;
-    document.getElementById('mainTitle').innerText = translations[currentLang].mainTitle;
-    document.documentElement.lang = currentLang;
+// 3. Централизованный словарь (Данные переводятся с РУССКОГО ключа)
+const translations = {
+  ru: {
+    ui: { title: "База Героев", mainTitle: "Герои", searchLabel: "Поиск по имени", searchPlaceholder: "Введите имя..." },
+    error: "Ошибка: ",
+    noResults: "Персонажи не найдены",
+    data: {
+      "ГЛАВНЫЙ ГЕРОЙ": "ГЛАВНЫЙ ГЕРОЙ", "ОХОТА": "ОХОТА", "ПРЕМИУМ": "ПРЕМИУМ",
+      "Сила": "Сила", "Ловкость": "Ловкость", "Интеллект": "Интеллект",
+      "Люди": "Люди", "Звери": "Звери", "Орки": "Орки", "Нежить": "Нежить", "Эльфы": "Эльфы", 
+      "Гномы": "Гномы", "Демоны": "Демоны", "Энты": "Энты", "Наги": "Наги", "Перворожденные": "Перворожденные",
+      "Осквернитель": "Осквернитель", "Жрец": "Жрец", "Колдун": "Колдун", "Следопыт": "Следопыт", "Защитник": "Защитник"
+    }
+  },
+  en: {
+    ui: { title: "Heroes Database", mainTitle: "Heroes", searchLabel: "Search by name", searchPlaceholder: "Enter name..." },
+    error: "Error: ",
+    noResults: "No characters found",
+    data: {
+      "ГЛАВНЫЙ ГЕРОЙ": "MAIN HERO", "ОХОТА": "HUNT", "ПРЕМИУМ": "PREMIUM",
+      "Сила": "Strength", "Ловкость": "Agility", "Интеллект": "Intelligence",
+      "Люди": "Humans", "Звери": "Beasts", "Орки": "Orcs", "Нежить": "Undead", "Эльфы": "Elves", 
+      "Гномы": "Dwarves", "Демоны": "Demons", "Энты": "Ents", "Наги": "Nagas", "Перворожденные": "Firstborn",
+      "Осквернитель": "Defiler", "Жрец": "Priest", "Колдун": "Warlock", "Следопыт": "Ranger", "Защитник": "Defender"
+    }
+  }
+};
+
+// 4. Функция динамической локализации карточек (перевод по русскому ключу)
+function getTxt(russianKey) {
+  if (!russianKey) return '';
+  return translations[currentLang].data[russianKey] || russianKey;
 }
-	
-    // Исправлено: Загрузка данных и вызов отрисовки
-    async function loadHeroes() {
-        try {
-            const response = await fetch('herous.json');
-            if (!response.ok) throw new Error('Ошибка сети');
-            heroesData = await response.json();
-            renderCards(heroesData);
-        } catch (error) {
-            grid.innerHTML = `<div class="no-results">Ошибка: ${error.message}</div>`;
-        }
-    }
 
-    // Исправлено: Отрисовка карточек
-    function renderCards(data) {
-        grid.innerHTML = '';
-        if (data.length === 0) {
-            grid.innerHTML = '<div class="no-results">Персонажи не найдены</div>';
-            return;
-        }
+// 5. Переключение языка интерфейса и карточек
+function toggleLanguage() {
+  currentLang = currentLang === 'ru' ? 'en' : 'ru';
+  document.documentElement.lang = currentLang;
+  
+  // Меняем текст кнопки
+  document.getElementById('langBtn').textContent = currentLang === 'ru' ? 'EN' : 'RU';
+  // Переводим статичные заголовки
+  document.getElementById('mainTitle').textContent = translations[currentLang].ui.mainTitle;
+  document.title = translations[currentLang].ui.title;
+  
+  // Перерисовываем карточки с новым языком
+  updateDisplay();
+}
 
-        data.forEach(hero => {
-            // Очищаем строки от лишних пробелов на краях для красивого вывода
-            const cleanName = hero.data.name.trim();
-            const cleanType = hero.data.character_type.trim();
-            
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-                <div class="avatar-container">
-                    <img class="avatar" src="${hero.data.avatar}" alt="${cleanName}" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <div class="card-header">
-                        <img class="icon" src="${hero.data.icon}" alt="icon">
-                        <h2 class="name">${cleanName}</h2>
-                    </div>
-					<div class="hero-badges-container">
-						<div class="hero-badges">
-							<span class="badge" style="background: #6FECD3;">${typeMapper[cleanType] || cleanType}</span>
-		                    <span class="badge" style="background: #FF5C5C;">${classMapper[hero.data.class_id] || hero.data.class_id}</span>
-						</div>
-		                <div class="hero-badges">
-							<span class="badge" style="background: #4A90E2;">${raceMapper[hero.data.race_id] || hero.data.race_id}</span>
-		                    <span class="badge" style="background: #F7BF64;">${allianceMapper[hero.data.alliance_id] || hero.data.alliance_id}</span>
-						</div>
-					</div>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <span class="info-label">Base ID</span>
-                            <span class="info-value">${hero.data.base_character_id}</span>
-                        </div>
+// 6. Загрузка данных (ИСПРАВЛЕНО имя файла на heroes.json)
+async function loadHeroes() {
+  try {
+    const response = await fetch('heroes.json'); 
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    heroesData = await response.json();
+    updateDisplay(); // Запуск отображения через фильтр
+  } catch (error) {
+    grid.innerHTML = `<div class="no-results">${translations[currentLang].error}${error.message}</div>`;
+  }
+}
 
-						<div class="info-item">
-                            <span class="info-label">MAX Star</span>
-                            <span class="info-value">${'★'.repeat(hero.data.max_stardom || 0)}</span>
-                        </div>
-                    </div>
-                </div>
-            `;
-            grid.appendChild(card);
-        });
-    }
-    
-    // Функция обработки поиска, фильтрации и сортировки
-    function updateDisplay() {
-        let updatedList = [...heroesData];
+// 7. Рендеринг карточек героев
+function renderCards(data) {
+  grid.innerHTML = '';
+  
+  if (data.length === 0) {
+    grid.innerHTML = `<div class="no-results">${translations[currentLang].noResults}</div>`;
+    return;
+  }
 
-        // 1. Поиск (по совпадению подстроки в имени без учета регистра)
-        const searchValue = searchInput.value.toLowerCase().trim();
-        if (searchValue) {
-            updatedList = updatedList.filter(hero => 
-                hero.data.name.toLowerCase().includes(searchValue)
-            );
-        }
+  data.forEach(hero => {
+    // Получаем эталонные русские значения из мапперов
+    const rawType = typeMapper[hero.type] || hero.type;
+    const rawClass = classMapper[hero.class] || hero.class;
+    const rawAlliance = allianceMapper[hero.alliance] || hero.alliance;
+    const rawRace = raceMapper[hero.race] || hero.race;
 
-        // 2. Фильтрация по типу
-        const typeValue = filterType.value;
-        if (typeValue !== 'all') {
-            updatedList = updatedList.filter(hero => 
-                hero.data.character_type.trim() === typeValue
-            );
-        }
-		
-        // 2. Фильтрация по классу
-        const classValue = filterClass.value;
-        if (classValue !== 'all') {
-        	updatedList = updatedList.filter(hero => hero.data.class_id === Number(classValue));
-        }
-		
-        // 2. Фильтрация по альянсу
-        const allianceValue = filterAlliance.value;
-        if (allianceValue !== 'all') {
-        	updatedList = updatedList.filter(hero => hero.data.alliance_id === Number(allianceValue));
-        }
-		
-		// 2. Фильтрация по расе
-        const raceValue = filterRace.value;
-        if (raceValue !== 'all') {
-        	updatedList = updatedList.filter(hero => hero.data.race_id === Number(raceValue));
-        }
-		
-		// 3. Сортировка по имени и ID
-		const sortValue = sortMIX.value;
-		if (sortValue === 'ascName') {
-		    updatedList.sort((a, b) => a.data.name.trim().localeCompare(b.data.name.trim()));
-		} else if (sortValue === 'descName') {
-		    updatedList.sort((a, b) => b.data.name.trim().localeCompare(a.data.name.trim()));
-		} else if (sortValue === 'ascBaseID') {
-            updatedList.sort((a, b) => a.data.base_character_id - b.data.base_character_id);
-        } else if (sortValue === 'descBaseID') {
-            updatedList.sort((a, b) => b.data.base_character_id - a.data.base_character_id);
-		} else if (sortValue === 'none') {
-            updatedList.sort((a, b) => a.data.base_character_id - b.data.base_character_id);
-		}
+    const card = document.createElement('div');
+    card.className = 'hero-card';
+    card.innerHTML = `
+      <img class="hero-avatar" src="${hero.avatar}" alt="${hero.name}" onerror="this.src='https://placeholder.com'">
+      <div class="hero-name">${hero.name}</div>
+      <div class="hero-tags">
+        <!-- getTxt переведет русскую строку на нужный язык автоматически -->
+        <span class="tag tag-type">${getTxt(rawType)}</span>
+        <span class="tag tag-class">${getTxt(rawClass)}</span>
+      </div>
+      <div class="hero-info">
+        <p><strong>${currentLang === 'ru' ? 'Альянс' : 'Alliance'}:</strong> ${getTxt(rawAlliance)}</p>
+        <p><strong>${currentLang === 'ru' ? 'Раса' : 'Race'}:</strong> ${getTxt(rawRace)}</p>
+      </div>
+      <div class="hero-footer">
+        <div><span class="info-label">Base ID</span><span class="info-value">${hero.id}</span></div>
+        <div><span class="info-label">MAX Star</span><span class="info-value">${hero.max_star}</span></div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
 
-        renderCards(updatedList);
-    }
+// 8. Логика фильтрации и сортировки
+function updateDisplay() {
+  const searchQuery = document.getElementById('search').value.toLowerCase();
+  const typeFilter = document.getElementById('filterType').value;
+  const classFilter = document.getElementById('filterClass').value;
+  const allianceFilter = document.getElementById('filterAlliance').value;
+  const raceFilter = document.getElementById('filterRace').value;
+  const sortValue = document.getElementById('sortMIX').value;
 
-    // Слушатели событий управления
-    searchInput.addEventListener('input', updateDisplay);
-	filterType.addEventListener('change', updateDisplay);
-	filterClass.addEventListener('change', updateDisplay);
-	filterAlliance.addEventListener('change', updateDisplay);
-	filterRace.addEventListener('change', updateDisplay);
-	sortMIX.addEventListener('change', updateDisplay);
-    
-    // Инициализация
-    loadHeroes();
+  let filtered = heroesData.filter(hero => {
+    const matchesSearch = hero.name.toLowerCase().includes(searchQuery);
+    const matchesType = typeFilter === 'all' || hero.type === typeFilter;
+    const matchesClass = classFilter === 'all' || String(hero.class) === classFilter;
+    const matchesAlliance = allianceFilter === 'all' || String(hero.alliance) === allianceFilter;
+    const matchesRace = raceFilter === 'all' || String(hero.race) === raceFilter;
+
+    return matchesSearch && matchesType && matchesClass && matchesAlliance && matchesRace;
+  });
+
+  // Сортировка
+  if (sortValue === 'ascName') {
+    filtered.sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+  } else if (sortValue === 'descName') {
+    filtered.sort((a, b) => b.name.localeCompare(a.name, 'ru'));
+  } else if (sortValue === 'ascID') {
+    filtered.sort((a, b) => a.id - b.id);
+  } else if (sortValue === 'descID') {
+    filtered.sort((a, b) => b.id - a.id);
+  }
+
+  renderCards(filtered);
+}
+
+// 9. Навешивание событий и старт
+document.getElementById('search').addEventListener('input', updateDisplay);
+document.getElementById('filterType').addEventListener('change', updateDisplay);
+document.getElementById('filterClass').addEventListener('change', updateDisplay);
+document.getElementById('filterAlliance').addEventListener('change', updateDisplay);
+document.getElementById('filterRace').addEventListener('change', updateDisplay);
+document.getElementById('sortMIX').addEventListener('change', updateDisplay);
+
+// Запуск приложения
+loadHeroes();
 </script>
 
 </body>
