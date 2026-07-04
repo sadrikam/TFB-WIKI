@@ -447,9 +447,9 @@ function updateDisplay() {
     filtered.sort((a, b) => a.data.name.localeCompare(b.data.name, 'ru'));
   } else if (sortValue === 'descName') {
     filtered.sort((a, b) => b.data.name.localeCompare(a.data.name, 'ru'));
-  } else if (sortValue === 'ascID') {
+  } else if (sortValue === 'ascBaseID') {
     filtered.sort((a, b) => a.data.base_character_id - b.data.base_character_id);
-  } else if (sortValue === 'descID') {
+  } else if (sortValue === 'descBaseID') {
     filtered.sort((a, b) => b.data.base_character_id - a.data.base_character_id);
   }
 
