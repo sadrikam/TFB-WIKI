@@ -376,7 +376,7 @@ function renderCards(data) {
     // Получаем эталонные русские значения из мапперов
     const rawType = typeMapper[hero.data.character_type] || hero.data.character_type;
     const rawClass = classMapper[hero.data.class_id] || hero.data.class_id;
-    const rawAlliance = allianceMapper[hero.alliance_id] || hero.alliance_id;
+    const rawAlliance = allianceMapper[hero.data.alliance_id] || hero.data.alliance_id;
     const rawRace = raceMapper[hero.data.race_id] || hero.data.race_id;
 
     const card = document.createElement('div');
