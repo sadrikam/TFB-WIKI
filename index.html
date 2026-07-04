@@ -423,42 +423,38 @@ function renderCards(data) {
   });
 }
 
-// 8. Логика фильтрации и сортировки
+// 8. Логика фильтрации и сортировки (ИСПРАВЛЕНО)
 function updateDisplay() {
-  const searchQuery = document.getElementById('search').value.toLowerCase();
-  const typeFilter = document.getElementById('filterType').value;
-  const classFilter = document.getElementById('filterClass').value;
-  const allianceFilter = document.getElementById('filterAlliance').value;
-  const raceFilter = document.getElementById('filterRace').value;
-  const sortValue = document.getElementById('sortMIX').value;
+  // Получаем значения фильтров
+  const filters = {
+    search: document.getElementById('search').value.toLowerCase(),
+    type: document.getElementById('filterType').value,
+    class: document.getElementById('filterClass').value,
+    alliance: document.getElementById('filterAlliance').value,
+    race: document.getElementById('filterRace').value,
+    sort: document.getElementById('sortMIX').value // Одно объявление
+  };
 
   let filtered = heroesData.filter(hero => {
-    const matchesSearch = hero.data.name.toLowerCase().includes(searchQuery);
-    const matchesType = typeFilter === 'all' || hero.data.character_type === typeFilter;
-    const matchesClass = classFilter === 'all' || String(hero.data.class_id) === classFilter;
-    const matchesAlliance = allianceFilter === 'all' || String(hero.data.alliance_id) === allianceFilter;
-    const matchesRace = raceFilter === 'all' || String(hero.data.race_id) === raceFilter;
-
-    return matchesSearch && matchesType && matchesClass && matchesAlliance && matchesRace;
+    const d = hero.data;
+    return (filters.search === '' || d.name.toLowerCase().includes(filters.search)) &&
+           (filters.type === 'all' || d.character_type === filters.type) &&
+           (filters.class === 'all' || String(d.class_id) === filters.class) &&
+           (filters.alliance === 'all' || String(d.alliance_id) === filters.alliance) &&
+           (filters.race === 'all' || String(d.race_id) === filters.race);
   });
 
- 	// Сортировка
-	const sortValue = sortMIX.value;
-	if ( sortValue === 'ascName') {
-	  filtered.sort(( a, b) => a.data.name.localeCompare( b.data.name, 'ru'));
-	} else if ( sortValue === 'descName') {
-	  filtered.sort(( a, b) => b.data.name.localeCompare( a.data.name, 'ru'));
-	} else if ( sortValue === 'ascBaseID') {
-	  // Принудительно превращаем строки в числа перед вычитанием
-	  filtered.sort(( a, b) => Number(a.data.base_character_id) - Number(b.data.base_character_id));
-	} else if ( sortValue === 'descBaseID') {
-	  // Принудительно превращаем строки в числа перед вычитанием
-	  filtered.sort(( a, b) => Number(b.data.base_character_id) - Number(a.data.base_character_id));
-	}
-	
+  // Сортировка (дублирующая const sortValue = ... удалена)
+  const sorts = {
+    'ascName': (a, b) => a.data.name.localeCompare(b.data.name, 'ru'),
+    'descName': (a, b) => b.data.name.localeCompare(a.data.name, 'ru'),
+    'ascBaseID': (a, b) => Number(a.data.base_character_id) - Number(b.data.base_character_id),
+    'descBaseID': (a, b) => Number(b.data.base_character_id) - Number(a.data.base_character_id)
+  };
+
+  if (sorts[filters.sort]) filtered.sort(sorts[filters.sort]);
   renderCards(filtered);
 }
-
 // 9. Навешивание событий и старт
 document.getElementById('search').addEventListener('input', updateDisplay);
 document.getElementById('filterType').addEventListener('change', updateDisplay);
