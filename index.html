@@ -389,15 +389,15 @@ function renderCards(data) {
       </div>
       <div class="hero-card-content">
 		  <div class="hero-name">${hero.data.name}</div>
-	      //<div class="hero-tags">
+	      <!--<div class="hero-tags"> -->
 	        <!-- getTxt переведет русскую строку на нужный язык автоматически -->
-	        //<span class="tag tag-type">${getTxt(rawType)}</span>
-	        //<span class="tag tag-class">${getTxt(rawClass)}</span>
+	        <!--<span class="tag tag-type">${getTxt(rawType)}</span> -->
+	        <!--<span class="tag tag-class">${getTxt(rawClass)}</span> -->
 
 					<div class="hero-badges-container">
 						<div class="hero-badges">
-							//<span class="badge" style="background: #6FECD3;">${typeMapper[cleanType] || cleanType}</span>
-		                    //<span class="badge" style="background: #FF5C5C;">${classMapper[hero.data.class_id] || hero.data.class_id}</span>
+							<!--//<span class="badge" style="background: #6FECD3;">${typeMapper[cleanType] || cleanType}</span> -->
+		                    <!--//<span class="badge" style="background: #FF5C5C;">${classMapper[hero.data.class_id] || hero.data.class_id}</span> -->
 							<span class="badge" style="background: #6FECD3;">${getTxt(rawType)</span>
 		                    <span class="badge" style="background: #FF5C5C;">${getTxt(rawClass)}</span>
 						</div>
@@ -406,11 +406,11 @@ function renderCards(data) {
 		                    <span class="badge" style="background: #F7BF64;">${allianceMapper[hero.data.alliance_id] || hero.data.alliance_id}</span>
 						</div>
 					</div>
-		  //</div>
-	      //<div class="hero-info">
-	      //  <p><strong>${currentLang === 'ru' ? 'Альянс' : 'Alliance'}:</strong> ${getTxt(rawAlliance)}</p>
-	      //  <p><strong>${currentLang === 'ru' ? 'Раса' : 'Race'}:</strong> ${getTxt(rawRace)}</p>
-	      //</div>
+		  <!--</div> -->
+	      <!--<div class="hero-info"> -->
+	      <!--  <p><strong>${currentLang === 'ru' ? 'Альянс' : 'Alliance'}:</strong> ${getTxt(rawAlliance)}</p> -->
+	      <!--  <p><strong>${currentLang === 'ru' ? 'Раса' : 'Race'}:</strong> ${getTxt(rawRace)}</p> -->
+	      <!--</div> -->
 	      <div class="hero-footer">
 	        <div><span class="info-label">Base ID</span><span class="info-value"> ${hero.data.base_character_id}</span></div>
 	        <div><span class="info-label">MAX Star</span><span class="info-value"> ${'★'.repeat(hero.data.max_stardom || 0)}</span></div>
