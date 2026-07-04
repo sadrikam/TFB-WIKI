@@ -412,24 +412,24 @@ function updateDisplay() {
   const sortValue = document.getElementById('sortMIX').value;
 
   let filtered = heroesData.filter(hero => {
-    const matchesSearch = hero.name.toLowerCase().includes(searchQuery);
-    const matchesType = typeFilter === 'all' || hero.type === typeFilter;
-    const matchesClass = classFilter === 'all' || String(hero.class) === classFilter;
-    const matchesAlliance = allianceFilter === 'all' || String(hero.alliance) === allianceFilter;
-    const matchesRace = raceFilter === 'all' || String(hero.race) === raceFilter;
+    const matchesSearch = hero.data.name.toLowerCase().includes(searchQuery);
+    const matchesType = typeFilter === 'all' || hero.data.character_type === typeFilter;
+    const matchesClass = classFilter === 'all' || String(hero.data.class_id) === classFilter;
+    const matchesAlliance = allianceFilter === 'all' || String(hero.data.alliance_id) === allianceFilter;
+    const matchesRace = raceFilter === 'all' || String(hero.data.race_id) === raceFilter;
 
     return matchesSearch && matchesType && matchesClass && matchesAlliance && matchesRace;
   });
 
   // Сортировка
   if (sortValue === 'ascName') {
-    filtered.sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+    filtered.sort((a, b) => a.data.name.localeCompare(b.data.name, 'ru'));
   } else if (sortValue === 'descName') {
-    filtered.sort((a, b) => b.name.localeCompare(a.name, 'ru'));
+    filtered.sort((a, b) => b.data.name.localeCompare(a.data.name, 'ru'));
   } else if (sortValue === 'ascID') {
-    filtered.sort((a, b) => a.id - b.id);
+    filtered.sort((a, b) => a.data.base_character_id - b.data.base_character_id);
   } else if (sortValue === 'descID') {
-    filtered.sort((a, b) => b.id - a.id);
+    filtered.sort((a, b) => b.data.base_character_id - a.data.base_character_id);
   }
 
   renderCards(filtered);
