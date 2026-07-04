@@ -199,8 +199,8 @@
     <!-- Переключатель языков -->
     <div style="text-align: right; margin-bottom: 10px;">
         <select id="languageSelect" style="padding: 5px 10px; font-size: 14px; min-width: auto; cursor: pointer;">
-            <option value="ru" id="btnRu">Русский</option>
-            <option value="en" id="btnEn">English</option>
+            <option value="ru">Русский</option>
+            <option value="en">English</option>
         </select>
     </div>
     <h1 id="mainTitle">Герои</h1>
@@ -208,12 +208,12 @@
     <!-- Панель управления -->
     <div class="controls">
         <div class="control-group">
-            <label for="searchInput">Поиск по имени</label>
-            <input type="text" id="searchInput" placeholder="Введите имя...">
+            <label for="search" id="searchLabel">Поиск по имени</label>
+            <input type="text" id="search" placeholder="Введите имя...">
         </div>
         <div class="control-group">
-            <label for="filterType">Тип персонажа</label>
-            <select id="filterType">
+            <label for="selectType">Тип персонажа</label>
+            <select id="selectType">
                 <option value="all">Все типы</option>
 				<option value="MAIN">Главный герой</option>
                 <option value="SECONDARY">Биом</option>
@@ -223,8 +223,8 @@
              </select>
         </div>
 		<div class="control-group">
-            <label for="filterClass">Класс персонажа</label>
-            <select id="filterClass">
+            <label for="selectClass">Класс персонажа</label>
+            <select id="selectClass">
                 <option value="all">Все классы</option>
 				<option value=1>Сила</option>
                 <option value=2>Ловкость</option>
@@ -232,8 +232,8 @@
              </select>
         </div>
 		<div class="control-group">
-            <label for="filterAlliance">Альянс персонажа</label>
-            <select id="filterAlliance">
+            <label for="selectAlliance">Альянс персонажа</label>
+            <select id="selectAlliance">
                 <option value="all">Все альянсы</option>
 				<option value=1>Осквернитель</option>
                 <option value=2>Жрец</option>
@@ -243,8 +243,8 @@
              </select>
         </div>
 		<div class="control-group">
-            <label for="filterRace">Раса персонажа</label>
-            <select id="filterRace">
+            <label for="selectRace">Раса персонажа</label>
+            <select id="selectRace">
                 <option value="all">Все расы</option>
 				<option value=1>Люди</option>
                 <option value=2>Звери</option>
@@ -612,8 +612,11 @@
 	filterAlliance.addEventListener('change', updateDisplay);
 	filterRace.addEventListener('change', updateDisplay);
 	sortMIX.addEventListener('change', updateDisplay);
-    document.getElementById('btnRu').addEventListener('click', () => setLanguage('ru'));
-	document.getElementById('btnEn').addEventListener('click', () => setLanguage('en'));
+	document.getElementById('languageSelect').addEventListener('change', function(event) {
+	    setLanguage(event.target.value);
+	});
+    //document.getElementById('btnRu').addEventListener('click', () => setLanguage('ru'));
+	//document.getElementById('btnEn').addEventListener('click', () => setLanguage('en'));
     // Инициализация
     loadHeroes();
 </script>
