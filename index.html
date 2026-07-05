@@ -232,73 +232,82 @@
 <body>
 
 <div class="container">
-    <button class="lang-switcher" id="langBtn" onclick="toggleLanguage()">EN</button>
-    <h1 id="mainTitle">Герои</h1>
+    <header class="header-bar">
+        <div class="header-left"><h1 id="mainTitle">Герои</h1></div>
+        <div class="header-right">
+            <button class="lang-switcher" id="langBtn" onclick="toggleLanguage()">EN</button>
+            <button class="menu-toggle" id="menuToggleBtn" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
 
-    <!-- Панель управления -->
-    <div class="controls">
-        <div class="control-group">
-            <label for="search" data-i18n="ui.searchLabel">Поиск по имени</label>
-            <input type="text" id="search" data-i18n="ui.searchPlaceholder" placeholder="Введите имя...">
-        </div>
-        <div class="control-group">
-            <label for="filterType" data-i18n="ui.labelType">Тип персонажа</label>
-            <select id="filterType">
-                <option value="all" data-i18n="options.allTypes">Все типы</option>
-				<option value="MAIN" data-i18n="options.typeMAIN">Главный герой</option>
-                <option value="SECONDARY" data-i18n="options.typeSECONDARY">Биом</option>
-                <option value="CONTRACT" data-i18n="options.typeCONTRACT">Контракт</option>
-				<option value="HUNT" data-i18n="options.typeHUNT">Охота</option>
-				<option value="PREMIUM" data-i18n="options.typePREMIUM">Премиум</option>
-             </select>
-        </div>
-		<div class="control-group">
-            <label for="filterClass" data-i18n="ui.labelClass">Класс персонажа</label>
-            <select id="filterClass">
-                <option value="all" data-i18n="options.allClasses">Все классы</option>
-				<option value=1 data-i18n="options.class1">Сила</option>
-                <option value=2 data-i18n="options.class2">Ловкость</option>
-                <option value=3 data-i18n="options.class3">Интеллект</option>
-             </select>
-        </div>
-		<div class="control-group">
-            <label for="filterAlliance" data-i18n="ui.labelAlliance">Альянс персонажа</label>
-            <select id="filterAlliance">
-                <option value="all" data-i18n="options.allAlliances">Все альянсы</option>
-				<option value=1 data-i18n="options.alliance1">Осквернитель</option>
-                <option value=2 data-i18n="options.alliance2">Жрец</option>
-                <option value=3 data-i18n="options.alliance3">Убийца</option>
-				<option value=4 data-i18n="options.alliance4">Боец</option>
-                <option value=5 data-i18n="options.alliance5">Защитник</option>
-             </select>
-        </div>
-		<div class="control-group">
-            <label for="filterRace" data-i18n="ui.labelRace">Раса персонажа</label>
-            <select id="filterRace">
-                <option value="all" data-i18n="options.allRaces">Все расы</option>
-				<option value=1 data-i18n="options.race1">Люди</option>
-                <option value=2 data-i18n="options.race2">Звери</option>
-                <option value=3 data-i18n="options.race3">Гномы</option>
-				<option value=4 data-i18n="options.race4">Демоны</option>
-                <option value=5 data-i18n="options.race5">Нежить</option>
-                <option value=6 data-i18n="options.race6">Эльфы</option>
-				<option value=7 data-i18n="options.race7">Орки</option>
-                <option value=8 data-i18n="options.race8">Механизмы</option>
-                <option value=9 data-i18n="options.race9">Энты</option>
-				<option value=10 data-i18n="options.race10">Перворожденные</option>
-             </select>
-        </div>
-        <div class="control-group">
-            <label for="sortMIX" data-i18n="ui.labelSort">Сортировка</label>
-            <select id="sortMIX">
-                <option value="none" data-i18n="options.sortNone">Без сортировки</option>
-                <option value="ascName" data-i18n="options.sortAscName">По возрастанию имени</option>
-                <option value="descName" data-i18n="options.sortDescName">По убыванию имени</option>
-				<option value="ascBaseID" data-i18n="options.sortAscBaseID">По возрастанию ID</option>
-                <option value="descBaseID" data-i18n="options.sortDescBaseID">По убыванию ID</option>
-            </select>
-        </div>
-    </div>
+		<!-- Панель управления -->
+		<div class="controls" id="controlsMenu">
+	       <div class="control-group">
+	            <label for="search" data-i18n="ui.searchLabel">Поиск по имени</label>
+	            <input type="text" id="search" data-i18n="ui.searchPlaceholder" placeholder="Введите имя...">
+	        </div>
+	        <div class="control-group">
+	            <label for="filterType" data-i18n="ui.labelType">Тип персонажа</label>
+	            <select id="filterType">
+	                <option value="all" data-i18n="options.allTypes">Все типы</option>
+					<option value="MAIN" data-i18n="options.typeMAIN">Главный герой</option>
+	                <option value="SECONDARY" data-i18n="options.typeSECONDARY">Биом</option>
+	                <option value="CONTRACT" data-i18n="options.typeCONTRACT">Контракт</option>
+					<option value="HUNT" data-i18n="options.typeHUNT">Охота</option>
+					<option value="PREMIUM" data-i18n="options.typePREMIUM">Премиум</option>
+	             </select>
+	        </div>
+			<div class="control-group">
+	            <label for="filterClass" data-i18n="ui.labelClass">Класс персонажа</label>
+	            <select id="filterClass">
+	                <option value="all" data-i18n="options.allClasses">Все классы</option>
+					<option value=1 data-i18n="options.class1">Сила</option>
+	                <option value=2 data-i18n="options.class2">Ловкость</option>
+	                <option value=3 data-i18n="options.class3">Интеллект</option>
+	             </select>
+	        </div>
+			<div class="control-group">
+	            <label for="filterAlliance" data-i18n="ui.labelAlliance">Альянс персонажа</label>
+	            <select id="filterAlliance">
+	                <option value="all" data-i18n="options.allAlliances">Все альянсы</option>
+					<option value=1 data-i18n="options.alliance1">Осквернитель</option>
+	                <option value=2 data-i18n="options.alliance2">Жрец</option>
+	                <option value=3 data-i18n="options.alliance3">Убийца</option>
+					<option value=4 data-i18n="options.alliance4">Боец</option>
+	                <option value=5 data-i18n="options.alliance5">Защитник</option>
+	             </select>
+	        </div>
+			<div class="control-group">
+	            <label for="filterRace" data-i18n="ui.labelRace">Раса персонажа</label>
+	            <select id="filterRace">
+	                <option value="all" data-i18n="options.allRaces">Все расы</option>
+					<option value=1 data-i18n="options.race1">Люди</option>
+	                <option value=2 data-i18n="options.race2">Звери</option>
+	                <option value=3 data-i18n="options.race3">Гномы</option>
+					<option value=4 data-i18n="options.race4">Демоны</option>
+	                <option value=5 data-i18n="options.race5">Нежить</option>
+	                <option value=6 data-i18n="options.race6">Эльфы</option>
+					<option value=7 data-i18n="options.race7">Орки</option>
+	                <option value=8 data-i18n="options.race8">Механизмы</option>
+	                <option value=9 data-i18n="options.race9">Энты</option>
+					<option value=10 data-i18n="options.race10">Перворожденные</option>
+	             </select>
+	        </div>
+	        <div class="control-group">
+	            <label for="sortMIX" data-i18n="ui.labelSort">Сортировка</label>
+	            <select id="sortMIX">
+	                <option value="none" data-i18n="options.sortNone">Без сортировки</option>
+	                <option value="ascName" data-i18n="options.sortAscName">По возрастанию имени</option>
+	                <option value="descName" data-i18n="options.sortDescName">По убыванию имени</option>
+					<option value="ascBaseID" data-i18n="options.sortAscBaseID">По возрастанию ID</option>
+	                <option value="descBaseID" data-i18n="options.sortDescBaseID">По убыванию ID</option>
+	            </select>
+	        </div>
+	    </div>
+    </header>
+    <div class="grid" id="heroesGrid"></div>
+</div>
 
     <!-- Сетка с карточками -->
     <div class="grid" id="heroesGrid"></div>
