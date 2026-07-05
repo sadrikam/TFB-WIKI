@@ -19,6 +19,7 @@
             color: var(--text-color);
             margin: 0;
             padding: 20px;
+			padding-top: 80px;
         }
 
         .container {
@@ -55,8 +56,22 @@
         }
 
         /* Панель управления */
-        .controls {
-            display: flex;
+		.header-bar {
+		    position: fixed; top: 0; left: 0; right: 0; height: 70px;
+		    background-color: var(--card-bg); display: flex; justify-content: space-between;
+		    align-items: center; padding: 0 30px; z-index: 1000;
+		}
+		.controls {
+
+		}
+		.controls.open { display: flex; }
+		.menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+		.menu-toggle.open span:nth-child(2) { opacity: 0; }
+		.menu-toggle.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+		
+		.controls {
+            /* display: flex; */
             flex-wrap: wrap;
             gap: 15px;
             background-color: var(--card-bg);
@@ -64,6 +79,12 @@
             border-radius: 8px;
             margin-bottom: 30px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+			position: absolute;
+			top: 70px;
+			left: 0;
+			right: 0;
+			background-color: var(--card-bg);
+		    display: none;
         }
 
         .control-group {
@@ -393,6 +414,11 @@ if (!text) return '';
   };
 
   return text.split('').map(char => rules[char] !== undefined ? rules[char] : char).join('');
+}
+
+function toggleMenu() {
+    document.getElementById('menuToggleBtn').classList.toggle('open');
+    document.getElementById('controlsMenu').classList.toggle('open');
 }
 	
 // 5. Переключение языка интерфейса и карточек (ИСПРАВЛЕНО ДЛЯ PLACEHOLDER)
