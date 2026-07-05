@@ -306,7 +306,13 @@ const typeMapper = { 'MAIN': 'ГЛАВНЫЙ ГЕРОЙ', 'HUNT': 'ОХОТА', 
 const translations = {
   ru: {
     ui: { title: "База Героев", mainTitle: "Герои", searchLabel: "Поиск по имени", searchPlaceholder: "Введите имя..." },
-	options: { allTypes: "Все типы", MAIN: "Главный герой", HUNT: "Охота", SECONDARY: "Биом", CONTRACT: "Контракт", PREMIUM: "Премиум" },
+	options: {
+      allTypes: "Все типы", typeMAIN: "Главный герой", typeSECONDARY: "Биом", typeCONTRACT: "Контракт", typeHUNT: "Охота", typePREMIUM: "Премиум",
+      allClasses: "Все классы", class1: "Сила", class2: "Ловкость", class3: "Интеллект",
+      allAlliances: "Все альянсы", alliance1: "Осквернитель", alliance2: "Жрец", alliance3: "Убийца", alliance4: "Боец", alliance5: "Защитник",
+      allRaces: "Все расы", race1: "Люди", race2: "Звери", race3: "Гномы", race4: "Демоны", race5: "Нежить", race6: "Эльфы", race7: "Орки", race8: "Механизмы", race9: "Энты", race10: "Перворожденные",
+      sortNone: "Без сортировки", sortAscName: "По возрастанию имени", sortDescName: "По убыванию имени", sortAscBaseID: "По возрастанию ID", sortDescBaseID: "По убыванию ID"
+	},
     error: "Ошибка: ",
     noResults: "Персонажи не найдены",
     data: {
@@ -320,7 +326,13 @@ const translations = {
   },
   en: {
     ui: { title: "Heroes Database", mainTitle: "Heroes", searchLabel: "Search by name", searchPlaceholder: "Enter name..." },
-	options: { allTypes: "All types", MAIN: "Main Hero", HUNT: "Hunt", SECONDARY: "Biom", CONTRACT: "Contract", PREMIUM: "Premium" },
+    options: {
+      allTypes: "All types", typeMAIN: "Main Hero", typeSECONDARY: "Biom", typeCONTRACT: "Contract", typeHUNT: "Hunt", typePREMIUM: "Premium",
+      allClasses: "All classes", class1: "Strength", class2: "Agility", class3: "Intelligence",
+      allAlliances: "All alliances", alliance1: "Defiler", alliance2: "Priest", alliance3: "Assassin", alliance4: "Fighter", alliance5: "Defender",
+      allRaces: "All races", race1: "Humans", race2: "Beasts", race3: "Dwarves", race4: "Demons", race5: "Undead", race6: "Elves", race7: "Orcs", race8: "Mechanisms", race9: "Ents", race10: "Firstborn",
+      sortNone: "No sorting", sortAscName: "Name Ascending", sortDescName: "Name Descending", sortAscBaseID: "ID Ascending", sortDescBaseID: "ID Descending"
+    },
     error: "Error: ",
     noResults: "No characters found",
     data: {
