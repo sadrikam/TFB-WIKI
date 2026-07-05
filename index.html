@@ -213,6 +213,20 @@
             color: var(--text-muted);
             font-size: 18px;
         }
+		.info-inline-row {
+		  display: flex;
+		  justify-content: space-between; /* Распределит Base ID влево, а кнопки звезд вправо */
+		  align-items: center;
+		  font-size: 14px;
+		  border-top: 1px solid #444;
+		  padding-top: 12px;
+		  margin-top: auto;
+		}
+		.info-inline-row div {
+		  display: flex;
+		  align-items: center;
+		  gap: 6px; /* Отступ между надписью и цифрой/звездами */
+		}
     </style>
 </head>
 <body>
@@ -438,10 +452,16 @@ function renderCards(data) {
 				<span class="badge" style="background: #F7BF64;">${getTxt(rawAlliance)}</span>
 			</div>
 		  </div>
-	      <div class="hero-footer">
-	        <div><span class="info-label">Base ID</span><span class="info-value"> ${hero.data.base_character_id}</span></div>
-	        <div><span class="info-label">MAX Star</span><span class="info-value"> ${'★'.repeat(hero.data.max_stardom || 0)}</span></div>
-	      </div>
+			<div class="info-inline-row">
+			  <div>
+			    <span class="info-label">Base ID</span>
+			    <span class="info-value">${hero.data.base_character_id}</span>
+			  </div>
+			  <div>
+			    <span class="info-label">MAX Star</span>
+			    <span class="info-value" style="color: #F7BF64;">${'★ '.repeat(hero.data.max_stardom || 0)}</span>
+			  </div>
+			</div>
 	  </div>
     `;
     grid.appendChild(card);
