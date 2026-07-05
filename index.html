@@ -384,20 +384,32 @@ if (!text) return '';
   return text.split('').map(char => rules[char] !== undefined ? rules[char] : char).join('');
 }
 	
-// 5. Переключение языка интерфейса и карточек
+// 5. Переключение языка интерфейса и карточек (ИСПРАВЛЕНО ДЛЯ PLACEHOLDER)
 function toggleLanguage() {
   currentLang = currentLang === 'ru' ? 'en' : 'ru';
   document.documentElement.lang = currentLang;
-  
+
   // Меняем текст кнопки
   document.getElementById('langBtn').textContent = currentLang === 'ru' ? 'EN' : 'RU';
-  // Переводим статичные заголовки
+
+  // Переводим статичные заголовки страницы
   document.getElementById('mainTitle').textContent = translations[currentLang].ui.mainTitle;
   document.title = translations[currentLang].ui.title;
+
+  // Бежим по всем элементам с атрибутом data-i18n
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const [section, key] = el.getAttribute('data-i18n').split('.');
-    el.textContent = translations[currentLang][section][key];
+    const translationText = translations[currentLang][section][key];
+
+    // ИСПРАВЛЕНИЕ: Если это поле ввода (input), переводим его placeholder
+    if (el.tagName === 'INPUT') {
+      el.placeholder = translationText;
+    } else {
+      // Для всех остальных элементов (label, option) меняем обычный текст
+      el.textContent = translationText;
+    }
   });
+
   // Перерисовываем карточки с новым языком
   updateDisplay();
 }
