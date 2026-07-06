@@ -114,13 +114,39 @@
         }
 
         /* Сетка карточек */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
+		/* Базовая сетка адаптивна по умолчанию (когда нет спец-классов) */
+		.grid {
+		    display: grid;
+		    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		    gap: 25px;
+		}
+		
+		/* Режим: 1 карточка в строке */
+		.grid.view-mode-1 {
+		    grid-template-columns: 1fr;
+		}
+		
+		/* Режим: 2 карточки в строке */
+		.grid.view-mode-2 {
+		    grid-template-columns: repeat(2, 1fr);
+		}
+		
+		/* Масштабирование текста в два раза при режиме "2 в строке" */
+		.grid.view-mode-2 .hero-name {
+		    font-size: 10px; /* Было 20px */
+		}
+		.grid.view-mode-2 .badge {
+		    font-size: 6px; /* Было 12px */
+		    padding: 1.5px 4px;
+		}
+		.grid.view-mode-2 .info-inline-row {
+		    font-size: 7px; /* Было 14px */
+		}
+		.grid.view-mode-2 .info-label {
+		    font-size: 5.5px; /* Было 11px */
+		}
 
-        /* Карточка */
+		/* Карточка */
         .hero-card {
             background-color: var(--card-bg);
             border-radius: 10px;
@@ -257,6 +283,10 @@
         <div class="header-left"><h1 id="mainTitle">Герои</h1></div>
         <div class="header-right">
             <button class="lang-switcher" id="langBtn" onclick="toggleLanguage()">EN</button>
+			
+			<!-- Новая кнопка переключения режимов отображения -->
+    		<button class="lang-switcher" id="viewModeBtn" onclick="toggleViewMode()">Вид: Авто</button>
+			
             <button class="menu-toggle" id="menuToggleBtn" onclick="toggleMenu()">
                 <span></span><span></span><span></span>
             </button>
@@ -418,6 +448,31 @@ function toggleMenu() {
     document.getElementById('menuToggleBtn').classList.toggle('open');
     document.getElementById('controlsMenu').classList.toggle('open');
 }
+
+// Переменная для хранения текущего режима (может быть: 'auto', '1', '2')
+let currentViewMode = 'auto';
+
+function toggleViewMode() {
+    const gridEl = document.getElementById('heroesGrid');
+    const viewBtn = document.getElementById('viewModeBtn');
+    
+    // Циклическое переключение: Авто -> 1 в строку -> 2 в строку -> Авто
+    if (currentViewMode === 'auto') {
+        currentViewMode = '1';
+        gridEl.classList.add('view-mode-1');
+        gridEl.classList.remove('view-mode-2');
+        viewBtn.textContent = currentLang === 'ru' ? 'Вид: 1' : 'View: 1';
+    } else if (currentViewMode === '1') {
+        currentViewMode = '2';
+        gridEl.classList.add('view-mode-2');
+        gridEl.classList.remove('view-mode-1');
+        viewBtn.textContent = currentLang === 'ru' ? 'Вид: 2' : 'View: 2';
+    } else {
+        currentViewMode = 'auto';
+        gridEl.classList.remove('view-mode-1', 'view-mode-2');
+        viewBtn.textContent = currentLang === 'ru' ? 'Вид: Авто' : 'View: Auto';
+    }
+}
 	
 // 5. Переключение языка интерфейса и карточек (ИСПРАВЛЕНО ДЛЯ PLACEHOLDER)
 function toggleLanguage() {
@@ -444,7 +499,15 @@ function toggleLanguage() {
       el.textContent = translationText;
     }
   });
-
+	// Внутри функции toggleLanguage() добавьте этот блок в самый конец:
+	const viewBtn = document.getElementById('viewModeBtn');
+	if (currentViewMode === 'auto') {
+	    viewBtn.textContent = currentLang === 'ru' ? 'Вид: Авто' : 'View: Auto';
+	} else if (currentViewMode === '1') {
+	    viewBtn.textContent = currentLang === 'ru' ? 'Вид: 1' : 'View: 1';
+	} else if (currentViewMode === '2') {
+	    viewBtn.textContent = currentLang === 'ru' ? 'Вид: 2' : 'View: 2';
+	}
   // Перерисовываем карточки с новым языком
   updateDisplay();
 }
