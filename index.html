@@ -145,7 +145,12 @@
 		.grid.view-mode-2 .info-label {
 		    font-size: 5.5px; /* Было 11px */
 		}
-
+		.grid.view-mode-2 .info-inline-row {
+		    font-size: 7px;
+		    flex-direction: column; /* Перестраивает элементы в столбик */
+		    align-items: flex-start; /* Выравнивает текст по левому краю */
+		    gap: 4px; /* Добавляет небольшой отступ между Base ID и MAX Star */
+		}
 		/* Карточка */
         .hero-card {
             background-color: var(--card-bg);
