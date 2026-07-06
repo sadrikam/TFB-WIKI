@@ -72,15 +72,9 @@
 		
 		/* Скрытие меню по умолчанию */
 		.controls {
-		    display: none; position: absolute; top: 70 px; left: 0; right: 0;
-		    /* Заменяем var(--card-bg) на RGBA с 30% непрозрачности (0.30) */
-		    background-color: rgba(45, 45, 45, 0.30);
-		    /* Необязательно: добавляет размытие заднего плана */
-		    backdrop-filter: blur(10px);
-		    -webkit-backdrop-filter: blur(10px);
-		    
-		    flex-wrap: wrap; gap: 15 px;
-		    padding: 20 px; box-shadow: 0 10 px 15 px rgba( 0, 0, 0, 0.5); z-index: 999;
+			display: none; position: absolute; top: 70px; left: 0; right: 0;
+		    background-color: var(--card-bg); flex-wrap: wrap; gap: 15px;
+		    padding: 20px; box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); z-index: 999;
 		}
 		.controls.open { display: flex; }
 		
