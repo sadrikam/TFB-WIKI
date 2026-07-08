@@ -12,6 +12,7 @@
             --text-muted: #aaaaaa;
             --accent: #00adb5;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
@@ -197,6 +198,13 @@
             gap: 10px;
         }
 
+        .hero-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            background-color: #111;
+        }
+
         .hero-name {
             font-size: 20px;
             font-weight: bold;
@@ -271,18 +279,6 @@
 		  display: flex;
 		  align-items: center;
 		  gap: 6px; /* Отступ между надписью и цифрой/звездами */
-		}
-
-		/* Красивый тонкий скроллбар для контента модального окна */
-		#heroModal div::-webkit-scrollbar {
-		    width: 6px;
-		}
-		#heroModal div::-webkit-scrollbar-track {
-		    background: #111;
-		}
-		#heroModal div::-webkit-scrollbar-thumb {
-		    background: #00adb5;
-		    border-radius: 3px;
 		}
     </style>
 </head>
@@ -555,9 +551,9 @@ function renderCards(data) {
 	
     card.className = 'hero-card';
     card.innerHTML = `
-	  <div class="hero-avatar-container" onclick="showHeroDetails(${hero.data.base_character_id})" style="cursor: pointer;">
-		<img class="hero-avatar" src="${hero.data.avatar}" alt="${hero.data.name}" onerror="this.src='https://placeholder.com'">
-	  </div>
+      <div class="hero-avatar-container">
+        <img class="hero-avatar" src="${hero.data.avatar}" alt="${hero.data.name}" onerror="this.src='https://placeholder.com'">
+      </div>
       <div class="hero-card-content">
 		  <div class="hero-name">
 		    ${currentLang === 'ru' ? hero.data.name : transliterate(hero.data.name)}
@@ -630,156 +626,7 @@ document.getElementById('sortMIX').addEventListener('change', updateDisplay);
 
 // Запуск приложения
 loadHeroes();
-
-/**
- * Открывает модальное окно с подробной информацией о способностях героя
- * @param {number} heroId - Уникальный base_character_id героя
- */
-function openHeroModal(heroId) {
-    // 1. Ищем объект героя в глобальном массиве данных (предполагаем, что он называется heroesData или data)
-    // Замените "heroesData", если ваш глобальный массив с JSON называется иначе
-    const hero = heroes.find(h => h.data.base_character_id === heroId);
-    
-    // Если вдруг герой не найден, останавливаем работу функции
-    if (!hero) {
-        console.error("Герой с ID " + heroId + " не найден в базе данных.");
-        return;
-    }
-
-    // 2. Получаем доступ к элементам модального окна на странице
-    const modal = document.getElementById('heroModal');
-    const modalContent = document.getElementById('modalContent');
-    
-    // 3. Начинаем формировать HTML-структуру внутри окна. Выводим шапку героя.
-    let htmlResult = `
-        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 15px;">
-            <img src="${hero.data.avatar}" style="width: 60px; height: 60px; border-radius: 8px; object-fit: cover; border: 1px solid #00adb5;">
-            <div>
-                <h2 style="margin: 0; color: #00adb5; font-size: 24px;">${hero.data.name}</h2>
-                <span style="font-size: 12px; color: #888; background: #222; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">
-                    ID: ${hero.data.base_character_id} | ${hero.data.character_type}
-                </span>
-            </div>
-        </div>
-        <h3 style="margin: 0 0 15px 0; font-size: 18px; color: #fff;">Способности персонажа:</h3>
-    `;
-
-    // 4. Проверяем, есть ли у героя массив способностей и не пустой ли он
-    if (hero.data.abilities && hero.data.abilities.length > 0) {
-        
-        // Открываем контейнер для списка способностей
-        htmlResult += `<div style="display: flex; flex-direction: column; gap: 15px;">`;
-
-        // Перебираем каждую способность через цикл forEach
-        hero.data.abilities.forEach(ability => {
-            htmlResult += `
-                <div style="display: flex; gap: 15px; background: #222; padding: 12px; border-radius: 8px; border-left: 3px solid #00adb5;">
-                    <!-- Иконка способности -->
-                    <div style="flex-shrink: 0;">
-                        <img src="${ability.icon}" alt="${ability.name}" style="width: 42px; height: 42px; border-radius: 6px; background-color: #111; display: block;" onerror="this.src='https://placehold.co?'">
-                    </div>
-                    <!-- Текстовое описание -->
-                    <div style="flex-grow: 1;">
-                        <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 16px; font-weight: 600;">${ability.name}</h4>
-                        <p style="margin: 0; color: #ccc; font-size: 13px; line-height: 1.4;">${ability.description}</p>
-                        <!-- Опционально: вывод шанса срабатывания, если он не равен 1 -->
-                        ${ability.chance < 1 ? `<span style="font-size: 11px; color: #00adb5; display: inline-block; margin-top: 4px;">Шанс: ${ability.chance * 100}%</span>` : ''}
-                    </div>
-                </div>
-            `;
-        });
-
-        htmlResult += `</div>`; // Закрываем контейнер списка
-        
-    } else {
-        // Если массив abilities пуст или отсутствует в JSON
-        htmlResult += `<p style="color: #888; font-style: italic;">У данного персонажа нет особых способностей.</p>`;
-    }
-
-    // 5. Записываем сгенерированный HTML-код внутрь нашего модального окна
-    modalContent.innerHTML = htmlResult;
-
-    // 6. Показываем модальное окно, изменив display с 'none' на 'flex'
-    modal.style.display = 'flex';
-}
-
-/**
- * Закрывает модальное окно
- */
-function closeModal() {
-    const modal = document.getElementById('heroModal');
-    modal.style.display = 'none';
-}
-
-// Дополнительно: закрытие окна при клике на серую область вокруг него
-window.addEventListener('click', function(event) {
-    const modal = document.getElementById('heroModal');
-    if (event.target === modal) {
-        closeModal();
-    }
-});
-	
 </script>
 
-<!-- ======================================================================= -->
-<!-- ШАГ 2: МОДАЛЬНОЕ ОКНО ДЛЯ ОТОБРАЖЕНИЯ СПОСОБНОСТЕЙ И ПОЛЕЙ ГЕРОЯ        -->
-<!-- ======================================================================= -->
-
-<!-- Внешний полупрозрачный фон (затемнение всей страницы).
-     display: none; — окно изначально скрыто.
-     position: fixed; — зафиксировано на экране при прокрутке.
-     z-index: 2000; — гарантирует, что окно будет поверх всех остальных элементов. -->
-<div id="heroModal" class="modal" style="
-    display: none; 
-    position: fixed; 
-    z-index: 2000; 
-    left: 0; 
-    top: 0; 
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0, 0, 0, 0.85); 
-    backdrop-filter: blur(5px); /* Легкое размытие заднего плана для красоты */
-    align-items: center; 
-    justify-content: center;
-">
-    
-    <!-- Само диалоговое окно (контейнер для контента).
-         overflow-y: auto; — если способностей у героя много, внутри окна появится прокрутка. -->
-    <div style="
-        background-color: #1a1a1a; 
-        color: #ffffff;
-        padding: 30px; 
-        border-radius: 12px; 
-        max-width: 600px; 
-        width: 90%; 
-        max-height: 85vh;
-        overflow-y: auto;
-        position: relative; 
-        border: 2px solid #00adb5; /* Фирменная неоновая рамка под стиль сайта */
-        box-shadow: 0 10px 30px rgba(0, 173, 181, 0.3); /* Свечение рамки */
-    ">
-        
-        <!-- Кнопка закрытия ("крестик") в правом верхнем углу окна -->
-        <span onclick="closeModal()" style="
-            position: absolute; 
-            top: 15px; 
-            right: 20px; 
-            color: #888; 
-            font-size: 32px; 
-            font-weight: bold; 
-            cursor: pointer;
-            transition: color 0.2s;
-        " onmouseover="this.style.color='#00adb5'" onmouseout="this.style.color='#888'">
-            &times;
-        </span>
-
-        <!-- Динамический блок, куда JavaScript будет вставлять всю информацию о герое.
-             Именно сюда попадут имя, тип, раса и весь список способностей (abilities). -->
-        <div id="modalContent">
-            <!-- Этот контент сформируется автоматически в Шаге 3 -->
-        </div>
-
-    </div>
-</div>
 </body>
 </html>
