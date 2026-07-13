@@ -280,6 +280,190 @@
 		  align-items: center;
 		  gap: 6px; /* Отступ между надписью и цифрой/звездами */
 		}
+		
+		.abilities-list {
+          margin-top: 16px;
+          padding-top: 12px;
+          border-top: 1px solid #333;
+        }
+        
+        .abilities-title {
+          font-size: 14px;
+          color: var(--accent);
+          margin: 0 0 12px 0;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+        
+        .ability-item {
+          display: flex;
+          gap: 10px;
+          align-items: flex-start;
+          margin-bottom: 12px;
+          background: rgba(255,255,255,0.03);
+          padding: 8px;
+          border-radius: 6px;
+        }
+        
+        .ability-item:last-child {
+          margin-bottom: 0;
+        }
+        
+        .ability-icon {
+          width: 32px;
+          height: 32px;
+          object-fit: contain;
+          flex-shrink: 0;
+        }
+        
+        .ability-content {
+          flex: 1;
+          min-width: 0; /* чтобы текст корректно обрезался при overflow */
+        }
+        
+        .ability-name {
+          font-size: 13px;
+          color: #fff;
+          line-height: 1.2;
+          margin: 0 0 4px 0;
+        }
+        
+        .ability-desc {
+          font-size: 11px;
+          color: var(--text-muted);
+          line-height: 1.3;
+          margin: 0 0 6px 0;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        
+        .ability-chance {
+          font-size: 11px;
+          color: #aaa;
+          background: #222;
+          padding: 2px 6px;
+          border-radius: 4px;
+        }
+        
+        .no-abilities {
+          font-size: 12px;
+          color: var(--text-muted);
+          text-align: center;
+          padding: 12px;
+        }
+        
+        /* Контейнер списка способностей */
+        .abilities-list {
+          margin-top: 16px;
+          padding-top: 12px;
+          border-top: 1px solid #333;
+        }
+        
+        /* Заголовок-кнопка для сворачивания/разворачивания */
+        .abilities-toggle-btn {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          background: none;
+          border: none;
+          color: var(--accent);
+          font-size: 14px;
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          cursor: pointer;
+          padding: 0;
+          margin: 0 0 12px 0;
+          outline: none;
+        }
+        
+        .abilities-toggle-btn::after {
+          content: '+';
+          font-size: 18px;
+          line-height: 1;
+          transition: transform 0.3s ease;
+        }
+        
+        .abilities-toggle-btn.open::after {
+          content: '−';
+        }
+        
+        .abilities-toggle-btn.open {
+          color: #fff;
+        }
+        
+        /* Скрываем список способностей по умолчанию */
+        .abilities-content {
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          transition: max-height 0.3s ease, opacity 0.3s ease;
+        }
+        
+        /* Показываем список способностей, когда кнопка в состоянии open */
+        .abilities-content.visible {
+          max-height: 500px; /* подбери значение, чтобы вместить все способности */
+          opacity: 1;
+        }
+        
+        /* Отдельные элементы способностей */
+        .ability-item {
+          display: flex;
+          gap: 10px;
+          align-items: flex-start;
+          margin-bottom: 12px;
+          background: rgba(255,255,255,0.03);
+          padding: 8px;
+          border-radius: 6px;
+        }
+        
+        .ability-icon {
+          width: 32px;
+          height: 32px;
+          object-fit: contain;
+          flex-shrink: 0;
+        }
+        
+        .ability-content {
+          flex: 1;
+          min-width: 0;
+        }
+        
+        .ability-name {
+          font-size: 13px;
+          color: #fff;
+          line-height: 1.2;
+          margin: 0 0 4px 0;
+        }
+        
+        .ability-desc {
+          font-size: 11px;
+          color: var(--text-muted);
+          line-height: 1.3;
+          margin: 0 0 6px 0;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        
+        .ability-chance {
+          font-size: 11px;
+          color: #aaa;
+          background: #222;
+          padding: 2px 6px;
+          border-radius: 4px;
+        }
+        
+        .no-abilities {
+          font-size: 12px;
+          color: var(--text-muted);
+          text-align: center;
+          padding: 12px;
+        }
     </style>
 </head>
 <body>
@@ -530,6 +714,11 @@ async function loadHeroes() {
   }
 }
 
+function formatNumber(value) {
+  if (typeof value !== 'number') return value;
+  return Number.isInteger(value) ? String(value) : value.toFixed(2).replace(/\.0+$/, '');
+}
+
 // 7. Рендеринг карточек героев
 function renderCards(data) {
   grid.innerHTML = '';
@@ -540,6 +729,7 @@ function renderCards(data) {
   }
 
   data.forEach(hero => {
+    const d = hero.data || {};
     // Получаем эталонные русские значения из мапперов
     const rawType = typeMapper[hero.data.character_type] || hero.data.character_type;
     const rawClass = classMapper[hero.data.class_id] || hero.data.class_id;
@@ -550,6 +740,33 @@ function renderCards(data) {
     const card = document.createElement('div');
 	
     card.className = 'hero-card';
+    
+        // Формируем HTML для способностей
+    let abilitiesHtml = '';
+    if (d.abilities && Array.isArray(d.abilities) && d.abilities.length > 0) {
+      abilitiesHtml = d.abilities.map(ab => {
+        const icon = ab.icon || '';
+        const name = ab.name || 'Без названия';
+        const desc = ab.description || '';
+        const chanceStr = ab.chance !== undefined && ab.chance !== null
+          ? `<span class="ability-chance">Шанс: ${(ab.chance * 100).toFixed(0)}%</span>`
+          : '';
+
+        return `
+          <div class="ability-item">
+            <img class="ability-icon" src="${icon}" alt="${name}" loading="lazy">
+            <div class="ability-content">
+              <strong class="ability-name">${name}</strong>
+              <div class="ability-desc">${desc}</div>
+              ${chanceStr}
+            </div>
+          </div>
+        `;
+      }).join('');
+    } else {
+      abilitiesHtml = '<div class="no-abilities">Способностей нет</div>';
+    }
+    
     card.innerHTML = `
       <div class="hero-avatar-container">
         <img class="hero-avatar" src="${hero.data.avatar}" alt="${hero.data.name}" onerror="this.src='https://placeholder.com'">
@@ -578,8 +795,29 @@ function renderCards(data) {
 			    <span class="info-value" style="color: #F7BF64;">${'★ '.repeat(hero.data.max_stardom || 0)}</span>
 			  </div>
 			</div>
-	  </div>
+			
+        <!-- Блок способностей: свернут по умолчанию -->
+        <div class="abilities-list">
+          <button class="abilities-toggle-btn" type="button" aria-expanded="false" aria-controls="abilities-content-${d.base_character_id}">
+            Способности
+          </button>
+          <div id="abilities-content-${d.base_character_id}" class="abilities-content">
+            ${abilitiesHtml}
+          </div>
+        </div>
+      </div>
     `;
+
+    // Добавляем обработчик клика для разворачивания способностей
+    const toggleBtn = card.querySelector('.abilities-toggle-btn');
+    const contentBlock = card.querySelector('.abilities-content');
+
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = toggleBtn.classList.toggle('open');
+      contentBlock.classList.toggle('visible', isOpen);
+      toggleBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
     grid.appendChild(card);
   });
 }
