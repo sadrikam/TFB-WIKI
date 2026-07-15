@@ -1,0 +1,410 @@
+// 1. Хранилище данных и текущее состояние
+let heroesData = []; 
+const grid = document.getElementById('heroesGrid');
+let currentLang = 'ru'; 
+
+// 2. Исправленные мапперы (поддерживают и числа, и строки в качестве ключей)
+const classMapper = { 1: 'Сила', 2: 'Ловкость', 3: 'Интеллект' };
+const allianceMapper = { 1: 'Осквернитель', 2: 'Жрец', 3: 'Убийца', 4: 'Боец', 5: 'Защитник' };
+const raceMapper = { 1: 'Люди', 2: 'Звери', 3: 'Гномы', 4: 'Демоны', 5: 'Нежить', 6: 'Эльфы', 7: 'Орки', 8: 'Механизмы', 9: 'Энты', 10: 'Перворожденные' };
+const typeMapper = { 'MAIN': 'ГЛАВНЫЙ ГЕРОЙ', 'HUNT': 'ОХОТА', 'PREMIUM': 'ПРЕМИУМ' };
+
+// 3. Централизованный словарь (Данные переводятся с РУССКОГО ключа)
+const translations = {
+  ru: {
+    ui: { title: "База Героев", mainTitle: "Герои", searchLabel: "Поиск по имени", searchPlaceholder: "Введите имя...", labelType: "Тип персонажа",
+		labelClass: "Класс персонажа", labelAlliance: "Альянс персонажа", labelRace: "Раса персонажа", labelSort: "Сортировка", title: "TFBWiKi", wikiTitle: "TFBWiKi" },
+	card: {
+      heroes: { title: "ГЕРОИ", desc: "База персонажей и их способностей" },
+      resources: { title: "РЕСУРСЫ", desc: "Склад, остатки, сортировка и форматирование" },
+      recipes: { title: "РЕЦЕПТЫ", desc: "Крафты, компоненты и требования" }
+    },
+	options: {
+      allTypes: "Все типы", typeMAIN: "Главный герой", typeSECONDARY: "Биом", typeCONTRACT: "Контракт", typeHUNT: "Охота", typePREMIUM: "Премиум",
+      allClasses: "Все классы", class1: "Сила", class2: "Ловкость", class3: "Интеллект",
+      allAlliances: "Все альянсы", alliance1: "Осквернитель", alliance2: "Жрец", alliance3: "Убийца", alliance4: "Боец", alliance5: "Защитник",
+      allRaces: "Все расы", race1: "Люди", race2: "Звери", race3: "Гномы", race4: "Демоны", race5: "Нежить", race6: "Эльфы", race7: "Орки", race8: "Механизмы", race9: "Энты", race10: "Перворожденные",
+      sortNone: "Без сортировки", sortAscName: "По возрастанию имени", sortDescName: "По убыванию имени", sortAscBaseID: "По возрастанию ID", sortDescBaseID: "По убыванию ID",
+      sortMaxCombatChanceDesc: "По макс-% комбат/способностей",
+      sortMaxBonusChanceDesc:  "По макс-% бонус/способностей"
+	},
+    error: "Ошибка: ",
+    noResults: "Персонажи не найдены",
+    data: {
+      "ГЛАВНЫЙ ГЕРОЙ": "ГЛАВНЫЙ ГЕРОЙ", "ОХОТА": "ОХОТА", "ПРЕМИУМ": "ПРЕМИУМ",
+      "Сила": "Сила", "Ловкость": "Ловкость", "Интеллект": "Интеллект",
+      "Люди": "Люди", "Звери": "Звери", "Орки": "Орки", "Нежить": "Нежить", "Эльфы": "Эльфы", 
+      "Гномы": "Гномы", "Демоны": "Демоны", "Энты": "Энты", "Механизмы": "Механизмы", "Перворожденные": "Перворожденные",
+      "Осквернитель": "Осквернитель", "Жрец": "Жрец", "Убийца": "Убийца", "Боец": "Боец", "Защитник": "Защитник",
+	  "SECONDARY":"Биом", "CONTRACT":"Контракт"
+    }
+  },
+  en: {
+    ui: { title: "Heroes Database", mainTitle: "Heroes", searchLabel: "Search by name", searchPlaceholder: "Enter name...", labelType: "Character Type",
+		labelClass: "Character Class", labelAlliance: "Character Alliance", labelRace: "Character Race", labelSort: "Sorting", title: "TFBWiKi", wikiTitle: "TFBWiKi" },
+	card: {
+      heroes: { title: "HEROES", desc: "Character database and their abilities" },
+      resources: { title: "RESOURCES", desc: "Warehouse, stock, sorting and formatting" },
+      recipes: { title: "RECIPES", desc: "Crafts, components and requirements" }
+    },
+    options: {
+      allTypes: "All types", typeMAIN: "Main Hero", typeSECONDARY: "Biom", typeCONTRACT: "Contract", typeHUNT: "Hunt", typePREMIUM: "Premium",
+      allClasses: "All classes", class1: "Strength", class2: "Agility", class3: "Intelligence",
+      allAlliances: "All alliances", alliance1: "Defiler", alliance2: "Priest", alliance3: "Assassin", alliance4: "Fighter", alliance5: "Defender",
+      allRaces: "All races", race1: "Humans", race2: "Beasts", race3: "Dwarves", race4: "Demons", race5: "Undead", race6: "Elves", race7: "Orcs", race8: "Mechanisms", race9: "Ents", race10: "Firstborn",
+      sortNone: "No sorting", sortAscName: "Name Ascending", sortDescName: "Name Descending", sortAscBaseID: "ID Ascending", sortDescBaseID: "ID Descending",
+      sortMaxCombatChanceDesc: "By max-% combat ability",
+      sortMaxBonusChanceDesc:  "By max-% bonus ability"
+    },
+    error: "Error: ",
+    noResults: "No characters found",
+    data: {
+      "ГЛАВНЫЙ ГЕРОЙ": "MAIN HERO", "ОХОТА": "HUNT", "ПРЕМИУМ": "PREMIUM",
+      "Сила": "Strength", "Ловкость": "Agility", "Интеллект": "Intelligence",
+      "Люди": "Humans", "Звери": "Beasts", "Орки": "Orcs", "Нежить": "Undead", "Эльфы": "Elves", 
+      "Гномы": "Dwarves", "Демоны": "Demons", "Энты": "Ents", "Механизмы": "Mechanisms", "Перворожденные": "Firstborn",
+      "Осквернитель": "Defiler", "Жрец": "Priest", "Убийца": "Assassin", "Боец": "Fighter", "Защитник": "Defender",
+	  "SECONDARY":"Biom", "CONTRACT":"Contract"
+    }
+  }
+};
+
+// 4. Функция динамической локализации карточек (перевод по русскому ключу)
+function getTxt(russianKey) {
+  if (!russianKey) return '';
+  return translations[currentLang].data[russianKey] || russianKey;
+}
+
+// Функция автоматической транскрипции русских имен на английский
+function transliterate(text) {
+if (!text) return '';
+  const rules = {
+    'А': 'A', 'Б': 'B', 'В': 'V', 'Г': 'G', 'Д': 'D', 'Е': 'E', 'Ё': 'Yo', 'Ж': 'Zh', 'З': 'Z',
+    'И': 'I', 'Й': 'Y', 'К': 'K', 'Л': 'L', 'М': 'M', 'Н': 'N', 'О': 'O', 'П': 'P', 'Р': 'R',
+    'С': 'S', 'Т': 'T', 'У': 'U', 'Ф': 'F', 'Х': 'Kh', 'Ц': 'Ts', 'Ч': 'Ch', 'Ш': 'Sh', 'Щ': 'Shch',
+    'Ъ': '', 'Ы': 'Y', 'Ь': '', 'Э': 'E', 'Ю': 'Yu', 'Я': 'Ya',
+    
+    'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'yo', 'ж': 'zh', 'з': 'z',
+    'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r',
+    'с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'kh', 'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'shch',
+    'ъ': '', 'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya'
+  };
+
+  return text.split('').map(char => rules[char] !== undefined ? rules[char] : char).join('');
+}
+
+	// Максимальный шанс среди комбат-способностей (type_id === 1)
+    function getMaxCombatChance(hero) {
+      const abilities = (hero.data?.abilities || []);
+      let max = 0;
+      for (const ab of abilities) {
+        if (ab.ability_type_id === 1 && ab.chance != null) {
+          if (ab.chance > max) max = ab.chance;
+        }
+      }
+      return max;
+    }
+    
+    // Максимальный шанс среди бонусных способностей (type_id === 2)
+    function getMaxBonusChance(hero) {
+      const abilities = (hero.data?.abilities || []);
+      let max = 0;
+      for (const ab of abilities) {
+        if (ab.ability_type_id === 2 && ab.chance != null) {
+          if (ab.chance > max) max = ab.chance;
+        }
+      }
+      return max;
+    }
+
+function toggleMenu() {
+    document.getElementById('menuToggleBtn').classList.toggle('open');
+    document.getElementById('controlsMenu').classList.toggle('open');
+}
+
+// Переменная для хранения текущего режима (может быть: 'auto', '1', '2')
+let currentViewMode = 'auto';
+
+function toggleViewMode() {
+    const gridEl = document.getElementById('heroesGrid');
+    const viewBtn = document.getElementById('viewModeBtn');
+    
+    // Циклическое переключение: Авто -> 1 в строку -> 2 в строку -> Авто
+    if (currentViewMode === 'auto') {
+        currentViewMode = '1';
+        gridEl.classList.add('view-mode-1');
+        gridEl.classList.remove('view-mode-2');
+        viewBtn.textContent = currentLang === 'ru' ? '1' : '1';
+    } else if (currentViewMode === '1') {
+        currentViewMode = '2';
+        gridEl.classList.add('view-mode-2');
+        gridEl.classList.remove('view-mode-1');
+        viewBtn.textContent = currentLang === 'ru' ? '2' : '2';
+    } else {
+        currentViewMode = 'auto';
+        gridEl.classList.remove('view-mode-1', 'view-mode-2');
+        viewBtn.textContent = currentLang === 'ru' ? 'А' : 'A';
+    }
+}
+	
+// 5. Переключение языка интерфейса и карточек (ИСПРАВЛЕНО ДЛЯ PLACEHOLDER)
+function toggleLanguage() {
+  currentLang = currentLang === 'ru' ? 'en' : 'ru';
+  document.documentElement.lang = currentLang;
+
+  const langBtn = document.getElementById('langBtn');
+  if (langBtn) {
+    langBtn.textContent = currentLang === 'ru' ? 'EN' : 'RU';
+  }
+
+  // Заголовок страницы и <title>
+  const mainTitle = document.getElementById('mainTitle'); // если есть такой ID
+  if (mainTitle) {
+    mainTitle.textContent = translations[currentLang].ui.mainTitle;
+  }
+  const titleEl = document.querySelector('title[data-i18n]');
+  if (titleEl) {
+    const key = titleEl.getAttribute('data-i18n');
+    const [s1, s2] = key.split('.');
+    if (translations[currentLang][s1]?.[s2]) {
+      titleEl.textContent = translations[currentLang][s1][s2];
+    }
+  }
+
+  // Перевод всех элементов с data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const parts = key.split('.');
+
+    // Поддерживаем 2 уровня: section.subkey или section.sub.sub
+    let value = translations[currentLang];
+    for (const part of parts) {
+      if (value && typeof value === 'object') {
+        value = value[part];
+      } else {
+        value = undefined;
+        break;
+      }
+    }
+
+    if (value === undefined) {
+      // Можно раскомментировать для отладки:
+      // console.warn('No translation for key:', key);
+      return;
+    }
+
+    if (el.tagName === 'INPUT') {
+      el.placeholder = value;
+    } else if (el.tagName === 'OPTION') {
+      el.textContent = value;
+    } else {
+      el.textContent = value;
+    }
+  });
+	// Внутри функции toggleLanguage() добавьте этот блок в самый конец:
+	const viewBtn = document.getElementById('viewModeBtn');
+	if (currentViewMode === 'auto') {
+	    viewBtn.textContent = currentLang === 'ru' ? 'А' : 'A';
+	} else if (currentViewMode === '1') {
+	    viewBtn.textContent = currentLang === 'ru' ? '1' : '1';
+	} else if (currentViewMode === '2') {
+	    viewBtn.textContent = currentLang === 'ru' ? '2' : '2';
+	}
+	
+    // Перерисовываем карточки с новым языком
+      updateDisplay();
+}
+
+// 6. Загрузка данных (ИСПРАВЛЕНО имя файла на heroes.json)
+async function loadHeroes() {
+  try {
+    const response = await fetch('heroes.json'); 
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    heroesData = await response.json();
+    updateDisplay(); // Запуск отображения через фильтр
+  } catch (error) {
+    grid.innerHTML = `<div class="no-results">${translations[currentLang].error}${error.message}</div>`;
+  }
+}
+
+function formatNumber(value) {
+  if (typeof value !== 'number') return value;
+  return Number.isInteger(value) ? String(value) : value.toFixed(2).replace(/\.0+$/, '');
+}
+
+// 7. Рендеринг карточек героев
+function renderCards(data) {
+  grid.innerHTML = '';
+  
+  if (data.length === 0) {
+    grid.innerHTML = `<div class="no-results">${translations[currentLang].noResults}</div>`;
+    return;
+  }
+
+  data.forEach(hero => {
+    const d = hero.data || {};
+    // Получаем эталонные русские значения из мапперов
+    const rawType = typeMapper[hero.data.character_type] || hero.data.character_type;
+    const rawClass = classMapper[hero.data.class_id] || hero.data.class_id;
+    const rawAlliance = allianceMapper[hero.data.alliance_id] || hero.data.alliance_id;
+    const rawRace = raceMapper[hero.data.race_id] || hero.data.race_id;
+	const cleanName = hero.data.name.trim();
+	const cleanType = hero.data.character_type.trim();
+    const card = document.createElement('div');
+	
+    card.className = 'hero-card';
+    
+        // Формируем HTML для способностей
+    let abilitiesHtml = '';
+    if (d.abilities && Array.isArray(d.abilities) && d.abilities.length > 0) {
+      abilitiesHtml = d.abilities.map(ab => {
+        const icon = ab.icon || '';
+        const name = ab.name || 'Без названия';
+        const desc = ab.description || '';
+        // Шанс
+        const chanceStr = ab.chance !== undefined && ab.chance !== null
+          ? `<span class="ability-chance">Шанс: ${(ab.chance * 100).toFixed(0)}%</span>`
+          : '';
+
+        // Tier: рисуем звёзды
+        const tierStars = ab.tier ? '<span class="tier-stars">' + '★'.repeat(ab.tier) + '</span>' : '';
+
+        // Unlock level: просто цифра
+        const unlockLevelStr = ab.unlock_level !== undefined && ab.unlock_level !== null
+          ? `<span>Ур. ${ab.unlock_level}</span>`
+          : '';
+
+        // Мета-строка: tier + unlock_level в одну линию
+        const metaRow = tierStars || unlockLevelStr
+          ? `<div class="ability-meta-row">${tierStars} ${unlockLevelStr}</div>`
+          : '';
+
+        return `
+          <div class="ability-item">
+            <img class="ability-icon" src="${icon}" alt="${name}" loading="lazy">
+            <div class="ability-content">
+              <strong class="ability-name">${name}</strong>
+              <div class="ability-desc">${desc}</div>
+              ${chanceStr}
+              ${metaRow}
+            </div>
+          </div>
+        `;
+      }).join('');
+    } else {
+      abilitiesHtml = '<div class="no-abilities">Способностей нет</div>';
+    }
+    
+    card.innerHTML = `
+      <div class="hero-avatar-container">
+        <img class="hero-avatar" src="${hero.data.avatar}" alt="${hero.data.name}" onerror="this.src='https://placeholder.com'">
+      </div>
+      <div class="hero-card-content">
+		  <div class="hero-name">
+		    ${currentLang === 'ru' ? hero.data.name : transliterate(hero.data.name)}
+		  </div>
+		  <div class="hero-badges-container">
+			<div class="hero-badges">
+				<span class="badge" style="background: #6FECD3;">${getTxt(rawType)}</span>
+				<span class="badge" style="background: #FF5C5C;">${getTxt(rawClass)}</span>
+			</div>
+			<div class="hero-badges">
+				<span class="badge" style="background: #4A90E2;">${getTxt(rawRace)}</span>
+				<span class="badge" style="background: #F7BF64;">${getTxt(rawAlliance)}</span>
+			</div>
+		  </div>
+			<div class="info-inline-row">
+			  <div>
+			    <span class="info-label">Base ID</span>
+			    <span class="info-value">${hero.data.base_character_id}</span>
+			  </div>
+			  <div>
+			    <span class="info-label">MAX Star</span>
+			    <span class="info-value" style="color: #F7BF64;">${'★ '.repeat(hero.data.max_stardom || 0)}</span>
+			  </div>
+			</div>
+			
+        <!-- Блок способностей: свернут по умолчанию -->
+        <div class="abilities-list">
+          <button class="abilities-toggle-btn" type="button" aria-expanded="false" aria-controls="abilities-content-${d.base_character_id}">
+            Способности
+          </button>
+          <div id="abilities-content-${d.base_character_id}" class="abilities-content">
+            ${abilitiesHtml}
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Добавляем обработчик клика для разворачивания способностей
+    const toggleBtn = card.querySelector('.abilities-toggle-btn');
+    const contentBlock = card.querySelector('.abilities-content');
+
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = toggleBtn.classList.toggle('open');
+      contentBlock.classList.toggle('visible', isOpen);
+      toggleBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    grid.appendChild(card);
+  });
+}
+
+// 8. Логика фильтрации и сортировки (ИСПРАВЛЕНО)
+function updateDisplay() {
+  const filters = {
+    search: document.getElementById('search').value.toLowerCase(),
+    type: document.getElementById('filterType').value,
+    class: document.getElementById('filterClass').value,
+    alliance: document.getElementById('filterAlliance').value,
+    race: document.getElementById('filterRace').value,
+    sort: document.getElementById('sortMIX').value
+  };
+
+  let filtered = heroesData.filter(hero => {
+    const d = hero.data;
+    return (filters.search === '' || d.name.toLowerCase().includes(filters.search)) &&
+           (filters.type === 'all' || d.character_type === filters.type) &&
+           (filters.class === 'all' || String(d.class_id) === filters.class) &&
+           (filters.alliance === 'all' || String(d.alliance_id) === filters.alliance) &&
+           (filters.race === 'all' || String(d.race_id) === filters.race);
+  });
+
+  const sorts = {
+    'ascName': (a, b) => a.data.name.localeCompare(b.data.name, 'ru'),
+    'descName': (a, b) => b.data.name.localeCompare(a.data.name, 'ru'),
+    'ascBaseID': (a, b) => Number(a.data.base_character_id) - Number(b.data.base_character_id),
+    'descBaseID': (a, b) => Number(b.data.base_character_id) - Number(a.data.base_character_id),
+
+    // Сортировка по макс. шансу комбат-способностей (убывание)
+    'maxCombatChanceDesc': (a, b) => {
+      const chanceA = getMaxCombatChance(a);
+      const chanceB = getMaxCombatChance(b);
+      return chanceB - chanceA; // убывание
+    },
+
+    // Сортировка по макс. шансу бонусных способностей (убывание)
+    'maxBonusChanceDesc': (a, b) => {
+      const chanceA = getMaxBonusChance(a);
+      const chanceB = getMaxBonusChance(b);
+      return chanceB - chanceA; // убывание
+    }
+  };
+
+  if (sorts[filters.sort]) {
+    filtered.sort(sorts[filters.sort]);
+  }
+
+  renderCards(filtered);
+}
+
+// 9. Навешивание событий и старт
+document.getElementById('search').addEventListener('input', updateDisplay);
+document.getElementById('filterType').addEventListener('change', updateDisplay);
+document.getElementById('filterClass').addEventListener('change', updateDisplay);
+document.getElementById('filterAlliance').addEventListener('change', updateDisplay);
+document.getElementById('filterRace').addEventListener('change', updateDisplay);
+document.getElementById('sortMIX').addEventListener('change', updateDisplay);
+
+// Запуск приложения
+loadHeroes();

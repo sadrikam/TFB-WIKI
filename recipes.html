@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Рецепты — TFBWiKi</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="common.js" defer></script>
 </head>
 <body class="page-sub">
     <header class="sub-header">
@@ -12,7 +13,7 @@
             <a href="index.html" class="btn-back">← Назад</a>
         </div>
         <div class="header-right">
-            <button id="langBtn" class="btn-lang" type="button">EN</button>
+            <button id="langBtn" class="lang-switcher" type="button">EN</button>
         </div>
     </header>
 
@@ -31,23 +32,5 @@
         </div>
     </div>
 
-    <script>
-        const langBtn = document.getElementById('langBtn');
-        let currentLang = 'ru';
-
-        langBtn.addEventListener('click', () => {
-            currentLang = currentLang === 'ru' ? 'en' : 'ru';
-            langBtn.textContent = currentLang === 'ru' ? 'EN' : 'RU';
-
-            const titles = {
-                ru: { title: 'Рецепты', status: 'В разработке', desc: 'Список рецептов и требования к компонентам скоро появятся.' },
-                en: { title: 'Recipes', status: 'Under Development', desc: 'Recipe list and component requirements will be available soon.' }
-            };
-
-            document.querySelector('h1').textContent = titles[currentLang].title;
-            document.querySelector('.card h2').textContent = titles[currentLang].status;
-            document.querySelector('.card p').textContent = titles[currentLang].desc;
-        });
-    </script>
 </body>
 </html>

@@ -3,62 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TFBWiKi</title>
+    <!-- Переводим title через словарь -->
+    <title data-i18n="ui.title">TFBWiKi</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="common.js" defer></script>
 </head>
 <body class="page-home">
     <header class="main-header">
-        <h1 class="wiki-title">TFBWiKi</h1>
-        <button id="langBtn" class="btn-lang" type="button">EN</button>
+        <!-- Заголовок тоже помечаем -->
+        <h1 class="wiki-title" data-i18n="ui.wikiTitle">TFBWiKi</h1>
+        <button id="langBtn" class="lang-switcher" type="button" onclick="toggleLanguage()">EN</button>
     </header>
 
     <main class="home-grid">
         <a href="heroes.html" class="card-link">
             <div class="card">
-                <h2>ГЕРОИ</h2>
-                <p>База персонажей и их способностей</p>
+                <!-- Добавляем data-i18n -->
+                <h2 data-i18n="card.heroes.title">ГЕРОИ</h2>
+                <p data-i18n="card.heroes.desc">База персонажей и их способностей</p>
             </div>
         </a>
         <a href="resources.html" class="card-link">
             <div class="card">
-                <h2>РЕСУРСЫ</h2>
-                <p>Склад, остатки, сортировка и форматирование</p>
+                <h2 data-i18n="card.resources.title">РЕСУРСЫ</h2>
+                <p data-i18n="card.resources.desc">Склад, остатки, сортировка и форматирование</p>
             </div>
         </a>
         <a href="recipes.html" class="card-link">
             <div class="card">
-                <h2>РЕЦЕПТЫ</h2>
-                <p>Крафты, компоненты и требования</p>
+                <h2 data-i18n="card.recipes.title">РЕЦЕПТЫ</h2>
+                <p data-i18n="card.recipes.desc">Крафты, компоненты и требования</p>
             </div>
         </a>
     </main>
-
-    <script>
-        const langBtn = document.getElementById('langBtn');
-        let currentLang = 'ru';
-
-        langBtn.addEventListener('click', () => {
-            currentLang = currentLang === 'ru' ? 'en' : 'ru';
-            langBtn.textContent = currentLang === 'ru' ? 'EN' : 'RU';
-
-            const titles = {
-                ru: { title: 'TFBWiKi', heroes: 'ГЕРОИ', resources: 'РЕСУРСЫ', recipes: 'РЕЦЕПТЫ' },
-                en: { title: 'TFBWiki', heroes: 'HEROES', resources: 'RESOURCES', recipes: 'RECIPES' }
-            };
-
-            document.title = titles[currentLang].title;
-
-            const cards = document.querySelectorAll('.card h2, .card p');
-            cards.forEach(el => {
-                if (el.tagName === 'H2') {
-                    if (el.textContent.includes('ГЕРОИ')) el.textContent = titles[currentLang].heroes;
-                    else if (el.textContent.includes('РЕСУРСЫ')) el.textContent = titles[currentLang].resources;
-                    else if (el.textContent.includes('РЕЦЕПТЫ')) el.textContent = titles[currentLang].recipes;
-                } else {
-                    // можно добавить отдельные переводы для описаний, если нужно
-                }
-            });
-        });
-    </script>
 </body>
 </html>
