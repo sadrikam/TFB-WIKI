@@ -81,6 +81,7 @@
     /* Заголовки и шапки */
     .main-header,
     .sub-header {
+      position: sticky;
       display: flex;
       justify-content: space-between;
       align-items: center;
