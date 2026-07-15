@@ -672,8 +672,10 @@
         min-width: 100%;
         flex: none;
     }
-
     .grid {
         grid-template-columns: 1fr;
+    }
+	.container {
+        margin-top: 10px;
     }
 }
