@@ -469,12 +469,27 @@
         font-size: 11px;
         color: var(--text-muted);
         line-height: 1.3;
-        margin: 0 0 6px 0;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
+        /*margin: 0 0 6px 0;*/
+        /*display: -webkit-box;*/
+        /*-webkit-line-clamp: 2;*/
+        /*-webkit-box-orient: vertical;*/
         overflow: hidden;
+
+      /* разрешает перенос длинных слов, чтобы не было горизонтальной прокрутки */
+      overflow-wrap: break-word;
+      word-break: break-word;
+    
+      /* убирает лишние отступы, если они есть */
+      margin: 0;
+      padding: 8px 12px;
+    
+      /* опционально: фиксируем максимальную ширину, если карточка имеет ограничения */
+      max-width: 100%;
+    
+      /* если внутри есть свои блочные элементы — они тоже не должны ломать строку */
+      display: block;
     }
+    
 
     .ability-chance {
         font-size: 11px;
