@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рецепты — TFBWiKi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-sub">
+    <header class="sub-header">
+        <div class="header-left">
+            <a href="index.html" class="btn-back">← Назад</a>
+        </div>
+        <div class="header-right">
+            <button id="langBtn" class="btn-lang" type="button">EN</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Рецепты</h1>
+
+        <div class="card" style="text-align: center; padding: 40px;">
+            <h2>В разработке</h2>
+            <p style="color: var(--text-muted); margin-top: 8px;">Список рецептов и требования к компонентам скоро появятся.</p>
+
+            <div style="margin-top: 24px; font-size: 0.9rem; color: var(--text-muted);">
+                <strong>Что будет:</strong><br>
+                • Список рецептов с фильтрацией и сортировка<br>
+                • Требования к ингредиентам и крафту
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const langBtn = document.getElementById('langBtn');
+        let currentLang = 'ru';
+
+        langBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'ru' ? 'en' : 'ru';
+            langBtn.textContent = currentLang === 'ru' ? 'EN' : 'RU';
+
+            const titles = {
+                ru: { title: 'Рецепты', status: 'В разработке', desc: 'Список рецептов и требования к компонентам скоро появятся.' },
+                en: { title: 'Recipes', status: 'Under Development', desc: 'Recipe list and component requirements will be available soon.' }
+            };
+
+            document.querySelector('h1').textContent = titles[currentLang].title;
+            document.querySelector('.card h2').textContent = titles[currentLang].status;
+            document.querySelector('.card p').textContent = titles[currentLang].desc;
+        });
+    </script>
+</body>
+</html>
