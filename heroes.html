@@ -4,45 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="pageTitle">База Героев</title>
-<style>
-    :root {
-        --bg-color: #1a1a1a;
-        --card-bg: #2d2d2d;
-        --text-color: #ffffff;
-        --text-muted: #aaaaaa;
-        --accent: #00adb5;
-        --dark-1: #111;
-        --dark-2: #222;
-        --border-color: #444;
-    }
-
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        margin: 0;
-        padding: 20px;
-        padding-top: 80px;
-    }
-</style>
-<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-<div class="container">
-    <header class="header-bar">
-        <div class="header-left"><h1 id="mainTitle">Герои</h1></div>
-        <div class="header-right">
-            <button class="lang-switcher" id="langBtn" onclick="toggleLanguage()">EN</button>
-			
-			<!-- Новая кнопка переключения режимов отображения -->
-    		<button class="lang-switcher" id="viewModeBtn" onclick="toggleViewMode()">А</button>
-			
-            <button class="menu-toggle" id="menuToggleBtn" onclick="toggleMenu()">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
 
+<body class="page-sub">
+    <div class="container">
+        <header class="header-bar">
+
+            <div class="header-left" style="display: flex; align-items: center; gap: 12px;">
+                <a href="index.html" class="btn-back" style="white-space: nowrap;">← Назад</a>
+                <h1 id="mainTitle" style="margin: 0; font-size: 1.5rem; line-height: 1;">Герои</h1>
+            </div>
+            <div class="header-right">
+                <button class="lang-switcher" id="langBtn" onclick="toggleLanguage()">EN</button>
+                
+                <!-- Кнопка переключения количества столбцов / режима отображения -->
+                <button class="lang-switcher" id="viewModeBtn" onclick="toggleViewMode()">А</button>
+                
+                <button class="menu-toggle" id="menuToggleBtn" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </header>
 		<!-- Панель управления -->
 		<div class="controls" id="controlsMenu">
 	       <div class="control-group">
