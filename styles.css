@@ -5,19 +5,24 @@
         --text-color: #ffffff;
         --text-muted: #aaaaaa;
         --accent: #00adb5;
+        --dark-1: #111;
+        --dark-2: #222;
+        --border-color: #444;
     }
+
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: var(--bg-color);
         color: var(--text-color);
         margin: 0;
         padding: 20px;
-		padding-top: 80px;
+        padding-top: 80px;
     }
+
     .container {
         max-width: 1200px;
         margin: 0 auto;
-		position: relative;
+        position: relative;
     }
 
 	.lang-switcher {
@@ -35,49 +40,83 @@
 	    transition: background-color 0.2s, color 0.2s;
 	    z-index: 10; /* Чтобы кнопка всегда была поверх остальных элементов */
 	}
-	
-	.lang-switcher:hover {
-	    background-color: var(--accent);
-	    color: var(--bg-color);
-	}
+    .lang-switcher:hover {
+        background-color: var(--accent);
+        color: var(--bg-color);
+    }
 
-	h1 {
+    h1 {
         text-align: center;
         color: var(--accent);
         margin-bottom: 30px;
     }
 
     /* Панель управления */
-	/* Фиксированная шапка */
-	.header-bar {
-	    position: fixed; top: 0; left: 0; right: 0; height: 70px;
-	    background-color: var(--card-bg);
-	    display: flex; justify-content: space-between; align-items: center;
-	    padding: 0 20px; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-	}
-	.header-right { display: flex; align-items: center; gap: 15px; }
-	
-	/* Скрытие меню по умолчанию */
-	.controls {
-	    display: none; position: absolute; top: 70px; left: 0; right: 0;
-	    background-color: var(--card-bg); flex-wrap: wrap; gap: 15px;
-	    padding: 20px; box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); z-index: 999;
-	}
+    .header-bar {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        height: 70px;
+        background-color: var(--card-bg);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
 
-	.controls.open { display: flex; }
-	
-	.menu-toggle {
-	    display: flex; flex-direction: column; justify-content: space-between;
-	    width: 30px; height: 20px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001;
-	}
-	.menu-toggle span {
-	    width: 100%; height: 3px; background-color: var(--text-color);
-	    border-radius: 2px; transition: all 0.3s ease;
-	}
-	/* Анимация */
-	.menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-	.menu-toggle.open span:nth-child(2) { opacity: 0; }
-	.menu-toggle.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .controls {
+        display: none;
+        position: absolute;
+        top: 70px; left: 0; right: 0;
+        background-color: var(--card-bg);
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 20px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .controls.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+    }
+
+    .menu-toggle span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--text-color);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggle.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.open span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
 
     .control-group {
         flex: 1;
@@ -95,8 +134,8 @@
     input, select {
         padding: 10px;
         border-radius: 4px;
-        border: 1px solid #444;
-        background-color: #1a1a1a;
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-color);
         color: white;
         font-size: 16px;
         outline: none;
@@ -107,44 +146,41 @@
     }
 
     /* Сетка карточек */
-	/* Базовая сетка адаптивна по умолчанию (когда нет спец-классов) */
-	.grid {
-	    display: grid;
-	    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-	    gap: 25px;
-	}
-	
-	/* Режим: 1 карточка в строке */
-	.grid.view-mode-1 {
-	    grid-template-columns: 1fr;
-	}
-	
-	/* Режим: 2 карточки в строке */
-	.grid.view-mode-2 {
-	    grid-template-columns: repeat(2, 1fr);
-	}
-	
-	/* Масштабирование текста в два раза при режиме "2 в строке" */
-	.grid.view-mode-2 .hero-name {
-	    font-size: 10px; /* Было 20px */
-	}
-	.grid.view-mode-2 .badge {
-	    font-size: 6px; /* Было 12px */
-	    padding: 1.5px 4px;
-	}
-	.grid.view-mode-2 .info-inline-row {
-	    font-size: 7px; /* Было 14px */
-	}
-	.grid.view-mode-2 .info-label {
-	    font-size: 5.5px; /* Было 11px */
-	}
-	.grid.view-mode-2 .info-inline-row {
-	    font-size: 7px;
-	    flex-direction: column; /* Перестраивает элементы в столбик */
-	    align-items: flex-start; /* Выравнивает текст по левому краю */
-	    gap: 4px; /* Добавляет небольшой отступ между Base ID и MAX Star */
-	}
-	/* Карточка */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .grid.view-mode-1 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid.view-mode-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid.view-mode-2 .hero-name {
+        font-size: 10px;
+    }
+
+    .grid.view-mode-2 .badge {
+        font-size: 6px;
+        padding: 1.5px 4px;
+    }
+
+    .grid.view-mode-2 .info-inline-row {
+        font-size: 7px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .grid.view-mode-2 .info-label {
+        font-size: 5.5px;
+    }
+
+    /* Карточка */
     .hero-card {
         background-color: var(--card-bg);
         border-radius: 10px;
@@ -163,8 +199,8 @@
     .hero-avatar-container {
         position: relative;
         width: 100%;
-        padding-top: 100%; /* Соотношение сторон 1:1 */
-        background-color: #111;
+        padding-top: 100%;
+        background-color: var(--dark-1);
     }
 
     .hero-avatar {
@@ -194,7 +230,7 @@
         width: 32px;
         height: 32px;
         border-radius: 4px;
-        background-color: #111;
+        background-color: var(--dark-1);
     }
 
     .hero-name {
@@ -203,20 +239,23 @@
         margin: 0;
         color: #fff;
     }
-	.hero-badges-container {
-		display: flex;
-		flex-direction: column;
-		gap: 4px;
-	}
-	.hero-badges {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 4px;
-	}
-	.badge {
+
+    .hero-badges-container {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .badge {
         display: inline-flex;
-		background-color: var(--accent);
-        color: #1a1a1a;
+        background-color: var(--accent);
+        color: var(--bg-color);
         padding: 3px 8px;
         border-radius: 4px;
         font-size: 12px;
@@ -230,7 +269,7 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
         font-size: 14px;
-        border-top: 1px solid #444;
+        border-top: 1px solid var(--border-color);
         padding-top: 12px;
         margin-top: auto;
     }
@@ -257,203 +296,160 @@
         color: var(--text-muted);
         font-size: 18px;
     }
-	.info-inline-row {
-	  display: flex;
-	  justify-content: space-between; /* Распределит Base ID влево, а кнопки звезд вправо */
-	  align-items: center;
-	  font-size: 14px;
-	  border-top: 1px solid #444;
-	  padding-top: 12px;
-	  margin-top: auto;
-	}
-	
-	.info-inline-row div {
-	  display: flex;
-	  align-items: center;
-	  gap: 6px; /* Отступ между надписью и цифрой/звездами */
-	}
-	
-	.abilities-list {
-      margin-top: 16px;
-      padding-top: 12px;
-      border-top: 1px solid #333;
+
+    .info-inline-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        border-top: 1px solid var(--border-color);
+        padding-top: 12px;
+    /*    margin-top: auto;*/
     }
-    
-    .abilities-title {
-      font-size: 14px;
-      color: var(--accent);
-      margin: 0 0 12px 0;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+
+    .info-inline-row div {
+        display: flex;
+        align-items: center;
+        gap: 6px;
     }
-    
-    .ability-item {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      margin-bottom: 12px;
-      background: rgba(255,255,255,0.03);
-      padding: 8px;
-      border-radius: 6px;
-    }
-    
-    .ability-item:last-child {
-      margin-bottom: 0;
-    }
-    
-    .ability-icon {
-      width: 32px;
-      height: 32px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-    
-    .ability-content {
-      flex: 1;
-      min-width: 0; /* чтобы текст корректно обрезался при overflow */
-    }
-    
-    .ability-name {
-      font-size: 13px;
-      color: #fff;
-      line-height: 1.2;
-      margin: 0 0 4px 0;
-    }
-    
-    .ability-desc {
-      font-size: 11px;
-      color: var(--text-muted);
-      line-height: 1.3;
-      margin: 0 0 6px 0;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    
-    .ability-chance {
-      font-size: 11px;
-      color: #aaa;
-      background: #222;
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-    
-    .no-abilities {
-      font-size: 12px;
-      color: var(--text-muted);
-      text-align: center;
-      padding: 12px;
-    }
-    
+
     /* Контейнер списка способностей */
     .abilities-list {
-      margin-top: 16px;
-      padding-top: 12px;
-      border-top: 1px solid #333;
+        margin-top: 16px;
+        padding-top: 12px;
+        border-top: 1px solid #333;
     }
-    
-    /* Заголовок-кнопка для сворачивания/разворачивания */
+
+    .abilities-title {
+        font-size: 14px;
+        color: var(--accent);
+        margin: 0 0 12px 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .ability-item {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        background: rgba(255,255,255,0.03);
+        padding: 8px;
+        border-radius: 6px;
+    }
+
+    .ability-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .ability-icon {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    .ability-content {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .ability-name {
+        font-size: 13px;
+        color: #fff;
+        line-height: 1.2;
+        margin: 0 0 4px 0;
+    }
+
+    .ability-desc {
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.3;
+        margin: 0 0 6px 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .ability-chance {
+        font-size: 11px;
+        color: #aaa;
+        background: var(--dark-2);
+        padding: 2px 6px;
+        border-radius: 4px;
+    }
+
+    .no-abilities {
+        font-size: 12px;
+        color: var(--text-muted);
+        text-align: center;
+        padding: 12px;
+    }
+
     .abilities-toggle-btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      background: none;
-      border: none;
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      padding: 0;
-      margin: 0 0 12px 0;
-      outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background: none;
+        border: none;
+        color: var(--accent);
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        padding: 0;
+        margin: 0 0 12px 0;
+        outline: none;
     }
-    
+
     .abilities-toggle-btn::after {
-      content: '+';
-      font-size: 18px;
-      line-height: 1;
-      transition: transform 0.3s ease;
+        content: '+';
+        font-size: 18px;
+        line-height: 1;
+        transition: transform 0.3s ease;
     }
-    
+
     .abilities-toggle-btn.open::after {
-      content: '−';
+        content: '−';
     }
-    
+
     .abilities-toggle-btn.open {
-      color: #fff;
+        color: #fff;
     }
-    
-    /* Скрываем список способностей по умолчанию */
+
     .abilities-content {
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: max-height 0.3s ease, opacity 0.3s ease;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
     }
     
     /* Показываем список способностей, когда кнопка в состоянии open */
     .abilities-content.visible {
-      max-height: 500px; /* подбери значение, чтобы вместить все способности */
+      max-height: fit-content; /* подбери значение, чтобы вместить все способности */
       opacity: 1;
     }
-    
-    /* Отдельные элементы способностей */
-    .ability-item {
+
+    .ability-meta-row {
       display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      margin-bottom: 12px;
-      background: rgba(255,255,255,0.03);
-      padding: 8px;
-      border-radius: 6px;
-    }
-    
-    .ability-icon {
-      width: 32px;
-      height: 32px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-    
-    .ability-content {
-      flex: 1;
-      min-width: 0;
-    }
-    
-    .ability-name {
-      font-size: 13px;
-      color: #fff;
-      line-height: 1.2;
-      margin: 0 0 4px 0;
-    }
-    
-    .ability-desc {
-      font-size: 11px;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+      font-size: 0.8rem;
       color: var(--text-muted);
-      line-height: 1.3;
-      margin: 0 0 6px 0;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
     }
     
-    .ability-chance {
-      font-size: 11px;
-      color: #aaa;
-      background: #222;
-      padding: 2px 6px;
-      border-radius: 4px;
+    .tier-stars {
+      display: inline-flex;
+      gap: 2px;
     }
     
-    .no-abilities {
-      font-size: 12px;
-      color: var(--text-muted);
-      text-align: center;
-      padding: 12px;
+    .tier-star {
+      color: #ffc107; /* золотой цвет звезды */
+      font-weight: bold;
     }
+
 </style>

@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="pageTitle">База Героев</title>
-	<style>
-	    :root {
-	        --bg-color: #1a1a1a;
-	        --card-bg: #2d2d2d;
-	        --text-color: #ffffff;
-	        --text-muted: #aaaaaa;
-	        --accent: #00adb5;
-	    }
-	    body {
-	        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	        background-color: var(--bg-color);
-	        color: var(--text-color);
-	        margin: 0;
-	        padding: 20px;
-			padding-top: 80px;
-	    }
-	</style>
-	<link rel="stylesheet" href="styles.css">
+<style>
+    :root {
+        --bg-color: #1a1a1a;
+        --card-bg: #2d2d2d;
+        --text-color: #ffffff;
+        --text-muted: #aaaaaa;
+        --accent: #00adb5;
+        --dark-1: #111;
+        --dark-2: #222;
+        --border-color: #444;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 20px;
+        padding-top: 80px;
+    }
+</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -100,6 +104,9 @@
 	                <option value="descName" data-i18n="options.sortDescName">По убыванию имени</option>
 					<option value="ascBaseID" data-i18n="options.sortAscBaseID">По возрастанию ID</option>
 	                <option value="descBaseID" data-i18n="options.sortDescBaseID">По убыванию ID</option>
+	                  <!-- Два новых пункта: отдельно по комбат и по бонусам -->
+                    <option value="maxCombatChanceDesc" data-i18n="options.sortMaxCombatChanceDesc">По макс-% комбат/способностей</option>
+                    <option value="maxBonusChanceDesc" data-i18n="options.sortMaxBonusChanceDesc">По макс-% бонус/способностей</option>
 	            </select>
 	        </div>
 	    </div>
@@ -131,7 +138,9 @@ const translations = {
       allClasses: "Все классы", class1: "Сила", class2: "Ловкость", class3: "Интеллект",
       allAlliances: "Все альянсы", alliance1: "Осквернитель", alliance2: "Жрец", alliance3: "Убийца", alliance4: "Боец", alliance5: "Защитник",
       allRaces: "Все расы", race1: "Люди", race2: "Звери", race3: "Гномы", race4: "Демоны", race5: "Нежить", race6: "Эльфы", race7: "Орки", race8: "Механизмы", race9: "Энты", race10: "Перворожденные",
-      sortNone: "Без сортировки", sortAscName: "По возрастанию имени", sortDescName: "По убыванию имени", sortAscBaseID: "По возрастанию ID", sortDescBaseID: "По убыванию ID"
+      sortNone: "Без сортировки", sortAscName: "По возрастанию имени", sortDescName: "По убыванию имени", sortAscBaseID: "По возрастанию ID", sortDescBaseID: "По убыванию ID",
+      sortMaxCombatChanceDesc: "По макс-% комбат/способностей",
+      sortMaxBonusChanceDesc:  "По макс-% бонус/способностей"
 	},
     error: "Ошибка: ",
     noResults: "Персонажи не найдены",
@@ -152,7 +161,9 @@ const translations = {
       allClasses: "All classes", class1: "Strength", class2: "Agility", class3: "Intelligence",
       allAlliances: "All alliances", alliance1: "Defiler", alliance2: "Priest", alliance3: "Assassin", alliance4: "Fighter", alliance5: "Defender",
       allRaces: "All races", race1: "Humans", race2: "Beasts", race3: "Dwarves", race4: "Demons", race5: "Undead", race6: "Elves", race7: "Orcs", race8: "Mechanisms", race9: "Ents", race10: "Firstborn",
-      sortNone: "No sorting", sortAscName: "Name Ascending", sortDescName: "Name Descending", sortAscBaseID: "ID Ascending", sortDescBaseID: "ID Descending"
+      sortNone: "No sorting", sortAscName: "Name Ascending", sortDescName: "Name Descending", sortAscBaseID: "ID Ascending", sortDescBaseID: "ID Descending",
+      sortMaxCombatChanceDesc: "By max-% combat ability",
+      sortMaxBonusChanceDesc:  "By max-% bonus ability"
     },
     error: "Error: ",
     noResults: "No characters found",
@@ -190,6 +201,30 @@ if (!text) return '';
 
   return text.split('').map(char => rules[char] !== undefined ? rules[char] : char).join('');
 }
+
+	// Максимальный шанс среди комбат-способностей (type_id === 1)
+    function getMaxCombatChance(hero) {
+      const abilities = (hero.data?.abilities || []);
+      let max = 0;
+      for (const ab of abilities) {
+        if (ab.ability_type_id === 1 && ab.chance != null) {
+          if (ab.chance > max) max = ab.chance;
+        }
+      }
+      return max;
+    }
+    
+    // Максимальный шанс среди бонусных способностей (type_id === 2)
+    function getMaxBonusChance(hero) {
+      const abilities = (hero.data?.abilities || []);
+      let max = 0;
+      for (const ab of abilities) {
+        if (ab.ability_type_id === 2 && ab.chance != null) {
+          if (ab.chance > max) max = ab.chance;
+        }
+      }
+      return max;
+    }
 
 function toggleMenu() {
     document.getElementById('menuToggleBtn').classList.toggle('open');
@@ -255,9 +290,10 @@ function toggleLanguage() {
 	} else if (currentViewMode === '2') {
 	    viewBtn.textContent = currentLang === 'ru' ? '2' : '2';
 	}
-  // Перерисовываем карточки с новым языком
-  updateDisplay();
-}
+	
+    // Перерисовываем карточки с новым языком
+      updateDisplay();
+    }
 
 // 6. Загрузка данных (ИСПРАВЛЕНО имя файла на heroes.json)
 async function loadHeroes() {
@@ -305,8 +341,22 @@ function renderCards(data) {
         const icon = ab.icon || '';
         const name = ab.name || 'Без названия';
         const desc = ab.description || '';
+        // Шанс
         const chanceStr = ab.chance !== undefined && ab.chance !== null
           ? `<span class="ability-chance">Шанс: ${(ab.chance * 100).toFixed(0)}%</span>`
+          : '';
+
+        // Tier: рисуем звёзды
+        const tierStars = ab.tier ? '<span class="tier-stars">' + '★'.repeat(ab.tier) + '</span>' : '';
+
+        // Unlock level: просто цифра
+        const unlockLevelStr = ab.unlock_level !== undefined && ab.unlock_level !== null
+          ? `<span>Ур. ${ab.unlock_level}</span>`
+          : '';
+
+        // Мета-строка: tier + unlock_level в одну линию
+        const metaRow = tierStars || unlockLevelStr
+          ? `<div class="ability-meta-row">${tierStars} ${unlockLevelStr}</div>`
           : '';
 
         return `
@@ -316,6 +366,7 @@ function renderCards(data) {
               <strong class="ability-name">${name}</strong>
               <div class="ability-desc">${desc}</div>
               ${chanceStr}
+              ${metaRow}
             </div>
           </div>
         `;
@@ -381,14 +432,13 @@ function renderCards(data) {
 
 // 8. Логика фильтрации и сортировки (ИСПРАВЛЕНО)
 function updateDisplay() {
-  // Получаем значения фильтров
   const filters = {
     search: document.getElementById('search').value.toLowerCase(),
     type: document.getElementById('filterType').value,
     class: document.getElementById('filterClass').value,
     alliance: document.getElementById('filterAlliance').value,
     race: document.getElementById('filterRace').value,
-    sort: document.getElementById('sortMIX').value // Одно объявление
+    sort: document.getElementById('sortMIX').value
   };
 
   let filtered = heroesData.filter(hero => {
@@ -400,17 +450,34 @@ function updateDisplay() {
            (filters.race === 'all' || String(d.race_id) === filters.race);
   });
 
-  // Сортировка (дублирующая const sortValue = ... удалена)
   const sorts = {
     'ascName': (a, b) => a.data.name.localeCompare(b.data.name, 'ru'),
     'descName': (a, b) => b.data.name.localeCompare(a.data.name, 'ru'),
     'ascBaseID': (a, b) => Number(a.data.base_character_id) - Number(b.data.base_character_id),
-    'descBaseID': (a, b) => Number(b.data.base_character_id) - Number(a.data.base_character_id)
+    'descBaseID': (a, b) => Number(b.data.base_character_id) - Number(a.data.base_character_id),
+
+    // Сортировка по макс. шансу комбат-способностей (убывание)
+    'maxCombatChanceDesc': (a, b) => {
+      const chanceA = getMaxCombatChance(a);
+      const chanceB = getMaxCombatChance(b);
+      return chanceB - chanceA; // убывание
+    },
+
+    // Сортировка по макс. шансу бонусных способностей (убывание)
+    'maxBonusChanceDesc': (a, b) => {
+      const chanceA = getMaxBonusChance(a);
+      const chanceB = getMaxBonusChance(b);
+      return chanceB - chanceA; // убывание
+    }
   };
 
-  if (sorts[filters.sort]) filtered.sort(sorts[filters.sort]);
+  if (sorts[filters.sort]) {
+    filtered.sort(sorts[filters.sort]);
+  }
+
   renderCards(filtered);
 }
+
 // 9. Навешивание событий и старт
 document.getElementById('search').addEventListener('input', updateDisplay);
 document.getElementById('filterType').addEventListener('change', updateDisplay);
