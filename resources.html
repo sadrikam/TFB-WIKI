@@ -3,33 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ресурсы — TFBWiKi</title>
+    <title id="pageTitle" data-i18n="ui.pageTitle_resource">Ресурсы — TFBWiKi</title>
     <link rel="stylesheet" href="styles.css">
     <script src="common.js" defer></script>
 </head>
+
 <body class="page-sub">
-    <header class="sub-header">
-        <div class="header-left">
-            <a href="index.html" class="btn-back">← Назад</a>
-        </div>
-        <div class="header-right">
-            <button id="langBtn" class="lang-switcher" type="button">EN</button>
-        </div>
-    </header>
-
     <div class="container">
-        <h1>Ресурсы</h1>
-
-        <div class="card" style="text-align: center; padding: 40px;">
-            <h2>В разработке</h2>
-            <p style="color: var(--text-muted); margin-top: 8px;">Панель мониторинга склада и форматирование остатков скоро появятся.</p>
-            
-            <div style="margin-top: 24px; font-size: 0.9rem; color: var(--text-muted);">
-                <strong>Что будет:</strong><br>
-                • Таблица ресурсов<br>
-                • Сортировка и поиск
+        <header class="header-bar">
+            <div class="header-left" style="display: flex; align-items: center; gap: 12px;">
+                <a href="index.html" class="btn-back" style="white-space: nowrap;">← </a>
+                <h1 id="mainTitle" data-i18n="ui.mainTitle_resource" style="margin: 0; font-size: 1.5rem; line-height: 1;">Ресурсы</h1>
             </div>
+            <div class="header-right">
+                <button class="lang-switcher" id="langBtn" onclick="toggleLanguage()">EN</button>
+                
+                <!-- Кнопка переключения количества столбцов / режима отображения -->
+                <button class="lang-switcher" id="viewModeBtn" onclick="toggleViewMode()">А</button>
+                
+                <button class="menu-toggle" id="menuToggleBtn" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </header>
+        
+  <div class="tabs-container" id="tabs-container"></div>
+  <div id="tab-contents"></div>
+
+<script>
+  const jsonPath = 'resources.json'; // путь к файлу
+
+  async function loadItems() {
+    try {
+      const res = await fetch(jsonPath);
+      if (!res.ok) throw new Error(`Ошибка HTTP: ${res.status}`);
+      const rawData = await res.json();
+      renderInventory(rawData);
+    } catch (e) {
+      console.error(e);
+      const contents = document.getElementById('tab-contents');
+      contents.innerHTML = `<div class="error">Не удалось загрузить resources.json: ${e.message}</div>`;
+    }
+  }
+
+  function flattenData(data) {
+    return data.map(entry => {
+      const d = entry.data;
+      return {
+        name: d.name,
+        item_type: d.item_type,
+        description: d.item_data?.description || '',
+        icon: d.icon,
+        rarity: d.rarity,
+        id: d.id
+      };
+    });
+  }
+
+  function groupByType(items) {
+    const groups = {};
+    items.forEach(item => {
+      if (!groups[item.item_type]) groups[item.item_type] = [];
+      groups[item.item_type].push(item);
+    });
+    return groups;
+  }
+
+  function escapeHtml(str) {
+    if (typeof str !== 'string') return '';
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function renderInventory(rawData) {
+    const items = flattenData(rawData);
+    const grouped = groupByType(items);
+    const tabNames = Object.keys(grouped);
+
+    const tabsContainer = document.getElementById('tabs-container');
+    const contentsContainer = document.getElementById('tab-contents');
+
+    // Создаём вкладки
+    tabNames.forEach((type, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'tab-btn' + (idx === 0 ? ' active' : '');
+      btn.textContent = type;
+      btn.dataset.type = type;
+
+      btn.addEventListener('click', () => {
+        tabsContainer.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        contentsContainer.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.getElementById(`tab-${type}`).classList.add('active');
+      });
+
+      tabsContainer.appendChild(btn);
+
+      // Создаём контент вкладки
+      const tabContent = document.createElement('div');
+      tabContent.id = `tab-${type}`;
+      tabContent.className = `tab-content ${idx === 0 ? 'active' : ''}`;
+      tabContent.innerHTML = `
+        <div class="items-grid">
+          ${grouped[type].map(item => `
+            <div class="item-card rarity-${item.rarity}">
+              <div class="item-icon-wrapper">
+                <img src="${escapeHtml(item.icon)}" alt="${escapeHtml(item.name)}" class="item-icon">
+                <span class="rarity-badge">${item.rarity}</span>
+              </div>
+              <div class="item-info">
+                <h3 class="item-name">${escapeHtml(item.name)}</h3>
+                <span class="item-type">${escapeHtml(item.item_type)}</span>
+                <p class="item-description">${escapeHtml(item.description)}</p>
+              </div>
+            </div>
+          `).join('')}
         </div>
+      `;
+      contentsContainer.appendChild(tabContent);
+    });
+  }
+
+  // Запуск загрузки
+  loadItems();
+</script>
     </div>
 
 </body>

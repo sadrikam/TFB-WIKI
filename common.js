@@ -12,11 +12,13 @@ const typeMapper = { 'MAIN': 'ГЛАВНЫЙ ГЕРОЙ', 'HUNT': 'ОХОТА', 
 // 3. Централизованный словарь (Данные переводятся с РУССКОГО ключа)
 const translations = {
   ru: {
-    ui: { title: "База Героев", mainTitle: "Герои", searchLabel: "Поиск по имени", searchPlaceholder: "Введите имя...", labelType: "Тип персонажа",
+    ui: { pageTitle_hero: "База Героев — TFBWiKi", mainTitle_hero: "Герои", pageTitle_resource: "База Ресурсов — TFBWiKi", mainTitle_resource: "Ресурсы",
+        pageTitle_recipes: "База Рецептов — TFBWiKi", mainTitle_recipes: "Рецепты",
+        searchLabel: "Поиск по имени", searchPlaceholder: "Введите имя...", labelType: "Тип персонажа",
 		labelClass: "Класс персонажа", labelAlliance: "Альянс персонажа", labelRace: "Раса персонажа", labelSort: "Сортировка", title: "TFBWiKi", wikiTitle: "TFBWiKi" },
 	card: {
       heroes: { title: "ГЕРОИ", desc: "База персонажей и их способностей" },
-      resources: { title: "РЕСУРСЫ", desc: "Склад, остатки, сортировка и форматирование" },
+      resources: { title: "РЕСУРСЫ", desc: "Ресурсы, сортировка" },
       recipes: { title: "РЕЦЕПТЫ", desc: "Крафты, компоненты и требования" }
     },
 	options: {
@@ -40,11 +42,13 @@ const translations = {
     }
   },
   en: {
-    ui: { title: "Heroes Database", mainTitle: "Heroes", searchLabel: "Search by name", searchPlaceholder: "Enter name...", labelType: "Character Type",
+    ui: { pageTitle_hero: "Heroes Database — TFBWiKi", mainTitle_hero: "Heroes", pageTitle_resource: "Resources Database — TFBWiKi", mainTitle_resource: "Resources",
+        pageTitle_recipes: "Recipes Database — TFBWiKi", mainTitle_recipes: "Recipes",
+        searchLabel: "Search by name", searchPlaceholder: "Enter name...", labelType: "Character Type",
 		labelClass: "Character Class", labelAlliance: "Character Alliance", labelRace: "Character Race", labelSort: "Sorting", title: "TFBWiKi", wikiTitle: "TFBWiKi" },
 	card: {
       heroes: { title: "HEROES", desc: "Character database and their abilities" },
-      resources: { title: "RESOURCES", desc: "Warehouse, stock, sorting and formatting" },
+      resources: { title: "RESOURCES", desc: "Resources and sorting" },
       recipes: { title: "RECIPES", desc: "Crafts, components and requirements" }
     },
     options: {

@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">База Героев</title>
+    <title id="pageTitle" data-i18n="ui.pageTitle_hero">База Героев — TFBWiKi</title>
     <link rel="stylesheet" href="styles.css">
     <script src="common.js" defer></script>
 </head>
 
-
 <body class="page-sub">
     <div class="container">
         <header class="header-bar">
-
             <div class="header-left" style="display: flex; align-items: center; gap: 12px;">
                 <a href="index.html" class="btn-back" style="white-space: nowrap;">← </a>
-                <h1 id="mainTitle" style="margin: 0; font-size: 1.5rem; line-height: 1;">Герои</h1>
+                <h1 id="mainTitle" data-i18n="ui.mainTitle_hero" style="margin: 0; font-size: 1.5rem; line-height: 1;">Герои</h1>
             </div>
             <div class="header-right">
                 <button class="lang-switcher" id="langBtn" onclick="toggleLanguage()">EN</button>
@@ -99,7 +97,7 @@
 
     <!-- Сетка с карточками -->
     <div class="grid" id="heroesGrid"></div>
-</div>
+    </div>
 
 </body>
 </html>

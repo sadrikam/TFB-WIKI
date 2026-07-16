@@ -1,0 +1,2132 @@
+[
+  {
+    "data": {
+      "name": "Угорь",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Угорь.png",
+      "rarity": 1,
+      "id": 477
+    }
+  },
+  {
+    "data": {
+      "name": "Звездовик",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Звездовик.png",
+      "rarity": 1,
+      "id": 485
+    }
+  },
+  {
+    "data": {
+      "name": "Кактус",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Кактус.png",
+      "rarity": 1,
+      "id": 492
+    }
+  },
+  {
+    "data": {
+      "name": "Сундук секретов",
+      "item_type": "LOOTBOX",
+      "item_data": {
+        "description": ""
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Сундук(1).jpg",
+      "rarity": 4,
+      "id": 712
+    }
+  },
+  {
+    "data": {
+      "name": "Необработанный рубин",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Рубин.png",
+      "rarity": 1,
+      "id": 130
+    }
+  },
+  {
+    "data": {
+      "name": "Золотая заготовка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Gold.png",
+      "rarity": 2,
+      "id": 574
+    }
+  },
+  {
+    "data": {
+      "name": "Берёзовая доска",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Birch_board.png",
+      "rarity": 2,
+      "id": 588
+    }
+  },
+  {
+    "data": {
+      "name": "Клей",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Предмет для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Glue.png",
+      "rarity": 3,
+      "id": 687
+    }
+  },
+  {
+    "data": {
+      "name": "Наковальня",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Anvil.png",
+      "rarity": 2,
+      "id": 126
+    }
+  },
+  {
+    "data": {
+      "name": "Оловянная руда",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Олово.png",
+      "rarity": 1,
+      "id": 452
+    }
+  },
+  {
+    "data": {
+      "name": "Свод мировоззрения",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Свод_мировоззрения.png",
+      "rarity": 3,
+      "id": 503
+    }
+  },
+  {
+    "data": {
+      "name": "Пончики",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Запускает экспедицию на 10 минут"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Ponchiki.png",
+      "rarity": 6,
+      "id": 110
+    }
+  },
+  {
+    "data": {
+      "name": "Железная руда",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Железо.png",
+      "rarity": 1,
+      "id": 451
+    }
+  },
+  {
+    "data": {
+      "name": "Полезная склянка",
+      "item_type": "CRAFT_BOOSTER",
+      "item_data": {
+        "description": "Повышает шанс крафта на 1%"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Poleznaya_sklyanka.png",
+      "rarity": 3,
+      "id": 76
+    }
+  },
+  {
+    "data": {
+      "name": "Необработанный янтарь",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Янтарь.png",
+      "rarity": 1,
+      "id": 133
+    }
+  },
+  {
+    "data": {
+      "name": "Грибоварня",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Mushroom_factory.png",
+      "rarity": 2,
+      "id": 579
+    }
+  },
+  {
+    "data": {
+      "name": "Никелевая руда",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Никель.png",
+      "rarity": 1,
+      "id": 454
+    }
+  },
+  {
+    "data": {
+      "name": "Берёза",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Birch.png",
+      "rarity": 1,
+      "id": 455
+    }
+  },
+  {
+    "data": {
+      "name": "Секвойя",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Sequoia.png",
+      "rarity": 1,
+      "id": 459
+    }
+  },
+  {
+    "data": {
+      "name": "Пирог с ягодами",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Запускает экспедицию на 20 минут"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Pirog_s_yagodami.png",
+      "rarity": 3,
+      "id": 109
+    }
+  },
+  {
+    "data": {
+      "name": "Дубильный набор",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Tanning_set.png",
+      "rarity": 2,
+      "id": 576
+    }
+  },
+  {
+    "data": {
+      "name": "Меха",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Furs.png",
+      "rarity": 2,
+      "id": 125
+    }
+  },
+  {
+    "data": {
+      "name": "Сапфир",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Sapphire.png",
+      "rarity": 2,
+      "id": 144
+    }
+  },
+  {
+    "data": {
+      "name": "Бамбуковые щепки",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Bamboo_chips.png",
+      "rarity": 2,
+      "id": 592
+    }
+  },
+  {
+    "data": {
+      "name": "Дуб",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Oak.png",
+      "rarity": 1,
+      "id": 456
+    }
+  },
+  {
+    "data": {
+      "name": "Креветка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Креветка.png",
+      "rarity": 1,
+      "id": 478
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Малдрак Трупояд",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/demon-tank-02-shards.png",
+      "rarity": 6,
+      "id": 198
+    }
+  },
+  {
+    "data": {
+      "name": "Очищенная креветка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Peeled_shrimp.png",
+      "rarity": 2,
+      "id": 599
+    }
+  },
+  {
+    "data": {
+      "name": "Рубин",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Ruby.png",
+      "rarity": 2,
+      "id": 143
+    }
+  },
+  {
+    "data": {
+      "name": "Кровавый экстракт Пека",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Bloody_Peck_Extract.png",
+      "rarity": 2,
+      "id": 601
+    }
+  },
+  {
+    "data": {
+      "name": "Ритуальный череп",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Ritual_Skull.png",
+      "rarity": 2,
+      "id": 639
+    }
+  },
+  {
+    "data": {
+      "name": "Разбитая кисть",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Broken_brush.png",
+      "rarity": 2,
+      "id": 640
+    }
+  },
+  {
+    "data": {
+      "name": "Укреплённый костяной хвост",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Reinforced_bone_tail.png",
+      "rarity": 2,
+      "id": 641
+    }
+  },
+  {
+    "data": {
+      "name": "Приманка удильщика",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Anglerfish_bait.png",
+      "rarity": 2,
+      "id": 643
+    }
+  },
+  {
+    "data": {
+      "name": "Экстракт лотоса",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Lotus_extract.png",
+      "rarity": 2,
+      "id": 645
+    }
+  },
+  {
+    "data": {
+      "name": "Медная заготовка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Copper.png",
+      "rarity": 2,
+      "id": 650
+    }
+  },
+  {
+    "data": {
+      "name": "Вычесанная шерсть ленивца",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Combed_sloth_fur.png",
+      "rarity": 2,
+      "id": 597
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Ликрон",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/undead-tank-02-shards.png",
+      "rarity": 6,
+      "id": 208
+    }
+  },
+  {
+    "data": {
+      "name": "Сложная шестерёнка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Complex_gear.png",
+      "rarity": 2,
+      "id": 605
+    }
+  },
+  {
+    "data": {
+      "name": "Огранённый сапфир",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Faceted_Sapphire.png",
+      "rarity": 3,
+      "id": 658
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Карган Страж",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/firstborn-tank-04-shards.png",
+      "rarity": 6,
+      "id": 681
+    }
+  },
+  {
+    "data": {
+      "name": "Ирис",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Ирис.png",
+      "rarity": 1,
+      "id": 493
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Тарвэль Дубощит",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/elf-tank-01-shards.png",
+      "rarity": 6,
+      "id": 217
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Гальдис Каменкор",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/elf-tank-02-shards.png",
+      "rarity": 6,
+      "id": 218
+    }
+  },
+  {
+    "data": {
+      "name": "Свод познания",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Свод_познания.png",
+      "rarity": 3,
+      "id": 504
+    }
+  },
+  {
+    "data": {
+      "name": "Шкура фугу",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Puffer_leather.png",
+      "rarity": 2,
+      "id": 600
+    }
+  },
+  {
+    "data": {
+      "name": "Раковина улитки",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Snail_Shell.png",
+      "rarity": 2,
+      "id": 642
+    }
+  },
+  {
+    "data": {
+      "name": "Экстракт млечника",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Extract_of_the_milkweed.png",
+      "rarity": 2,
+      "id": 644
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Мирэль Лунный Свет",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/elf-bufer-03-shards.png",
+      "rarity": 6,
+      "id": 223
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Дрокгар",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/orc-fighter-01-shards.png",
+      "rarity": 6,
+      "id": 236
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Титан-12",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/mechanism-tank-01-shards.png",
+      "rarity": 6,
+      "id": 237
+    }
+  },
+  {
+    "data": {
+      "name": "Болты",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/болты.png",
+      "rarity": 1,
+      "id": 488
+    }
+  },
+  {
+    "data": {
+      "name": "Усиленный болтовой комплект",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Reinforced_bolts.png",
+      "rarity": 2,
+      "id": 606
+    }
+  },
+  {
+    "data": {
+      "name": "Огранённый рубин",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Faceted_Ruby.png",
+      "rarity": 3,
+      "id": 657
+    }
+  },
+  {
+    "data": {
+      "name": "Огранённый янтарь",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Faceted_Amber.png",
+      "rarity": 3,
+      "id": 659
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Варден Душекрад",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/human-debufer-01-shards.png",
+      "rarity": 6,
+      "id": 169
+    }
+  },
+  {
+    "data": {
+      "name": "Золотая руда",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Золото.png",
+      "rarity": 1,
+      "id": 453
+    }
+  },
+  {
+    "data": {
+      "name": "Удильщик",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Удильщик.png",
+      "rarity": 1,
+      "id": 480
+    }
+  },
+  {
+    "data": {
+      "name": "Фляга",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ускоряет экспедицию на 5%"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Flyaga.png",
+      "rarity": 7,
+      "id": 162
+    }
+  },
+  {
+    "data": {
+      "name": "Точный подшипник",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Precise_bearing.png",
+      "rarity": 2,
+      "id": 607
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Тарн",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/beast-fighter-01-shards.png",
+      "rarity": 6,
+      "id": 186
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Карден Ясный",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/human-bufer-01-shards.png",
+      "rarity": 6,
+      "id": 171
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Рагнур Длинный Клык",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/beast-bufer-03-shards.png",
+      "rarity": 6,
+      "id": 183
+    }
+  },
+  {
+    "data": {
+      "name": "Млечник голубой",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Млечник.png",
+      "rarity": 1,
+      "id": 481
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Бордан Крепкорук",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/dwarf-tank-01-shards.png",
+      "rarity": 6,
+      "id": 187
+    }
+  },
+  {
+    "data": {
+      "name": "Подшипник",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Подшипник.png",
+      "rarity": 1,
+      "id": 489
+    }
+  },
+  {
+    "data": {
+      "name": "Головач гигантский",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Головач.png",
+      "rarity": 1,
+      "id": 483
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Дроггард Лобогром",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/beast-tank-01-shards.png",
+      "rarity": 6,
+      "id": 177
+    }
+  },
+  {
+    "data": {
+      "name": "Мутинус Равенелли",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Мутинус.png",
+      "rarity": 1,
+      "id": 484
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Гракс",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/beast-bufer-02-shards.png",
+      "rarity": 6,
+      "id": 182
+    }
+  },
+  {
+    "data": {
+      "name": "Сердце Механизма",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Сердце_механизма.png",
+      "rarity": 1,
+      "id": 486
+    }
+  },
+  {
+    "data": {
+      "name": "Шестерёнка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Шертерёнка.png",
+      "rarity": 1,
+      "id": 487
+    }
+  },
+  {
+    "data": {
+      "name": "Деталь корпуса",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Деталь_корпуса.png",
+      "rarity": 1,
+      "id": 490
+    }
+  },
+  {
+    "data": {
+      "name": "Восковой плющ",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Плющ.png",
+      "rarity": 1,
+      "id": 495
+    }
+  },
+  {
+    "data": {
+      "name": "Лепесток-Ампула",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Petal_Ampoule.png",
+      "rarity": 2,
+      "id": 496
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Селина Звёздная",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/elf-bufer-01-shards.png",
+      "rarity": 6,
+      "id": 221
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Дарилан",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/elf-fighter-01-shards.png",
+      "rarity": 6,
+      "id": 226
+    }
+  },
+  {
+    "data": {
+      "name": "Свод удачи",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Свод_удачи.png",
+      "rarity": 3,
+      "id": 502
+    }
+  },
+  {
+    "data": {
+      "name": "Кирка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Pickaxe.png",
+      "rarity": 2,
+      "id": 586
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Коггард",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/mechanism-bufer-01-shards.png",
+      "rarity": 6,
+      "id": 241
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Ардалир",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/firstborn-bufer-02-shards.png",
+      "rarity": 6,
+      "id": 262
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Авис-3",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/mechanism-fighter-01-shards.png",
+      "rarity": 6,
+      "id": 246
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Браннус",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/ent-tank-01-shards.png",
+      "rarity": 6,
+      "id": 247
+    }
+  },
+  {
+    "data": {
+      "name": "Улитка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Улитка.png",
+      "rarity": 1,
+      "id": 476
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Кронвелл",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/ent-tank-02-shards.png",
+      "rarity": 6,
+      "id": 248
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Орвендар",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/ent-bufer-01-shards.png",
+      "rarity": 6,
+      "id": 251
+    }
+  },
+  {
+    "data": {
+      "name": "Хранилище горнов",
+      "item_type": "LOOTBOX",
+      "item_data": {
+        "description": "Сундук с сокровищами, восстанавливает энергию охоты"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Gorn_set.png",
+      "rarity": 1,
+      "id": 703
+    }
+  },
+  {
+    "data": {
+      "name": "Укреплённая деталь корпуса",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Reinforced_body_part.png",
+      "rarity": 2,
+      "id": 608
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Таргул Костолом",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/orc-bufer-01-shards.png",
+      "rarity": 6,
+      "id": 231
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Крадок Молотобоец",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/dwarf-debufer-02-shards.png",
+      "rarity": 6,
+      "id": 190
+    }
+  },
+  {
+    "data": {
+      "name": "Обрывок искаженного пергамента",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "А что, если секретного босса можно было бы создать?"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Obryvok_Iskazhennogo_Pergamenta.png",
+      "rarity": 3,
+      "id": 704
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Зорук",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/orc-tank-02-shards.png",
+      "rarity": 6,
+      "id": 228
+    }
+  },
+  {
+    "data": {
+      "name": "Сердце карты",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "А что, если секретного босса можно было бы создать?"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Serdtse_Karty.png",
+      "rarity": 3,
+      "id": 705
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Дурик",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/dwarf-bufer-02-shards.png",
+      "rarity": 6,
+      "id": 192
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Грастон Медный Щит",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/dwarf-killer-01-shards.png",
+      "rarity": 6,
+      "id": 195
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Борин Камнебород",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/dwarf-fighter-01-shards.png",
+      "rarity": 6,
+      "id": 196
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Каэларис",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/firstborn-fighter-01-shards.png",
+      "rarity": 6,
+      "id": 266
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Сарн Колючий",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/human-bufer-02-shards.png",
+      "rarity": 6,
+      "id": 172
+    }
+  },
+  {
+    "data": {
+      "name": "Мантия Пробуждения",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Мантия_пробуждения.png",
+      "rarity": 1,
+      "id": 500
+    }
+  },
+  {
+    "data": {
+      "name": "Фрагмент забытого атласа",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "А что, если секретного босса можно было бы создать?"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Fragment_Zabytogo_Atlasa.png",
+      "rarity": 3,
+      "id": 706
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Ворзул",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/demon-tank-01-shards.png",
+      "rarity": 6,
+      "id": 197
+    }
+  },
+  {
+    "data": {
+      "name": "Звёздная эссенция",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Zvyozdnaya_essentsiya.png",
+      "rarity": 6,
+      "id": 427
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Брум",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/beast-tank-02-shards.png",
+      "rarity": 6,
+      "id": 178
+    }
+  },
+  {
+    "data": {
+      "name": "Свиток мастерства",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Svitok_masterstva.png",
+      "rarity": 9,
+      "id": 428
+    }
+  },
+  {
+    "data": {
+      "name": "Свод истины",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Свод_истины.png",
+      "rarity": 3,
+      "id": 501
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Громмир Железобород",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/dwarf-bufer-01-shards.png",
+      "rarity": 6,
+      "id": 191
+    }
+  },
+  {
+    "data": {
+      "name": "Обработанная шкура медведя",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Processed_bear_skin.png",
+      "rarity": 2,
+      "id": 594
+    }
+  },
+  {
+    "data": {
+      "name": "Огранённый аметист",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Faceted_Amethyst.png",
+      "rarity": 3,
+      "id": 655
+    }
+  },
+  {
+    "data": {
+      "name": "Огранённый изумруд",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Faceted_Emerald.png",
+      "rarity": 3,
+      "id": 656
+    }
+  },
+  {
+    "data": {
+      "name": "Искаженная карта",
+      "item_type": "SUMMON",
+      "item_data": {
+        "description": "Искаженная карта, ведущая к порталу между мирами. Призывает крафтового босса - Искаженного Стража."
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Iskazhennaya_Karta.png",
+      "rarity": 5,
+      "id": 708
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Кредас Огнеклеймо",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/demon-bufer-01-shards.png",
+      "rarity": 6,
+      "id": 201
+    }
+  },
+  {
+    "data": {
+      "name": "Живая карта",
+      "item_type": "SUMMON",
+      "item_data": {
+        "description": "Карта, изменяющая свой рисунок. Призывает крафтового босса - Живое Древо с корнями в разных измерениях."
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Zhivaya_Karta.png",
+      "rarity": 5,
+      "id": 709
+    }
+  },
+  {
+    "data": {
+      "name": "Аметист",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Amethyst.png",
+      "rarity": 2,
+      "id": 112
+    }
+  },
+  {
+    "data": {
+      "name": "Необработанный аметист",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Аметист.png",
+      "rarity": 1,
+      "id": 128
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Мурдрак Костолом",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/orc-tank-01-shards.png",
+      "rarity": 6,
+      "id": 227
+    }
+  },
+  {
+    "data": {
+      "name": "Карта запретного места",
+      "item_type": "SUMMON",
+      "item_data": {
+        "description": "Карта, ведущая к месту силы, запечатанному древними. Призывает мощного крафтового босса."
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Karta_Zapretnogo_Mesta.png",
+      "rarity": 5,
+      "id": 710
+    }
+  },
+  {
+    "data": {
+      "name": "Необработанный изумруд",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Изумруд.png",
+      "rarity": 1,
+      "id": 129
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Тарнольд Суховенец",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/ent-fighter-01-shards.png",
+      "rarity": 6,
+      "id": 256
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Воранис Звёздный",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/firstborn-bufer-01-shards.png",
+      "rarity": 6,
+      "id": 261
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Залтар",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/demon-bufer-02-shards.png",
+      "rarity": 6,
+      "id": 202
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Луминар",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/firstborn-tank-01-shards.png",
+      "rarity": 6,
+      "id": 257
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Сильдар",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/firstborn-debufer-01-shards.png",
+      "rarity": 6,
+      "id": 259
+    }
+  },
+  {
+    "data": {
+      "name": "Монета Участника",
+      "item_type": "CURRENCY",
+      "icon": "https://s3.game-tech.net/lotw/res/Moneta_uchastnika.png",
+      "rarity": 8,
+      "id": 397
+    }
+  },
+  {
+    "data": {
+      "name": "Гиднеллум Пека",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Гиднеллум.png",
+      "rarity": 1,
+      "id": 482
+    }
+  },
+  {
+    "data": {
+      "name": "Изумруд",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Emerald.png",
+      "rarity": 2,
+      "id": 120
+    }
+  },
+  {
+    "data": {
+      "name": "Необработанный сапфир",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Сапфир.png",
+      "rarity": 1,
+      "id": 131
+    }
+  },
+  {
+    "data": {
+      "name": "Медная руда",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Медь.png",
+      "rarity": 1,
+      "id": 450
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Гралмор Рогохват",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/demon-fighter-01-shards.png",
+      "rarity": 6,
+      "id": 206
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Саргот",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/undead-killer-01-shards.png",
+      "rarity": 6,
+      "id": 215
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Эллариос",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/firstborn-bufer-05-shards.png",
+      "rarity": 6,
+      "id": 672
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Ривекс-8",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/mechanism-tank-02-shards.png",
+      "rarity": 6,
+      "id": 238
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Торвальд Буря",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/human-tank-01-shards.png",
+      "rarity": 6,
+      "id": 167
+    }
+  },
+  {
+    "data": {
+      "name": "Закалённая чешуя дракона",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Tempered_Dragon_Scales.png",
+      "rarity": 2,
+      "id": 595
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Ульмар",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/undead-tank-01-shards.png",
+      "rarity": 6,
+      "id": 207
+    }
+  },
+  {
+    "data": {
+      "name": "Загусток головача",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/A_thickening_of_the_head.png",
+      "rarity": 2,
+      "id": 602
+    }
+  },
+  {
+    "data": {
+      "name": "Форма",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Mold.png",
+      "rarity": 2,
+      "id": 636
+    }
+  },
+  {
+    "data": {
+      "name": "Железная заготовка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Iron.PNG",
+      "rarity": 2,
+      "id": 651
+    }
+  },
+  {
+    "data": {
+      "name": "Оловянная заготовка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Tin.png",
+      "rarity": 2,
+      "id": 652
+    }
+  },
+  {
+    "data": {
+      "name": "Бронзовая заготовка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Bronze.png",
+      "rarity": 2,
+      "id": 654
+    }
+  },
+  {
+    "data": {
+      "name": "Кожа питона",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Кожа_питона.png",
+      "rarity": 1,
+      "id": 460
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Драксор",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/undead-debufer-01-shards.png",
+      "rarity": 6,
+      "id": 209
+    }
+  },
+  {
+    "data": {
+      "name": "Раздробленная кость",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Shattered_bone.png",
+      "rarity": 2,
+      "id": 637
+    }
+  },
+  {
+    "data": {
+      "name": "Сок кактуса",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Cactus_juice.png",
+      "rarity": 2,
+      "id": 646
+    }
+  },
+  {
+    "data": {
+      "name": "Масло розы",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Rose_oil.png",
+      "rarity": 2,
+      "id": 648
+    }
+  },
+  {
+    "data": {
+      "name": "Смола воскового плюща",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Wax_ivy_resin.png",
+      "rarity": 2,
+      "id": 649
+    }
+  },
+  {
+    "data": {
+      "name": "Никелевая заготовка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Nickel.png",
+      "rarity": 2,
+      "id": 653
+    }
+  },
+  {
+    "data": {
+      "name": "Инструмент для огранки",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Cutting_Tool.png",
+      "rarity": 3,
+      "id": 121
+    }
+  },
+  {
+    "data": {
+      "name": "Кедр",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Cedar.png",
+      "rarity": 1,
+      "id": 458
+    }
+  },
+  {
+    "data": {
+      "name": "Чешуя дракона",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Чешуя_дракона.png",
+      "rarity": 1,
+      "id": 462
+    }
+  },
+  {
+    "data": {
+      "name": "Шерсть Ленивца",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Шерсть_ленивца.png",
+      "rarity": 1,
+      "id": 464
+    }
+  },
+  {
+    "data": {
+      "name": "Костяная кисть",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Костянная_кисть.png",
+      "rarity": 1,
+      "id": 471
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Мурок Рогач",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/beast-bufer-01-shards.png",
+      "rarity": 6,
+      "id": 181
+    }
+  },
+  {
+    "data": {
+      "name": "Кость",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Кость.png",
+      "rarity": 1,
+      "id": 474
+    }
+  },
+  {
+    "data": {
+      "name": "Осколок: Аэлларон",
+      "item_type": "HERO_SHARD",
+      "item_data": {
+        "description": "Уникальные осколки для прокачки конкретного персонажа"
+      },
+      "icon": "https://s3.game-tech.net/lotw/icons/firstborn-tank-02-shards.png",
+      "rarity": 6,
+      "id": 258
+    }
+  },
+  {
+    "data": {
+      "name": "Монета Лидера",
+      "item_type": "CURRENCY",
+      "icon": "https://s3.game-tech.net/lotw/res/Moneta_lidera.png",
+      "rarity": 8,
+      "id": 396
+    }
+  },
+  {
+    "data": {
+      "name": "Набор с компасом",
+      "item_type": "LOOTBOX",
+      "item_data": {
+        "description": "Сундук с сокровищами, восстанавливает энергию биома"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Nabor_s_kompasom.png",
+      "rarity": 6,
+      "id": 281
+    }
+  },
+  {
+    "data": {
+      "name": "Осколки главного героя",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Осколки для прокачки главного героя"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Oskolki_glavnogo_geroya.png",
+      "rarity": 5,
+      "id": 406
+    }
+  },
+  {
+    "data": {
+      "name": "Сборочный верстак",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Assembly_workbench.png",
+      "rarity": 2,
+      "id": 587
+    }
+  },
+  {
+    "data": {
+      "name": "Дубовая доска",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Oak_plank.png",
+      "rarity": 2,
+      "id": 590
+    }
+  },
+  {
+    "data": {
+      "name": "Доска секвойи",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Sequoia_Board.png",
+      "rarity": 2,
+      "id": 591
+    }
+  },
+  {
+    "data": {
+      "name": "Укреплённое перо зимородка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Reinforced_Kingfisher_Feather.png",
+      "rarity": 2,
+      "id": 596
+    }
+  },
+  {
+    "data": {
+      "name": "Филе угря",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Eel_fillet.png",
+      "rarity": 2,
+      "id": 598
+    }
+  },
+  {
+    "data": {
+      "name": "Токсичный настой мутинуса",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Toxic_infusion_of_mutinus.png",
+      "rarity": 1,
+      "id": 603
+    }
+  },
+  {
+    "data": {
+      "name": "Шкура медведя",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингридиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Bear_Skin.png",
+      "rarity": 1,
+      "id": 461
+    }
+  },
+  {
+    "data": {
+      "name": "Перо Зимородка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Перо_Зимородка.png",
+      "rarity": 1,
+      "id": 463
+    }
+  },
+  {
+    "data": {
+      "name": "Ребра",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/ребра.png",
+      "rarity": 1,
+      "id": 472
+    }
+  },
+  {
+    "data": {
+      "name": "Череп",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Череп.png",
+      "rarity": 1,
+      "id": 473
+    }
+  },
+  {
+    "data": {
+      "name": "Костяной хвост",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Костяной_хвост.png",
+      "rarity": 1,
+      "id": 475
+    }
+  },
+  {
+    "data": {
+      "name": "Фугу",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Фугу.png",
+      "rarity": 1,
+      "id": 479
+    }
+  },
+  {
+    "data": {
+      "name": "Лотос",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Лотос.png",
+      "rarity": 1,
+      "id": 491
+    }
+  },
+  {
+    "data": {
+      "name": "Сундук Зачатка",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Сундук_зачатка.png",
+      "rarity": 1,
+      "id": 497
+    }
+  },
+  {
+    "data": {
+      "name": "Сосуд Инкубации",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Сосуд_Инкубации.png",
+      "rarity": 1,
+      "id": 499
+    }
+  },
+  {
+    "data": {
+      "name": "Бамбук",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Назначение: Используется для создания новых предметов.\nПолучение: Биомы \"Город Людей\", Рынок.\nРедкость: Обычная."
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Bamboo.png",
+      "rarity": 1,
+      "id": 457
+    }
+  },
+  {
+    "data": {
+      "name": "Сундук Перворожденных I",
+      "item_type": "LOOTBOX",
+      "item_data": {
+        "description": "Содержит 3-7 осколков одного из героев расы Перворожденные"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/10-chest-firstborn.png",
+      "rarity": 6,
+      "id": 425
+    }
+  },
+  {
+    "data": {
+      "name": "Камень пробуждения",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Kamen_probuzhdeniya.png",
+      "rarity": 6,
+      "id": 426
+    }
+  },
+  {
+    "data": {
+      "name": "Роза",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Роза.png",
+      "rarity": 1,
+      "id": 494
+    }
+  },
+  {
+    "data": {
+      "name": "Кристалл Эмбрион",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафтов"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Кристалл_Эмбрион.png",
+      "rarity": 1,
+      "id": 498
+    }
+  },
+  {
+    "data": {
+      "name": "Кедровая доска",
+      "item_type": "RESOURCE",
+      "item_data": {
+        "description": "Ингредиент для крафта"
+      },
+      "icon": "https://s3.game-tech.net/lotw/res/Cedar_board.png",
+      "rarity": 2,
+      "id": 589
+    }
+  }
+]

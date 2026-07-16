@@ -1,0 +1,3493 @@
+[
+    {
+      "recipe_id": 91,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 456,
+            "quantity": 10
+          },
+          {
+            "item_id": 459,
+            "quantity": 10
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 3,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 91,
+        "success_chance": 99,
+        "rarity": 1,
+        "result_item_id": 125,
+        "result_quantity": 3,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 110,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 455,
+            "quantity": 20
+          },
+          {
+            "item_id": 575,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 110,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 588,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 111,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 458,
+            "quantity": 20
+          },
+          {
+            "item_id": 575,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 111,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 589,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 112,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 456,
+            "quantity": 20
+          },
+          {
+            "item_id": 575,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 112,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 590,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 113,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 459,
+            "quantity": 20
+          },
+          {
+            "item_id": 575,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 113,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 591,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 120,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 474,
+            "quantity": 5
+          },
+          {
+            "item_id": 499,
+            "quantity": 1
+          },
+          {
+            "item_id": 588,
+            "quantity": 1
+          }
+        ],
+        "total_required": 3,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 120,
+        "success_chance": 99,
+        "rarity": 1,
+        "result_item_id": 577,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 121,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 460,
+            "quantity": 20
+          },
+          {
+            "item_id": 576,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 121,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 593,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 122,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 461,
+            "quantity": 20
+          },
+          {
+            "item_id": 576,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 122,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 594,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 123,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 462,
+            "quantity": 20
+          },
+          {
+            "item_id": 576,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 123,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 595,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 124,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 463,
+            "quantity": 20
+          },
+          {
+            "item_id": 576,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 124,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 596,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 125,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 464,
+            "quantity": 20
+          },
+          {
+            "item_id": 576,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 125,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 597,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 131,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 128,
+            "quantity": 20
+          },
+          {
+            "item_id": 586,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 131,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 112,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 132,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 129,
+            "quantity": 20
+          },
+          {
+            "item_id": 586,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 132,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 120,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 133,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 133,
+            "quantity": 20
+          },
+          {
+            "item_id": 586,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 133,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 157,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 134,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 130,
+            "quantity": 20
+          },
+          {
+            "item_id": 586,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 134,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 143,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 135,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 131,
+            "quantity": 20
+          },
+          {
+            "item_id": 586,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 135,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 144,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 142,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 125,
+            "quantity": 1
+          },
+          {
+            "item_id": 453,
+            "quantity": 20
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 142,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 574,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 143,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 128,
+            "quantity": 5
+          },
+          {
+            "item_id": 496,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 143,
+        "success_chance": 99,
+        "rarity": 1,
+        "result_item_id": 76,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 148,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 477,
+            "quantity": 20
+          },
+          {
+            "item_id": 578,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 148,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 598,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 149,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 478,
+            "quantity": 20
+          },
+          {
+            "item_id": 578,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 149,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 599,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 150,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 479,
+            "quantity": 20
+          },
+          {
+            "item_id": 578,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 150,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 600,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 152,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 482,
+            "quantity": 20
+          },
+          {
+            "item_id": 579,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 152,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 601,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 153,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 483,
+            "quantity": 20
+          },
+          {
+            "item_id": 579,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 153,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 602,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 154,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 484,
+            "quantity": 20
+          },
+          {
+            "item_id": 579,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 154,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 603,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 155,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 485,
+            "quantity": 20
+          },
+          {
+            "item_id": 579,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 155,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 604,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 156,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 487,
+            "quantity": 20
+          },
+          {
+            "item_id": 587,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 156,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 605,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 157,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 488,
+            "quantity": 20
+          },
+          {
+            "item_id": 587,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 157,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 606,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 158,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 489,
+            "quantity": 20
+          },
+          {
+            "item_id": 587,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 158,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 607,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 159,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 490,
+            "quantity": 20
+          },
+          {
+            "item_id": 587,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 159,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 608,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 160,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 486,
+            "quantity": 20
+          },
+          {
+            "item_id": 587,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 160,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 609,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 161,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 455,
+            "quantity": 20
+          },
+          {
+            "item_id": 456,
+            "quantity": 20
+          },
+          {
+            "item_id": 458,
+            "quantity": 20
+          },
+          {
+            "item_id": 459,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 161,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 162,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 455,
+            "quantity": 20
+          },
+          {
+            "item_id": 456,
+            "quantity": 20
+          },
+          {
+            "item_id": 457,
+            "quantity": 20
+          },
+          {
+            "item_id": 458,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 162,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 163,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 455,
+            "quantity": 20
+          },
+          {
+            "item_id": 457,
+            "quantity": 20
+          },
+          {
+            "item_id": 458,
+            "quantity": 20
+          },
+          {
+            "item_id": 459,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 163,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 164,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 455,
+            "quantity": 20
+          },
+          {
+            "item_id": 456,
+            "quantity": 20
+          },
+          {
+            "item_id": 457,
+            "quantity": 20
+          },
+          {
+            "item_id": 459,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 164,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 165,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 456,
+            "quantity": 20
+          },
+          {
+            "item_id": 457,
+            "quantity": 20
+          },
+          {
+            "item_id": 458,
+            "quantity": 20
+          },
+          {
+            "item_id": 459,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 165,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 166,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 460,
+            "quantity": 20
+          },
+          {
+            "item_id": 461,
+            "quantity": 20
+          },
+          {
+            "item_id": 462,
+            "quantity": 20
+          },
+          {
+            "item_id": 463,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 166,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 167,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 460,
+            "quantity": 20
+          },
+          {
+            "item_id": 461,
+            "quantity": 20
+          },
+          {
+            "item_id": 462,
+            "quantity": 20
+          },
+          {
+            "item_id": 464,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 167,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 168,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 460,
+            "quantity": 20
+          },
+          {
+            "item_id": 461,
+            "quantity": 20
+          },
+          {
+            "item_id": 463,
+            "quantity": 20
+          },
+          {
+            "item_id": 464,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 168,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 169,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 460,
+            "quantity": 20
+          },
+          {
+            "item_id": 462,
+            "quantity": 20
+          },
+          {
+            "item_id": 463,
+            "quantity": 20
+          },
+          {
+            "item_id": 464,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 169,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 170,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 461,
+            "quantity": 20
+          },
+          {
+            "item_id": 462,
+            "quantity": 20
+          },
+          {
+            "item_id": 463,
+            "quantity": 20
+          },
+          {
+            "item_id": 464,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 170,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 171,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 450,
+            "quantity": 20
+          },
+          {
+            "item_id": 451,
+            "quantity": 20
+          },
+          {
+            "item_id": 452,
+            "quantity": 20
+          },
+          {
+            "item_id": 453,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 171,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 172,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 450,
+            "quantity": 20
+          },
+          {
+            "item_id": 451,
+            "quantity": 20
+          },
+          {
+            "item_id": 452,
+            "quantity": 20
+          },
+          {
+            "item_id": 454,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 172,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 173,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 450,
+            "quantity": 20
+          },
+          {
+            "item_id": 451,
+            "quantity": 20
+          },
+          {
+            "item_id": 453,
+            "quantity": 20
+          },
+          {
+            "item_id": 454,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 173,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 174,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 450,
+            "quantity": 20
+          },
+          {
+            "item_id": 452,
+            "quantity": 20
+          },
+          {
+            "item_id": 453,
+            "quantity": 20
+          },
+          {
+            "item_id": 454,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 174,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 175,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 451,
+            "quantity": 20
+          },
+          {
+            "item_id": 452,
+            "quantity": 20
+          },
+          {
+            "item_id": 453,
+            "quantity": 20
+          },
+          {
+            "item_id": 454,
+            "quantity": 20
+          },
+          {
+            "item_id": 501,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 175,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 176,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 128,
+            "quantity": 20
+          },
+          {
+            "item_id": 129,
+            "quantity": 20
+          },
+          {
+            "item_id": 130,
+            "quantity": 20
+          },
+          {
+            "item_id": 131,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 176,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 177,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 128,
+            "quantity": 20
+          },
+          {
+            "item_id": 129,
+            "quantity": 20
+          },
+          {
+            "item_id": 130,
+            "quantity": 20
+          },
+          {
+            "item_id": 133,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 177,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 178,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 128,
+            "quantity": 20
+          },
+          {
+            "item_id": 129,
+            "quantity": 20
+          },
+          {
+            "item_id": 131,
+            "quantity": 20
+          },
+          {
+            "item_id": 133,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 178,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 179,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 128,
+            "quantity": 20
+          },
+          {
+            "item_id": 130,
+            "quantity": 20
+          },
+          {
+            "item_id": 131,
+            "quantity": 20
+          },
+          {
+            "item_id": 133,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 179,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 180,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 129,
+            "quantity": 20
+          },
+          {
+            "item_id": 130,
+            "quantity": 20
+          },
+          {
+            "item_id": 131,
+            "quantity": 20
+          },
+          {
+            "item_id": 133,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 180,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 181,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 471,
+            "quantity": 20
+          },
+          {
+            "item_id": 472,
+            "quantity": 20
+          },
+          {
+            "item_id": 473,
+            "quantity": 20
+          },
+          {
+            "item_id": 474,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 181,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 182,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 471,
+            "quantity": 20
+          },
+          {
+            "item_id": 472,
+            "quantity": 20
+          },
+          {
+            "item_id": 473,
+            "quantity": 20
+          },
+          {
+            "item_id": 475,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 182,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 184,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 471,
+            "quantity": 20
+          },
+          {
+            "item_id": 473,
+            "quantity": 20
+          },
+          {
+            "item_id": 474,
+            "quantity": 20
+          },
+          {
+            "item_id": 475,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 184,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 185,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 472,
+            "quantity": 20
+          },
+          {
+            "item_id": 473,
+            "quantity": 20
+          },
+          {
+            "item_id": 474,
+            "quantity": 20
+          },
+          {
+            "item_id": 475,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 185,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 186,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 471,
+            "quantity": 20
+          },
+          {
+            "item_id": 472,
+            "quantity": 20
+          },
+          {
+            "item_id": 474,
+            "quantity": 20
+          },
+          {
+            "item_id": 475,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 186,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 187,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 476,
+            "quantity": 20
+          },
+          {
+            "item_id": 477,
+            "quantity": 20
+          },
+          {
+            "item_id": 478,
+            "quantity": 20
+          },
+          {
+            "item_id": 480,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 187,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 188,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 476,
+            "quantity": 20
+          },
+          {
+            "item_id": 477,
+            "quantity": 20
+          },
+          {
+            "item_id": 479,
+            "quantity": 20
+          },
+          {
+            "item_id": 480,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 188,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 189,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 476,
+            "quantity": 20
+          },
+          {
+            "item_id": 478,
+            "quantity": 20
+          },
+          {
+            "item_id": 479,
+            "quantity": 20
+          },
+          {
+            "item_id": 480,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 189,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 190,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 476,
+            "quantity": 20
+          },
+          {
+            "item_id": 477,
+            "quantity": 20
+          },
+          {
+            "item_id": 478,
+            "quantity": 20
+          },
+          {
+            "item_id": 479,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 190,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 191,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 477,
+            "quantity": 20
+          },
+          {
+            "item_id": 478,
+            "quantity": 20
+          },
+          {
+            "item_id": 479,
+            "quantity": 20
+          },
+          {
+            "item_id": 480,
+            "quantity": 20
+          },
+          {
+            "item_id": 502,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 191,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 192,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 481,
+            "quantity": 20
+          },
+          {
+            "item_id": 482,
+            "quantity": 20
+          },
+          {
+            "item_id": 483,
+            "quantity": 20
+          },
+          {
+            "item_id": 484,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 192,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 193,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 481,
+            "quantity": 20
+          },
+          {
+            "item_id": 482,
+            "quantity": 20
+          },
+          {
+            "item_id": 483,
+            "quantity": 20
+          },
+          {
+            "item_id": 485,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 193,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 194,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 481,
+            "quantity": 20
+          },
+          {
+            "item_id": 482,
+            "quantity": 20
+          },
+          {
+            "item_id": 484,
+            "quantity": 20
+          },
+          {
+            "item_id": 485,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 194,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 195,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 481,
+            "quantity": 20
+          },
+          {
+            "item_id": 483,
+            "quantity": 20
+          },
+          {
+            "item_id": 484,
+            "quantity": 20
+          },
+          {
+            "item_id": 485,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 195,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 196,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 482,
+            "quantity": 20
+          },
+          {
+            "item_id": 483,
+            "quantity": 20
+          },
+          {
+            "item_id": 484,
+            "quantity": 20
+          },
+          {
+            "item_id": 485,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 196,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 197,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 486,
+            "quantity": 20
+          },
+          {
+            "item_id": 487,
+            "quantity": 20
+          },
+          {
+            "item_id": 488,
+            "quantity": 20
+          },
+          {
+            "item_id": 489,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 197,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 198,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 486,
+            "quantity": 20
+          },
+          {
+            "item_id": 487,
+            "quantity": 20
+          },
+          {
+            "item_id": 488,
+            "quantity": 20
+          },
+          {
+            "item_id": 490,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 198,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 199,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 486,
+            "quantity": 20
+          },
+          {
+            "item_id": 487,
+            "quantity": 20
+          },
+          {
+            "item_id": 489,
+            "quantity": 20
+          },
+          {
+            "item_id": 490,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 199,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 200,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 486,
+            "quantity": 20
+          },
+          {
+            "item_id": 488,
+            "quantity": 20
+          },
+          {
+            "item_id": 489,
+            "quantity": 20
+          },
+          {
+            "item_id": 490,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 200,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 201,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 487,
+            "quantity": 20
+          },
+          {
+            "item_id": 488,
+            "quantity": 20
+          },
+          {
+            "item_id": 489,
+            "quantity": 20
+          },
+          {
+            "item_id": 490,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 201,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 202,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 491,
+            "quantity": 20
+          },
+          {
+            "item_id": 492,
+            "quantity": 20
+          },
+          {
+            "item_id": 493,
+            "quantity": 20
+          },
+          {
+            "item_id": 494,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 202,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 203,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 491,
+            "quantity": 20
+          },
+          {
+            "item_id": 492,
+            "quantity": 20
+          },
+          {
+            "item_id": 493,
+            "quantity": 20
+          },
+          {
+            "item_id": 495,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 203,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 204,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 491,
+            "quantity": 20
+          },
+          {
+            "item_id": 492,
+            "quantity": 20
+          },
+          {
+            "item_id": 494,
+            "quantity": 20
+          },
+          {
+            "item_id": 495,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 204,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 205,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 491,
+            "quantity": 20
+          },
+          {
+            "item_id": 493,
+            "quantity": 20
+          },
+          {
+            "item_id": 494,
+            "quantity": 20
+          },
+          {
+            "item_id": 495,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 205,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 206,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 492,
+            "quantity": 20
+          },
+          {
+            "item_id": 493,
+            "quantity": 20
+          },
+          {
+            "item_id": 494,
+            "quantity": 20
+          },
+          {
+            "item_id": 495,
+            "quantity": 20
+          },
+          {
+            "item_id": 503,
+            "quantity": 2
+          }
+        ],
+        "total_required": 5,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 206,
+        "success_chance": 95,
+        "rarity": 1,
+        "result_item_id": 281,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 207,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 455,
+            "quantity": 5
+          },
+          {
+            "item_id": 502,
+            "quantity": 1
+          },
+          {
+            "item_id": 651,
+            "quantity": 1
+          }
+        ],
+        "total_required": 3,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 207,
+        "success_chance": 99,
+        "rarity": 1,
+        "result_item_id": 575,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 208,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 456,
+            "quantity": 5
+          },
+          {
+            "item_id": 503,
+            "quantity": 1
+          },
+          {
+            "item_id": 651,
+            "quantity": 1
+          }
+        ],
+        "total_required": 3,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 208,
+        "success_chance": 99,
+        "rarity": 1,
+        "result_item_id": 576,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 209,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 459,
+            "quantity": 5
+          },
+          {
+            "item_id": 504,
+            "quantity": 1
+          },
+          {
+            "item_id": 651,
+            "quantity": 1
+          }
+        ],
+        "total_required": 3,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 209,
+        "success_chance": 99,
+        "rarity": 1,
+        "result_item_id": 586,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 210,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 458,
+            "quantity": 5
+          },
+          {
+            "item_id": 504,
+            "quantity": 1
+          },
+          {
+            "item_id": 651,
+            "quantity": 1
+          }
+        ],
+        "total_required": 3,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 210,
+        "success_chance": 99,
+        "rarity": 1,
+        "result_item_id": 580,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 211,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 458,
+            "quantity": 5
+          },
+          {
+            "item_id": 502,
+            "quantity": 1
+          },
+          {
+            "item_id": 650,
+            "quantity": 1
+          }
+        ],
+        "total_required": 3,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 211,
+        "success_chance": 99,
+        "rarity": 1,
+        "result_item_id": 578,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 212,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 459,
+            "quantity": 5
+          },
+          {
+            "item_id": 499,
+            "quantity": 1
+          },
+          {
+            "item_id": 652,
+            "quantity": 1
+          }
+        ],
+        "total_required": 3,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 212,
+        "success_chance": 99,
+        "rarity": 1,
+        "result_item_id": 579,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 213,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 456,
+            "quantity": 5
+          },
+          {
+            "item_id": 489,
+            "quantity": 5
+          },
+          {
+            "item_id": 650,
+            "quantity": 1
+          }
+        ],
+        "total_required": 3,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 213,
+        "success_chance": 99,
+        "rarity": 1,
+        "result_item_id": 587,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 214,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 458,
+            "quantity": 8
+          },
+          {
+            "item_id": 496,
+            "quantity": 1
+          },
+          {
+            "item_id": 574,
+            "quantity": 1
+          },
+          {
+            "item_id": 653,
+            "quantity": 2
+          }
+        ],
+        "total_required": 4,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 214,
+        "success_chance": 99,
+        "rarity": 1,
+        "result_item_id": 121,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 216,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 574,
+            "quantity": 1
+          },
+          {
+            "item_id": 650,
+            "quantity": 1
+          },
+          {
+            "item_id": 651,
+            "quantity": 1
+          },
+          {
+            "item_id": 652,
+            "quantity": 1
+          },
+          {
+            "item_id": 653,
+            "quantity": 1
+          },
+          {
+            "item_id": 654,
+            "quantity": 1
+          }
+        ],
+        "total_required": 6,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 216,
+        "success_chance": 99,
+        "rarity": 1,
+        "result_item_id": 636,
+        "result_quantity": 3,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 217,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 474,
+            "quantity": 20
+          },
+          {
+            "item_id": 580,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 217,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 637,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 218,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 472,
+            "quantity": 20
+          },
+          {
+            "item_id": 580,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 218,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 638,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 219,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 473,
+            "quantity": 20
+          },
+          {
+            "item_id": 580,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 219,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 639,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 220,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 471,
+            "quantity": 20
+          },
+          {
+            "item_id": 580,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 220,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 640,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 221,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 475,
+            "quantity": 20
+          },
+          {
+            "item_id": 580,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 221,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 641,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 222,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 476,
+            "quantity": 20
+          },
+          {
+            "item_id": 578,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 222,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 642,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 223,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 480,
+            "quantity": 20
+          },
+          {
+            "item_id": 578,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 223,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 643,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 224,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 481,
+            "quantity": 20
+          },
+          {
+            "item_id": 579,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 224,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 644,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 225,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 491,
+            "quantity": 20
+          },
+          {
+            "item_id": 577,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 225,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 645,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 226,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 492,
+            "quantity": 20
+          },
+          {
+            "item_id": 577,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 226,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 646,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 227,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 493,
+            "quantity": 20
+          },
+          {
+            "item_id": 577,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 227,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 647,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 228,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 494,
+            "quantity": 20
+          },
+          {
+            "item_id": 577,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 228,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 648,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 229,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 495,
+            "quantity": 20
+          },
+          {
+            "item_id": 577,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 229,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 649,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 230,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 125,
+            "quantity": 1
+          },
+          {
+            "item_id": 452,
+            "quantity": 20
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 230,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 652,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 231,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 125,
+            "quantity": 1
+          },
+          {
+            "item_id": 454,
+            "quantity": 20
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 231,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 653,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 232,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 125,
+            "quantity": 1
+          },
+          {
+            "item_id": 450,
+            "quantity": 20
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 232,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 650,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 233,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 125,
+            "quantity": 1
+          },
+          {
+            "item_id": 451,
+            "quantity": 20
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 233,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 651,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    },
+    {
+      "recipe_id": 234,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 125,
+            "quantity": 1
+          },
+          {
+            "item_id": 650,
+            "quantity": 2
+          },
+          {
+            "item_id": 652,
+            "quantity": 2
+          }
+        ],
+        "total_required": 3,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 234,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 654,
+        "result_quantity": 3,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 235,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 112,
+            "quantity": 3
+          },
+          {
+            "item_id": 121,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 235,
+        "success_chance": 70,
+        "rarity": 1,
+        "result_item_id": 655,
+        "result_quantity": 2,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 236,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 120,
+            "quantity": 3
+          },
+          {
+            "item_id": 121,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 236,
+        "success_chance": 70,
+        "rarity": 1,
+        "result_item_id": 656,
+        "result_quantity": 2,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 237,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 121,
+            "quantity": 1
+          },
+          {
+            "item_id": 143,
+            "quantity": 3
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 237,
+        "success_chance": 70,
+        "rarity": 1,
+        "result_item_id": 657,
+        "result_quantity": 2,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 238,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 121,
+            "quantity": 1
+          },
+          {
+            "item_id": 144,
+            "quantity": 3
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 238,
+        "success_chance": 70,
+        "rarity": 1,
+        "result_item_id": 658,
+        "result_quantity": 2,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 239,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 121,
+            "quantity": 1
+          },
+          {
+            "item_id": 157,
+            "quantity": 3
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 239,
+        "success_chance": 70,
+        "rarity": 1,
+        "result_item_id": 659,
+        "result_quantity": 2,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 261,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 496,
+            "quantity": 4
+          },
+          {
+            "item_id": 602,
+            "quantity": 2
+          },
+          {
+            "item_id": 637,
+            "quantity": 2
+          },
+          {
+            "item_id": 649,
+            "quantity": 2
+          }
+        ],
+        "total_required": 4,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 261,
+        "success_chance": 99,
+        "rarity": 1,
+        "result_item_id": 687,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 268,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 475,
+            "quantity": 1
+          },
+          {
+            "item_id": 496,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 268,
+        "success_chance": 85,
+        "rarity": 1,
+        "result_item_id": 703,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 269,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 475,
+            "quantity": 1
+          },
+          {
+            "item_id": 497,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 269,
+        "success_chance": 85,
+        "rarity": 1,
+        "result_item_id": 703,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 270,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 475,
+            "quantity": 1
+          },
+          {
+            "item_id": 498,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 270,
+        "success_chance": 85,
+        "rarity": 1,
+        "result_item_id": 703,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 271,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 475,
+            "quantity": 1
+          },
+          {
+            "item_id": 499,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 271,
+        "success_chance": 85,
+        "rarity": 1,
+        "result_item_id": 703,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 272,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 475,
+            "quantity": 1
+          },
+          {
+            "item_id": 500,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 272,
+        "success_chance": 85,
+        "rarity": 1,
+        "result_item_id": 703,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 273,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 456,
+            "quantity": 10
+          },
+          {
+            "item_id": 650,
+            "quantity": 1
+          },
+          {
+            "item_id": 651,
+            "quantity": 2
+          }
+        ],
+        "total_required": 3,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 273,
+        "success_chance": 99,
+        "rarity": 1,
+        "result_item_id": 126,
+        "result_quantity": 1,
+        "result_quantity_min": 1
+      }
+    },
+    {
+      "recipe_id": 274,
+      "known_ingredients": {
+        "matched": [
+          {
+            "item_id": 457,
+            "quantity": 20
+          },
+          {
+            "item_id": 575,
+            "quantity": 1
+          }
+        ],
+        "total_required": 2,
+        "discovery_progress": 1
+      },
+      "recipe": {
+        "id": 274,
+        "success_chance": 80,
+        "rarity": 1,
+        "result_item_id": 592,
+        "result_quantity": 4,
+        "result_quantity_min": 2
+      }
+    }
+]
